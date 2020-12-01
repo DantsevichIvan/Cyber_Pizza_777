@@ -1,4 +1,5 @@
 const {Schema, model} = require('mongoose');
+const mongoose = require('mongoose')
 
 const productsSchema = new Schema({
     name:{type:String},
@@ -6,7 +7,7 @@ const productsSchema = new Schema({
     description:{type:String},
     weight:{type:Number},
     image:{type:String},
-    category:{ref: 'Categories'}
+    category:{ type: Schema.Types.ObjectId, ref: 'Categories'}
 })
 
 module.exports = model('Products', productsSchema)
