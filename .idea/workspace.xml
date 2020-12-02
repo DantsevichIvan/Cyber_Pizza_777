@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/products.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/products.router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -17,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -30,9 +32,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maritTest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,12 +47,26 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\models" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.seed">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="webpack.config.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/webpack.config.js" working-dir="$PROJECT_DIR$/client">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -60,11 +77,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="server" />
+        <script value="start client" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -82,9 +99,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start client" />
+        <item itemvalue="Node.js.webpack.config.js" />
         <item itemvalue="npm.seed" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
   </component>
@@ -96,7 +115,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606896954460</updated>
-      <workItem from="1606896955688" duration="10825000" />
+      <workItem from="1606896955688" duration="12945000" />
+      <workItem from="1606913125860" duration="1784000" />
+      <workItem from="1606915088060" duration="2201000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -105,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606897721377</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add seed script">
+      <created>1606909005905</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606909005905</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,32 +141,45 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: new structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: new structure" />
+    <MESSAGE value="feat: add seed script" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add seed script" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2057" y="0" key="CommitChangelistDialog2" timestamp="1606897720053">
+    <state x="2057" y="0" key="CommitChangelistDialog2" timestamp="1606909004925">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2057" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606897720053" />
-    <state width="1003" height="218" key="GridCell.Tab.0.bottom" timestamp="1606908245395">
+    <state x="2057" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909004925" />
+    <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="218" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606908245395" />
-    <state width="1003" height="218" key="GridCell.Tab.0.center" timestamp="1606908245395">
+    <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909583908" />
+    <state width="1259" height="305" key="GridCell.Tab.0.bottom" timestamp="1606915991556">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1003" height="218" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871179" />
+    <state width="1259" height="305" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606915991556" />
+    <state width="1259" height="305" key="GridCell.Tab.0.center" timestamp="1606915991555">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1003" height="218" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
+    <state width="1259" height="305" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606915991555" />
+    <state width="1259" height="305" key="GridCell.Tab.0.left" timestamp="1606915991555">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1003" height="218" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
+    <state width="1259" height="305" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606915991555" />
+    <state width="1259" height="305" key="GridCell.Tab.0.right" timestamp="1606915991555">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1003" height="218" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
+    <state width="1259" height="305" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606915991555" />
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1606909514030">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="218" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606908245395" />
-    <state width="1003" height="218" key="GridCell.Tab.0.left" timestamp="1606908245395">
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909514030" />
+    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="218" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606908245395" />
-    <state width="1003" height="218" key="GridCell.Tab.0.right" timestamp="1606908245395">
-      <screen x="1920" y="0" width="1024" height="779" />
-    </state>
-    <state width="1003" height="218" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606908245395" />
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1606897727362">
-      <screen x="1920" y="0" width="1024" height="779" />
-    </state>
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606897727362" />
+    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606910080032" />
   </component>
 </project>
