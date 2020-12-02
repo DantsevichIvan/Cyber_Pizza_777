@@ -28,7 +28,11 @@ async function updateProduct(req, res) {
         let productId = req.params.id
         const {name, price} = req.body
 
-        Products.findByIdAndUpdate(productId, {name, price}, async function (err, product){
+        Products.findByIdAndUpdate(
+            productId,
+            {name, price},
+            {new:true, upsert:true},
+            async function (err, product){
             if (err) return console.log(err)
             await res.status(200).json({product})
         })

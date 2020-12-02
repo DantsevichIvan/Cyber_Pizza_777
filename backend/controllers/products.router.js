@@ -13,7 +13,7 @@ router.put('/products/:id', async (req, res) => {
     await updateProduct(req, res)
 })
 router.delete('/products/:id', async (req, res) => {
-    await deleteProduct
+    await deleteProduct(req, res)
 })
 
 
