@@ -1,1 +1,1 @@
-require('./src/app').start()
+require('./app').start()

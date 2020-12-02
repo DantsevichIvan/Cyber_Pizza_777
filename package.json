@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --inspect server.js",
-    "start": "node server.js"
+    "server": "nodemon --inspect backend/server.js",
+    "start": "node backend/server.js"
   },
   "keywords": [],
   "author": "",
