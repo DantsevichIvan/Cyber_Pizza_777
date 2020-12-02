@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/products.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/products.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,7 @@
       <updated>1606896954460</updated>
       <workItem from="1606896955688" duration="12945000" />
       <workItem from="1606913125860" duration="1784000" />
-      <workItem from="1606915088060" duration="4321000" />
+      <workItem from="1606915088060" duration="5243000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606917646371</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: add get method: GetProducts">
+      <created>1606920021962</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606920021962</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,14 +152,15 @@
     <MESSAGE value="feat: new structure" />
     <MESSAGE value="feat: add seed script" />
     <MESSAGE value="feat: add webpack.config.js and App.jsx&#10;Create count" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add webpack.config.js and App.jsx&#10;Create count" />
+    <MESSAGE value="feat: add get method: GetProducts" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add get method: GetProducts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1606917645183">
+    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1606920020854">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2057" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909004925" />
-    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606917645183" />
+    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606920020854" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
@@ -177,11 +185,11 @@
     </state>
     <state width="1003" height="218" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
     <state width="1259" height="305" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606917576676" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1606918270747">
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1606920026862">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909514030" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606918270747" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606920026862" />
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
