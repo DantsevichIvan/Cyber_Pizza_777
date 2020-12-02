@@ -1,8 +1,10 @@
-const {getProduct, creatProduct, updateProduct, deleteProduct} = require("../providers/products");
+const {getProducts,getProduct, creatProduct, updateProduct, deleteProduct} = require("../providers/products");
 const {Router} = require('express');
 const router = Router();
 
-
+router.get('/products', async (req, res) => {
+    await getProducts(req, res)
+});
 router.get('/products/:id', async (req, res) => {
     await getProduct(req, res)
 });

@@ -1,6 +1,11 @@
 const Products = require('../models/Products')
 
-
+async function getProducts(req,res){
+    Products.find({}, async function (err, products) {
+        if (err) return console.log(err)
+        await res.status(200).json({products})
+    })
+}
 async function getProduct(req, res) {
     try {
         const productId = req.params.id
@@ -52,4 +57,4 @@ async function deleteProduct(req, res) {
     }
 }
 
-module.exports = {getProduct, creatProduct, updateProduct, deleteProduct}
+module.exports = {getProduct, creatProduct, updateProduct, deleteProduct, getProducts}
