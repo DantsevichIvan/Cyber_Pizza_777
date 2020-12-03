@@ -1,36 +1,33 @@
-const util = require('util');
+const {promisify} = require('util');
 const seeder = require('mongoose-seed')
 require('dotenv').config();
 const mongoose = require('mongoose')
 const db = process.env.DB_HOST
 const _ObjectId = mongoose.Types._ObjectId
 
-const promisified = util.promisify(seeder)
+seeder.connect = promisify(seeder.connect)
+seeder.clearModels = promisify(seeder.clearModels);
+seeder.populateModels = promisify(seeder.populateModels);
+seeder.disconnect = promisify(seeder.disconnect);
 
-promisified.connect(db, {useUnifiedTopology: true})
-    .then(() => {
-        promisified.loadModels([
-            './backend/models/Products.js',
-            './backend/models/Categories.js'
-        ])
-            .then(() => {
-                promisified.clearModels(['Products', 'Categories'])
-                    .then(() => {
-                        seeder.populateModels(data, function (err, done) {
-                            if (err) {
-                                return console.log('seed err', err)
-                            }
-                            if (done) {
-                                return console.log('seed done', done)
-                            }
-                            seeder.disconnect()
-                        }.catch((e) => {
-                            console.log(e)
-                        }))
-                    });
-            })
-    })
+async function main() {
+    try {
+        await seeder.connect(db, { useUnifiedTopology: true });
+        seeder.loadModels([
+            "./backend/models/Products.js",
+            "./backend/models/Categories.js",
+        ]);
+        await seeder.clearModels(["Products", "Categories"]);
+        await seeder.populateModels(data);
+        console.log("[+] Seed data added");
+    } catch (err) {
+        console.error("[-]", err);
+    } finally {
+        await seeder.disconnect();
+    }
+}
 
+ main();
 
 const data = [
     {
