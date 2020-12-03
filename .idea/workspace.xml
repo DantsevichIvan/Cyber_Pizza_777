@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +112,7 @@
       <workItem from="1606896955688" duration="12945000" />
       <workItem from="1606913125860" duration="1784000" />
       <workItem from="1606915088060" duration="7435000" />
+      <workItem from="1606976274393" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -148,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606920833121</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: update PORT">
+      <created>1606976322554</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606976322554</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +168,8 @@
     <MESSAGE value="feat: add webpack.config.js and App.jsx&#10;Create count" />
     <MESSAGE value="feat: add get method: GetProducts" />
     <MESSAGE value="feat: update" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update" />
+    <MESSAGE value="feat: update PORT" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update PORT" />
   </component>
   <component name="WindowStateProjectService">
     <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1606920832138">
