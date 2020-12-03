@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,9 +94,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.seed" />
         <item itemvalue="npm.start client" />
         <item itemvalue="Node.js.webpack.config.js" />
-        <item itemvalue="npm.seed" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -112,7 +111,7 @@
       <updated>1606896954460</updated>
       <workItem from="1606896955688" duration="12945000" />
       <workItem from="1606913125860" duration="1784000" />
-      <workItem from="1606915088060" duration="5243000" />
+      <workItem from="1606915088060" duration="7435000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -142,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606920021962</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: update">
+      <created>1606920833121</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606920833121</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,43 +159,44 @@
     <MESSAGE value="feat: add seed script" />
     <MESSAGE value="feat: add webpack.config.js and App.jsx&#10;Create count" />
     <MESSAGE value="feat: add get method: GetProducts" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add get method: GetProducts" />
+    <MESSAGE value="feat: update" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1606920020854">
+    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1606920832138">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2057" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909004925" />
-    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606920020854" />
+    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606920832138" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909583908" />
-    <state width="1259" height="305" key="GridCell.Tab.0.bottom" timestamp="1606917576677">
+    <state width="1259" height="282" key="GridCell.Tab.0.bottom" timestamp="1606937927713">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="218" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871179" />
-    <state width="1259" height="305" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606917576677" />
-    <state width="1259" height="305" key="GridCell.Tab.0.center" timestamp="1606917576676">
+    <state width="1259" height="282" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606937927713" />
+    <state width="1259" height="282" key="GridCell.Tab.0.center" timestamp="1606937927713">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="218" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
-    <state width="1259" height="305" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606917576676" />
-    <state width="1259" height="305" key="GridCell.Tab.0.left" timestamp="1606917576676">
+    <state width="1259" height="282" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606937927713" />
+    <state width="1259" height="282" key="GridCell.Tab.0.left" timestamp="1606937927712">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="218" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
-    <state width="1259" height="305" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606917576676" />
-    <state width="1259" height="305" key="GridCell.Tab.0.right" timestamp="1606917576676">
+    <state width="1259" height="282" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606937927712" />
+    <state width="1259" height="282" key="GridCell.Tab.0.right" timestamp="1606937927713">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="218" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606913871178" />
-    <state width="1259" height="305" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606917576676" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1606920026862">
+    <state width="1259" height="282" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606937927713" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1606920845575">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909514030" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606920026862" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606920845575" />
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>

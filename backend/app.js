@@ -13,7 +13,7 @@ require('./routers')(app)
 module.exports.start = async function start() {
     try {
         await connectDB()
-        app.listen(3000, () => console.log(`server is listing in ${PORT} - ${ENV} environment`))
+        app.listen(PORT, () => console.log(`server is listing in ${PORT} - ${ENV} environment`))
     }catch (e){
         console.log(e)
         process.exit(1)
