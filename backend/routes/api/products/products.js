@@ -1,4 +1,23 @@
+const {Router} = require('express');
+const router = Router();
 const Products = require('../models/Products')
+
+router.get('/products', async (req, res) => {
+   await getProducts(req, res)
+});
+router.get('/products/:id', async (req, res) => {
+    await getProduct(req, res)
+});
+router.post('/products', async (req, res) => {
+    await creatProduct(req, res)
+})
+router.put('/products/:id', async (req, res) => {
+    await updateProduct(req, res)
+})
+router.delete('/products/:id', async (req, res) => {
+    await deleteProduct(req, res)
+})
+
 
 async function getProducts(req,res){
     Products.find({}, async function (err, products) {
@@ -38,9 +57,9 @@ async function updateProduct(req, res) {
             {name, price},
             {new:true, upsert:true},
             async function (err, product){
-            if (err) return console.log(err)
-            await res.status(200).json({product})
-        })
+                if (err) return console.log(err)
+                await res.status(200).json({product})
+            })
     } catch (e) {
         res.status(500).json({message: 'Что-то пошло не так, попробуйте снова', success: false})
     }
@@ -57,4 +76,5 @@ async function deleteProduct(req, res) {
     }
 }
 
-module.exports = {getProduct, creatProduct, updateProduct, deleteProduct, getProducts}
+
+module.exports = router
