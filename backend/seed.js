@@ -1,26 +1,36 @@
+const util = require('util');
 const seeder = require('mongoose-seed')
 require('dotenv').config();
 const mongoose = require('mongoose')
 const db = process.env.DB_HOST
 const _ObjectId = mongoose.Types._ObjectId
 
+const promisified = util.promisify(seeder)
 
-seeder.connect(db, {useUnifiedTopology: true }, function () {
-    seeder.loadModels([
-        './backend/models/Products.js',
-        './backend/models/Categories.js'
-    ]);
-    seeder.clearModels(['Products', 'Categories']);
-    seeder.populateModels(data, function (err, done) {
-        if (err) {
-            return console.log('seed err', err)
-        }
-        if (done) {
-            return console.log('seed done', done)
-        }
-        seeder.disconnect()
+promisified.connect(db, {useUnifiedTopology: true})
+    .then(() => {
+        promisified.loadModels([
+            './backend/models/Products.js',
+            './backend/models/Categories.js'
+        ])
+            .then(() => {
+                promisified.clearModels(['Products', 'Categories'])
+                    .then(() => {
+                        seeder.populateModels(data, function (err, done) {
+                            if (err) {
+                                return console.log('seed err', err)
+                            }
+                            if (done) {
+                                return console.log('seed done', done)
+                            }
+                            seeder.disconnect()
+                        }.catch((e) => {
+                            console.log(e)
+                        }))
+                    });
+            })
     })
-})
+
 
 const data = [
     {
@@ -63,6 +73,7 @@ const data = [
         ]
 
     }
-
 ]
+
+
 
