@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/products.router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/providers/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <workItem from="1606896955688" duration="12945000" />
       <workItem from="1606913125860" duration="1784000" />
       <workItem from="1606915088060" duration="7435000" />
-      <workItem from="1606976274393" duration="11353000" />
+      <workItem from="1606976274393" duration="11659000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -185,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606980903055</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: add new structure  and static page">
+      <created>1606990977659</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606990977659</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +201,8 @@
     <MESSAGE value="feat: update PORT" />
     <MESSAGE value="feat: add README.md" />
     <MESSAGE value="feat: add structure client, add static file" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add structure client, add static file" />
+    <MESSAGE value="feat: add new structure  and static page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new structure  and static page" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -208,10 +210,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="2057" y="0" key="CommitChangelistDialog2" timestamp="1606980901935">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1606990976414">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2057" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606980901935" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606990976414" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606976630203" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
@@ -237,10 +239,10 @@
     </state>
     <state width="1003" height="288" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606990920100" />
     <state width="1259" height="282" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606979048698" />
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1606980907146">
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1606990982143">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606980907146" />
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606990982143" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606976328136" />
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
       <screen x="1920" y="0" width="1024" height="779" />

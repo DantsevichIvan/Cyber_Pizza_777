@@ -10,7 +10,7 @@ const ENV = process.env.NODE_ENV || 'Development';
 
 require('./routers')(app)
 
-app.use('/*',express.static(__dirname + 'dist'))
+app.use('/',express.static(__dirname + 'dist'))
 
 module.exports.start = async function start() {
     try {
