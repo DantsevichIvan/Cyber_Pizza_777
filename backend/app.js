@@ -10,6 +10,8 @@ const ENV = process.env.NODE_ENV || 'Development';
 
 require('./routers')(app)
 
+app.use(express.static('dist'))
+
 module.exports.start = async function start() {
     try {
         await connectDB()

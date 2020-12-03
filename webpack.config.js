@@ -5,17 +5,12 @@ const HTMLWebpackPlugin =require('html-webpack-plugin')
 
 module.exports = {
     mode: "development",
-
     entry:path.resolve(__dirname, './client/index.js'),
-    //"./client/index.js",
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: "[name].[hash].js"
     },
     watch: true,
-    devServer: {
-        port: 3000
-    },
     plugins: [
         new HTMLWebpackPlugin({template: "./client/index.html"}),
         new CleanWebpackPlugin()
