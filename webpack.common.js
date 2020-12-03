@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: "[name].[hash].js"
     },
-    watch: true,
+    watch: false,
     plugins: [
         new HTMLWebpackPlugin({template: "./client/index.html"}),
         new CleanWebpackPlugin()
