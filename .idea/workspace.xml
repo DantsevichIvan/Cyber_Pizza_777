@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="" />
+    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/productsReducer.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -28,6 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../maritTest" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -46,7 +61,7 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\models" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.seed">
     <configuration type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -106,9 +121,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.client" />
         <item itemvalue="npm.seed" />
+        <item itemvalue="npm.client" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm." />
         <item itemvalue="npm.start client" />
       </list>
@@ -125,7 +140,7 @@
       <workItem from="1606896955688" duration="12945000" />
       <workItem from="1606913125860" duration="1784000" />
       <workItem from="1606915088060" duration="7435000" />
-      <workItem from="1606976274393" duration="14096000" />
+      <workItem from="1606976274393" duration="22256000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -204,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606992931277</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: update webpack.prod.js">
+      <created>1606994998276</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606994998276</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +244,8 @@
     <MESSAGE value="feat: add new structure  and static page" />
     <MESSAGE value="feat:static page" />
     <MESSAGE value="feat: add webpack.dev.js and webpack.prod.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add webpack.dev.js and webpack.prod.js" />
+    <MESSAGE value="feat: update webpack.prod.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update webpack.prod.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -230,35 +253,35 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1606992930197">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1606994997323">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606992930197" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606994997323" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606976630203" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909583908" />
-    <state width="1003" height="288" key="GridCell.Tab.0.bottom" timestamp="1606992793709">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1259" height="156" key="GridCell.Tab.0.bottom" timestamp="1607005095735">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="288" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606992793709" />
-    <state width="1259" height="282" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606979048698" />
-    <state width="1003" height="288" key="GridCell.Tab.0.center" timestamp="1606992793709">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="188" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606997425231" />
+    <state width="1259" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607005095735" />
+    <state width="1259" height="156" key="GridCell.Tab.0.center" timestamp="1607005095735">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="288" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606992793709" />
-    <state width="1259" height="282" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606979048698" />
-    <state width="1003" height="288" key="GridCell.Tab.0.left" timestamp="1606992793709">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="188" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606997425231" />
+    <state width="1259" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607005095735" />
+    <state width="1259" height="156" key="GridCell.Tab.0.left" timestamp="1607005095735">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="288" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606992793709" />
-    <state width="1259" height="282" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606979048698" />
-    <state width="1003" height="288" key="GridCell.Tab.0.right" timestamp="1606992793709">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="188" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606997425230" />
+    <state width="1259" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607005095735" />
+    <state width="1259" height="156" key="GridCell.Tab.0.right" timestamp="1607005095735">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="288" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606992793709" />
-    <state width="1259" height="282" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606979048698" />
+    <state width="1003" height="188" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606997425231" />
+    <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607005095735" />
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1606992975097">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
