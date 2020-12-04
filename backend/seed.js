@@ -1,6 +1,6 @@
+require('dotenv').config();
 const {promisify} = require('util');
 const seeder = require('mongoose-seed')
-require('dotenv').config();
 const mongoose = require('mongoose')
 const db = process.env.DB_HOST
 const _ObjectId = mongoose.Types._ObjectId

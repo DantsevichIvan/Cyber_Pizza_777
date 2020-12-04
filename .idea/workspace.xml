@@ -26,18 +26,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="feat: add CRUD methods client and interface">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/AddButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/Form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/Modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/action/categoriesAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/action/productsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/ModalWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ModalWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/reducers/categoriesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/categoriesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/productsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +68,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maritTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Cyber_Pizza_777" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,39 +81,29 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777\backend\routes\api\categories" />
+      <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\routes\api\products" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\models" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server">
-    <configuration type="js.build_tools.npm" temporary="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.client:watch">
     <configuration name="client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="client:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="client:watch" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -136,18 +129,30 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="server:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server:watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="npm.seed" />
       <item itemvalue="npm.client" />
-      <item itemvalue="npm.build" />
       <item itemvalue="npm.server" />
+      <item itemvalue="npm.server:watch" />
+      <item itemvalue="npm.client:watch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.server:watch" />
+        <item itemvalue="npm.client:watch" />
         <item itemvalue="npm.server" />
         <item itemvalue="npm.client" />
         <item itemvalue="npm.seed" />
-        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +169,10 @@
       <workItem from="1606915088060" duration="7435000" />
       <workItem from="1606976274393" duration="30451000" />
       <workItem from="1607062322328" duration="7953000" />
+      <workItem from="1607087259364" duration="1557000" />
+      <workItem from="1607089009018" duration="2253000" />
+      <workItem from="1607091410718" duration="934000" />
+      <workItem from="1607093672507" duration="2526000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -312,6 +321,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: new structure" />
@@ -344,29 +354,29 @@
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607072254869" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
-    <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
+    <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606909583908" />
-    <state width="1003" height="413" key="GridCell.Tab.0.bottom" timestamp="1607070944575">
+    <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607087752138" />
+    <state width="1003" height="259" key="GridCell.Tab.0.bottom" timestamp="1607094991254">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="413" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607070944575" />
+    <state width="1003" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607094991254" />
     <state width="1259" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607030248989" />
-    <state width="1003" height="413" key="GridCell.Tab.0.center" timestamp="1607070944575">
+    <state width="1003" height="259" key="GridCell.Tab.0.center" timestamp="1607094991253">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="413" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607070944575" />
+    <state width="1003" height="259" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607094991253" />
     <state width="1259" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607030248989" />
-    <state width="1003" height="413" key="GridCell.Tab.0.left" timestamp="1607070944575">
+    <state width="1003" height="259" key="GridCell.Tab.0.left" timestamp="1607094991253">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="413" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607070944575" />
+    <state width="1003" height="259" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607094991253" />
     <state width="1259" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607030248988" />
-    <state width="1003" height="413" key="GridCell.Tab.0.right" timestamp="1607070944575">
+    <state width="1003" height="259" key="GridCell.Tab.0.right" timestamp="1607094991253">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="413" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607070944575" />
+    <state width="1003" height="259" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607094991253" />
     <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607030248989" />
     <state x="2174" y="92" key="RollbackChangesDialog" timestamp="1607071767004">
       <screen x="1920" y="0" width="1024" height="779" />

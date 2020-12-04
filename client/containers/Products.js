@@ -6,6 +6,7 @@ import '../style/Products.css'
 import '../style/Modal.css'
 import FormAddProduct from "../component/FormAddProduct";
 import Product from "../component/Product";
+import ModalWindow from "../component/ModalWindow";
 
 const product ={
     name:'',
@@ -17,22 +18,14 @@ const Products = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products.products)
     const [modal, setModal] = useState(false)
-    console.log(products)
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
     const openCloseModal = () => {
         setModal(!modal)
     }
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('name', e.target[1].value)
-        formData.append('description', e.target[2].value)
-        formData.append('weight', e.target[3].value)
-        formData.append('price', e.target[4].value)
-        formData.append('categories', e.target[5].value)
-        dispatch(createProduct(formData))
+    const handleSubmit = (value) => {
+        console.log(value)
     }
     const removeProduct = (id) =>{
         dispatch(deleteProduct(id))
@@ -47,15 +40,20 @@ const Products = () => {
                 <AddButton method={openCloseModal} title={'Add Products'}/>
             </div>
             <div className='products'>
-                <Product updateProduct={updateProduct} removeProduct={removeProduct} product={product}/>
-                <Product removeProduct={removeProduct} product={product}/>
-                <Product removeProduct={removeProduct} product={product}/>
+                {products.map((item)=>{
+                  return  <Product
+                      key={item._id}
+                      updateProduct={updateProduct}
+                      removeProduct={removeProduct}
+                      product={item}/>
+                })}
             </div>
             {
                 modal ?
-                    <div className='modal'>
-                        <FormAddProduct handleSubmit={handleSubmit} closeModal={openCloseModal}/>
-                    </div>
+                   <ModalWindow
+                       Component={FormAddProduct}
+                       handleSubmit={handleSubmit}
+                       openCloseModal={openCloseModal}/>
                     : null
             }
 

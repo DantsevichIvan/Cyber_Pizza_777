@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --inspect backend/server.js",
     "start": "node backend/server.js",
-    "seed": "node backend/seed.js",
-    "client": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "server:watch": "nodemon --inspect backend/server.js",
+    "db:seed": "node backend/seed.js",
+    "client:watch": "webpack --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "formik": "^2.2.5",
     "mongoose": "^5.11.0",
     "mongoose-seed": "^0.6.0",
     "nodemon": "^2.0.6",

@@ -8,3 +8,5 @@
 .env
 .env.test
 .env.sample
+
+/dist
