@@ -3,15 +3,15 @@ import {render} from 'react-dom'
 import App from "./App";
 import {Provider} from "react-redux";
 import admin from "./store";
-import {HashRouter} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 
 
 render(
-    <HashRouter>
+    <Router>
         <Provider store={admin}>
             <App/>
         </Provider>
-    </HashRouter>
+    </Router>
     ,
     document.getElementById('root')
 )

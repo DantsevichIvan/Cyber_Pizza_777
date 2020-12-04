@@ -2,8 +2,8 @@ import React from 'react';
 
 const Categories = () => {
     return (
-        <div>
-            Hello Categories
+        <div className='container'>
+            <h3>Categories</h3>
         </div>
     );
 };
