@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddButton = ({title, method}) => {
     return (
-        <button onClick={method}>{title}</button>
+        <button  className='container_header_btn' onClick={method}>{title}</button>
     );
 };
 

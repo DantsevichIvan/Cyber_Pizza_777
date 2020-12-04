@@ -6,7 +6,6 @@ import {useSelector} from "react-redux";
 
 const FormAddProduct = ({closeModal, handleSubmit}) => {
     const categories = useSelector(state => state.categories.categories)
-    console.log(categories)
     return (
         <Formik
             initialValues={{
@@ -73,13 +72,13 @@ const FormAddProduct = ({closeModal, handleSubmit}) => {
                         <div className='form-item'>
                             <label htmlFor="">Image</label>
                             <input
-                                type="number"
+                                type="text"
                                 name="image"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.image}
                             />
-                            <a href="">Image Search</a>
+                            <a href="https://dantsevichivan.github.io/Search-Image/" target='_blank'>Image Search</a>
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Categories</label>

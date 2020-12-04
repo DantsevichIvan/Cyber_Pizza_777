@@ -8,12 +8,6 @@ import FormAddProduct from "../component/FormAddProduct";
 import Product from "../component/Product";
 import ModalWindow from "../component/ModalWindow";
 
-const product ={
-    name:'',
-    price: 12,
-    id: ''
-}
-
 const Products = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products.products)
@@ -25,7 +19,8 @@ const Products = () => {
         setModal(!modal)
     }
     const handleSubmit = (value) => {
-        console.log(value)
+        dispatch(createProduct(value))
+        setModal(!modal)
     }
     const removeProduct = (id) =>{
         dispatch(deleteProduct(id))
@@ -33,9 +28,10 @@ const Products = () => {
     const updateProduct = () =>{
 
     }
+
     return (
         <div className='container'>
-            <div>
+            <div className='container_header' >
                 <h3>Products</h3>
                 <AddButton method={openCloseModal} title={'Add Products'}/>
             </div>

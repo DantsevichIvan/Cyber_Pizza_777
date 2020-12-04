@@ -39,7 +39,7 @@ async function getProduct(req, res) {
 }
 async function creatProduct(req, res) {
     try {
-        const {name, price, description, weight, image} = req.body
+        const {name, price, description, weight, image} = req.body.product
         await Products.create({name, price, description, weight, image}, function (err) {
             if (err) return console.log(err)
             res.status(200).json({message: 'Products create'})

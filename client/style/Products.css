@@ -9,6 +9,15 @@
     align-items: center;
 
 }
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
+    align-items: center;
+}
+.container_header_btn{
+    height: 40px;
+}
 .item{
     display: flex;
     justify-content: space-around;
