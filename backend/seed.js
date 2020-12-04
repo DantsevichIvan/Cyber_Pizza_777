@@ -27,7 +27,7 @@ async function main() {
     }
 }
 
- main();
+main();
 
 const data = [
     {
@@ -59,12 +59,12 @@ const data = [
         'documents': [
             {
                 "_id": _ObjectId,
-                "name": "Carbonara",
+                "name": "Pizza",
                 "available": "true"
             },
             {
                 "_id": _ObjectId,
-                "name": "Margherita",
+                "name": "drink",
                 "available": "false"
             }
         ]
