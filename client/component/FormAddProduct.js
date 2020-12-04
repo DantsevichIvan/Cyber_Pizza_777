@@ -102,8 +102,6 @@ const FormAddProduct = ({closeModal, handleSubmit}) => {
 
             )}
         </Formik>
-
-
     );
 };
 

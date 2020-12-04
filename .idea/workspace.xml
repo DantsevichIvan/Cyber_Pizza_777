@@ -27,11 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/productsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +165,7 @@
       <workItem from="1607087259364" duration="1557000" />
       <workItem from="1607089009018" duration="2253000" />
       <workItem from="1607091410718" duration="934000" />
-      <workItem from="1607093672507" duration="6189000" />
+      <workItem from="1607093672507" duration="7321000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -296,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607096498475</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: fix client">
+      <created>1607100188177</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1607100188177</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +348,8 @@
     <MESSAGE value="feat: fix webpack.common.js and webpack.dev.js" />
     <MESSAGE value="feat: fix routers.js" />
     <MESSAGE value="feat: add CRUD methods client and interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add CRUD methods client and interface" />
+    <MESSAGE value="feat: fix client" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: fix client" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -352,10 +357,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607096496550">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607100187161">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607096496550" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607100187161" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
