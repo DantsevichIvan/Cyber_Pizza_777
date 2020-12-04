@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:client" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
+    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="feat: add CRUD methods client and interface">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/component/AddButton.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
@@ -13,13 +38,6 @@
       <change afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/productsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,11 +277,41 @@
       <option name="project" value="LOCAL" />
       <updated>1607064915051</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: add CRUD methods client and interface">
+      <created>1607071783275</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607071783275</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: new structure" />
@@ -282,7 +330,8 @@
     <MESSAGE value="feat: update seed and fix products.js" />
     <MESSAGE value="feat: fix webpack.common.js and webpack.dev.js" />
     <MESSAGE value="feat: fix routers.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: fix routers.js" />
+    <MESSAGE value="feat: add CRUD methods client and interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add CRUD methods client and interface" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -290,10 +339,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607064913084">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607072254869">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607064913084" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607072254869" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1606909583908">
       <screen x="1920" y="0" width="1024" height="779" />
@@ -319,10 +368,14 @@
     </state>
     <state width="1003" height="413" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607070944575" />
     <state width="1259" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607030248989" />
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607065320540">
+    <state x="2174" y="92" key="RollbackChangesDialog" timestamp="1607071767004">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607065320540" />
+    <state x="2174" y="92" key="RollbackChangesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607071767004" />
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607072302534">
+      <screen x="1920" y="0" width="1024" height="779" />
+    </state>
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607072302534" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1607009400422" />
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
       <screen x="1920" y="0" width="1024" height="779" />
