@@ -5,8 +5,14 @@ import './style/navBar.css'
 const NavBar = () => {
     return (
         <div className='header'>
-            <NavLink to='/admin/categories'>Categories</NavLink>
-            <NavLink to='/admin/products'>Products</NavLink>
+            <div className='header_container'>
+                <div className='header_title'>
+                    <h2>Administrator</h2>
+                </div>
+                <NavLink to='/admin/categories'>Categories</NavLink>
+                <NavLink to='/admin/products'>Products</NavLink>
+            </div>
+
         </div>
     );
 };

@@ -7,6 +7,7 @@ import '../style/Modal.css'
 import FormAddProduct from "../component/FormAddProduct";
 import Product from "../component/Product";
 import ModalWindow from "../component/ModalWindow";
+import HeaderContainer from "../component/HeaderContainer";
 
 const Products = () => {
     const dispatch = useDispatch()
@@ -22,34 +23,34 @@ const Products = () => {
         dispatch(createProduct(value))
         setModal(!modal)
     }
-    const removeProduct = (id) =>{
+    const removeProduct = (id) => {
         dispatch(deleteProduct(id))
     }
-    const updateProduct = () =>{
+    const updateProduct = () => {
 
     }
 
     return (
         <div className='container'>
-            <div className='container_header' >
-                <h3>Products</h3>
-                <AddButton method={openCloseModal} title={'Add Products'}/>
-            </div>
+            <HeaderContainer
+                openCloseModal={openCloseModal}
+                value={'Add Products'}
+                title={'Products'}/>
             <div className='products'>
-                {products.map((item)=>{
-                  return  <Product
-                      key={item._id}
-                      updateProduct={updateProduct}
-                      removeProduct={removeProduct}
-                      product={item}/>
+                {products.map((item) => {
+                    return <Product
+                        key={item._id}
+                        updateProduct={updateProduct}
+                        removeProduct={removeProduct}
+                        product={item}/>
                 })}
             </div>
             {
                 modal ?
-                   <ModalWindow
-                       Component={FormAddProduct}
-                       handleSubmit={handleSubmit}
-                       openCloseModal={openCloseModal}/>
+                    <ModalWindow
+                        Component={FormAddProduct}
+                        handleSubmit={handleSubmit}
+                        openCloseModal={openCloseModal}/>
                     : null
             }
 

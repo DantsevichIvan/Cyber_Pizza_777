@@ -26,9 +26,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/component/ButtonRemove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/Category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/FormAddCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/HeaderContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/AddButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/ButtonRemove.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/AddButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/AddButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +51,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -165,7 +177,7 @@
       <workItem from="1607087259364" duration="1557000" />
       <workItem from="1607089009018" duration="2253000" />
       <workItem from="1607091410718" duration="934000" />
-      <workItem from="1607093672507" duration="7321000" />
+      <workItem from="1607093672507" duration="16790000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -300,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607100188177</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: add FormUpdateProduct.js">
+      <created>1607103216514</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1607103216514</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +368,8 @@
     <MESSAGE value="feat: fix routers.js" />
     <MESSAGE value="feat: add CRUD methods client and interface" />
     <MESSAGE value="feat: fix client" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: fix client" />
+    <MESSAGE value="feat: add FormUpdateProduct.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add FormUpdateProduct.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -357,10 +377,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607100187161">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607103215370">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607100187161" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607103215370" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
@@ -390,14 +410,14 @@
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2174" y="92" key="RollbackChangesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607071767004" />
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607099655554">
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607103221769">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607099655554" />
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607103221769" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1607009400422" />
-    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1606910080032">
+    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1607114455861">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606910080032" />
+    <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607114455861" />
   </component>
 </project>

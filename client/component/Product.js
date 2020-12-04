@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonRemove from "./ButtonRemove";
 
 const Product = ({removeProduct,product, updateProduct}) => {
     return (
@@ -6,14 +7,20 @@ const Product = ({removeProduct,product, updateProduct}) => {
             <div className='item_info'>
                 <img src={product.image} alt=""/>
                 <div className='textInfo'>
-                    <span>{product.name}</span>
-                    <span>{product.description}</span>
+                    <span className='textInfo_name'>{product.name}</span>
+                    <span className='textInfo_description'>{product.description}</span>
                 </div>
             </div>
-            <span>{product.weight}</span>
-            <span>{product.price}</span>
-            <button onClick={()=> updateProduct(product)}>update</button>
-            <button onClick={() => removeProduct(product._id)}>x</button>
+            <span className='info'>Weight:<span>{product.weight}</span></span>
+            <span className='info'>Price:<span>{product.price}</span></span>
+            <button
+                className='item_btnAdd'
+                onClick={()=> updateProduct(product)}>
+                update
+            </button>
+            <ButtonRemove
+                removeProduct={removeProduct}
+                id={product._id}/>
         </div>
     );
 };

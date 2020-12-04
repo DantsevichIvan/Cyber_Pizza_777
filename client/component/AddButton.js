@@ -1,8 +1,14 @@
 import React from 'react';
+import '../style/AddButton.css'
 
-const AddButton = ({title, method}) => {
+const AddButton = ({value, method}) => {
     return (
-        <button  className='container_header_btn' onClick={method}>{title}</button>
+        <div className='btn_Add'>
+            <button className="icon-btn add-btn" onClick={method}>
+                <div className="add-icon"></div>
+                <div className="btn-txt">{value}</div>
+            </button>
+        </div>
     );
 };
 

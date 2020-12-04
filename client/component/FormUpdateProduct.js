@@ -97,7 +97,6 @@ const FormUpdateProduct = ({closeModal,handleSubmit,product}) => {
                         <button type="submit" disabled={isSubmitting}>Create Product</button>
                     </div>
                 </form>
-
             )}
         </Formik>
     );
