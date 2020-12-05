@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getCategories} from "../action/categoriesAction";
+import {createCategories, deleteCategories, getCategories} from "../action/categoriesAction";
 import Category from "../component/Category";
 import ModalWindow from "../component/ModalWindow";
 import FormAddCategory from "../component/FormAddCategory";
@@ -17,17 +17,15 @@ const Categories = () => {
         setModal(!modal)
     }
     const handleSubmit = (value) => {
-        dispatch()
+        dispatch(createCategories(value))
         setModal(!modal)
     }
     const removeCategory = (id) =>{
-        dispatch()
+        dispatch(deleteCategories(id))
     }
     const updateProduct = () =>{
 
     }
-
-
 
     return (
         <div className='container'>

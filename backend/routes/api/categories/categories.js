@@ -1,6 +1,8 @@
 const {Router} = require('express');
 const router = Router();
 const Categories = require('../../../models/Categories')
+const mongoose = require('mongoose')
+
 
 router.get('/categories', async (req, res) => {
     await getCategories(req, res)
@@ -18,6 +20,9 @@ router.delete('/categories/:id', async (req, res) => {
     await deleteCategories(req, res)
 });
 
+
+
+//finish update and geCategory
 
 async function getCategories(req, res) {
     try {
@@ -55,8 +60,8 @@ async function updateCategories(req, res) {
         Categories.findByIdAndUpdate(
             categoriesId,
             {name, available},
-            {new:true, upsert:true},
-            async function (err, categories){
+            {new: true, upsert: true},
+            async function (err, categories) {
                 if (err) return console.log(err)
                 await res.status(200).json({categories})
             })
@@ -67,12 +72,13 @@ async function updateCategories(req, res) {
 async function deleteCategories(req, res) {
     try {
         let categoriesId = req.params.id
-        Categories.findByIdAndDelete({categoriesId}, async function (err) {
+        Categories.findByIdAndDelete({_id:categoriesId}, async function (err) {
             if (err) return console.log(err)
             await res.status(200).json({message: 'Categories remove'})
         })
+
     } catch (e) {
-        res.status(500).json({message: 'Что-то пошло не так, попробуйте снова', success: false})
+        res.status(500).json({message: 'Что-то пошло не так' + e, success: false})
     }
 
 }

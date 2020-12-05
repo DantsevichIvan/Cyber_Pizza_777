@@ -26,16 +26,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/component/ViewProducts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/style/ViewProducts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/action/categoriesAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/categoriesAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/ButtonRemove.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ButtonRemove.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/FormAddCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/ViewProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ViewProducts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/AddButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/AddButton.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -48,8 +51,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -83,11 +86,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777\backend\routes\api\admin" />
       <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777\backend\routes\api\categories" />
       <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\routes\api\products" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server:watch">
@@ -175,7 +178,7 @@
       <workItem from="1607089009018" duration="2253000" />
       <workItem from="1607091410718" duration="934000" />
       <workItem from="1607093672507" duration="17352000" />
-      <workItem from="1607151517870" duration="5521000" />
+      <workItem from="1607151517870" duration="10779000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -324,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607116565598</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: add layout Categories.js and Category.js&#10;feat: add CRUD methods for categories.js">
+      <created>1607157163422</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607157163422</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +385,8 @@
     <MESSAGE value="feat: fix client" />
     <MESSAGE value="feat: add FormUpdateProduct.js" />
     <MESSAGE value="feat: add layout Products.js and Product.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add layout Products.js and Product.js" />
+    <MESSAGE value="feat: add layout Categories.js and Category.js&#10;feat: add CRUD methods for categories.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add layout Categories.js and Category.js&#10;feat: add CRUD methods for categories.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
@@ -383,10 +394,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607116564743">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607157162096">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607116564743" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607157162096" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
@@ -421,6 +432,18 @@
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607103221769" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1607009400422" />
+    <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1607157855251">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="277" y="0" width="1017" height="737" key="dock-window-1/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607157855251" />
+    <state x="277" y="0" width="1017" height="737" key="dock-window-2" timestamp="1607157855251">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="277" y="0" width="1017" height="737" key="dock-window-2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607157855251" />
+    <state x="1920" y="0" width="1017" height="737" key="dock-window-3" timestamp="1607157855252">
+      <screen x="1920" y="0" width="1024" height="779" />
+    </state>
+    <state x="1920" y="0" width="1017" height="737" key="dock-window-3/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607157855252" />
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup" timestamp="1607114455861">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>

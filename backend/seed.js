@@ -4,7 +4,6 @@ const seeder = require('mongoose-seed')
 const mongoose = require('mongoose')
 const db = process.env.DB_HOST
 const _ObjectId = mongoose.Types._ObjectId
-
 seeder.connect = promisify(seeder.connect)
 seeder.clearModels = promisify(seeder.clearModels);
 seeder.populateModels = promisify(seeder.populateModels);

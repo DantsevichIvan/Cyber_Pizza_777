@@ -8,7 +8,7 @@ const ViewProducts = () => {
         e.target.classList.toggle('open')
     }
     return (
-       <Link className={'arrow-down-close'} onClick={(e)=>openClass(e)}/>
+       <Link to='#' className={'arrow-down-close'} onClick={(e)=>openClass(e)}/>
     );
 };
 

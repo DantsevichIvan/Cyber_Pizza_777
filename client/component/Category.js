@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonRemove from "./ButtonRemove";
 import ViewProducts from "./ViewProducts";
 
-const Category = ({category, updateProduct, removeProduct}) => {
+const Category = ({category, updateProduct, removeCategory}) => {
     return (
         <div className='item'>
             <div className='item_content'>
@@ -16,7 +16,7 @@ const Category = ({category, updateProduct, removeProduct}) => {
                     update
                 </button>
                 <ButtonRemove
-                    removeProduct={removeProduct}
+                    remove={removeCategory}
                     id={category._id}/>
             </div>
         </div>

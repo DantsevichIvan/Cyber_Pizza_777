@@ -20,7 +20,7 @@ const Product = ({removeProduct,product, updateProduct}) => {
                     update
                 </button>
                 <ButtonRemove
-                    removeProduct={removeProduct}
+                    remove={removeProduct}
                     id={product._id}/>
             </div>
         </div>
