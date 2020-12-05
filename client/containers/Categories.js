@@ -1,22 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import AddButton from "../component/AddButton";
 import {useDispatch, useSelector} from "react-redux";
 import {getCategories} from "../action/categoriesAction";
 import Category from "../component/Category";
 import ModalWindow from "../component/ModalWindow";
-import FormAddProduct from "../component/FormAddProduct";
-import {createProduct, deleteProduct} from "../action/productsAction";
 import FormAddCategory from "../component/FormAddCategory";
 import HeaderContainer from "../component/HeaderContainer";
 
 const Categories = () => {
     const dispatch =useDispatch()
-    const categories = useSelector(state => state.products.products)
+    const categories = useSelector(state => state.categories.categories)
     const [modal, setModal] = useState(false)
     useEffect(() => {
         dispatch(getCategories())
     }, [dispatch])
-
     const openCloseModal = () => {
         setModal(!modal)
     }
@@ -27,6 +23,10 @@ const Categories = () => {
     const removeCategory = (id) =>{
         dispatch()
     }
+    const updateProduct = () =>{
+
+    }
+
 
 
     return (
@@ -37,7 +37,11 @@ const Categories = () => {
                 title={'Categories'}/>
             <div className='products'>
                 {categories.map((item)=>{
-                    return  <Category category={item}/>
+                    return  <Category
+                        key={item._id}
+                        category={item}
+                        removeCategory={removeCategory}
+                        updateProduct={updateProduct}/>
                 })}
             </div>
             {

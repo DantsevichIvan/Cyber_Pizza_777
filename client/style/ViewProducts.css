@@ -1,0 +1,31 @@
+.arrow-down-close {
+    width: 60px;
+}
+.arrow-down-close:before, .arrow-down-close:after {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 3px;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    transition: 300ms ease-in-out transform;
+}
+.arrow-down-close:before {
+    transform: rotate(-45deg);
+    left: 30px;
+}
+.arrow-down-close:after {
+    transform: rotate(45deg);
+    left: 40px;
+}
+
+.arrow-down-close.open:before {
+    transform: translateX(10px) rotate(-45deg);
+}
+.arrow-down-close.open:after {
+    transform: translateX(-3px) rotate(45deg);
+}
+
+
+

@@ -12,9 +12,9 @@
 /*Container Header*/
 .container_header{
     display: flex;
-    justify-content: space-around;
     margin: 0 15px;
     align-items: center;
+    position: relative;
 }
 .container_header h3{
     font-size: 26px;
@@ -34,6 +34,10 @@
     overflow: hidden;
     margin: 5px 0;
     box-sizing: border-box;
+}
+.item_content{
+    display: flex;
+    align-items: center;
 }
 .item_info{
     display: flex;
@@ -72,4 +76,11 @@
     font-size: 12px;
     text-transform: capitalize;
     border-radius: 5px;
+    margin: 0 10px;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-between;
 }

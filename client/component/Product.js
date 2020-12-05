@@ -13,14 +13,16 @@ const Product = ({removeProduct,product, updateProduct}) => {
             </div>
             <span className='info'>Weight:<span>{product.weight}</span></span>
             <span className='info'>Price:<span>{product.price}</span></span>
-            <button
-                className='item_btnAdd'
-                onClick={()=> updateProduct(product)}>
-                update
-            </button>
-            <ButtonRemove
-                removeProduct={removeProduct}
-                id={product._id}/>
+            <div className='btns'>
+                <button
+                    className='item_btnAdd'
+                    onClick={()=> updateProduct(product)}>
+                    update
+                </button>
+                <ButtonRemove
+                    removeProduct={removeProduct}
+                    id={product._id}/>
+            </div>
         </div>
     );
 };
