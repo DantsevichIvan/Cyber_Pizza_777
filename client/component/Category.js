@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonRemove from "./ButtonRemove";
 import ViewProducts from "./ViewProducts";
 
-const Category = ({category, updateProduct, removeCategory}) => {
+const Category = ({category, updateCategory, removeCategory}) => {
     return (
         <div className='item'>
             <div className='item_content'>
@@ -12,7 +12,7 @@ const Category = ({category, updateProduct, removeCategory}) => {
             <div className='btns'>
                 <button
                     className='item_btnAdd'
-                    onClick={()=> updateProduct(category)}>
+                    onClick={()=> updateCategory(category)}>
                     update
                 </button>
                 <ButtonRemove

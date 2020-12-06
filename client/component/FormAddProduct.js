@@ -1,11 +1,13 @@
 import React from 'react';
 import '../style/Form.css'
 import {Field, Formik} from "formik";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {createProduct} from "../action/productsAction";
 
 
-const FormAddProduct = ({closeModal, handleSubmit}) => {
+const FormAddProduct = ({closeModal}) => {
     const categories = useSelector(state => state.categories.categories)
+    const dispatch = useDispatch()
     return (
         <Formik
             initialValues={{
@@ -16,7 +18,10 @@ const FormAddProduct = ({closeModal, handleSubmit}) => {
                 categories: categories,
                 image: ''
             }}
-            onSubmit={handleSubmit}
+            onSubmit={values => {
+                dispatch(createProduct(values))
+                closeModal()
+            }}
         >
             {({
                   values,
@@ -82,10 +87,10 @@ const FormAddProduct = ({closeModal, handleSubmit}) => {
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Categories</label>
-                            <Field name="categories" as="select" >
+                            <Field name="categories" as="select">
                                 {
                                     categories.map((item) => {
-                                        return<option
+                                        return <option
                                             key={item._id}
                                             value={item.name}>
                                             {item.name}
@@ -99,7 +104,6 @@ const FormAddProduct = ({closeModal, handleSubmit}) => {
                         <button type="submit" disabled={isSubmitting}>Create Product</button>
                     </div>
                 </form>
-
             )}
         </Formik>
     );

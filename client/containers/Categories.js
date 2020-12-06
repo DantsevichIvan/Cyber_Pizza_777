@@ -5,48 +5,59 @@ import Category from "../component/Category";
 import ModalWindow from "../component/ModalWindow";
 import FormAddCategory from "../component/FormAddCategory";
 import HeaderContainer from "../component/HeaderContainer";
+import FormUpdateCategory from "../component/FormUpdateCategory";
 
 const Categories = () => {
-    const dispatch =useDispatch()
+    const dispatch = useDispatch()
     const categories = useSelector(state => state.categories.categories)
-    const [modal, setModal] = useState(false)
+    const [isModal, setIsModal] = useState(false)
+    const [method, setMethod] = useState('')
+    const [category, setCategory] = useState('')
     useEffect(() => {
         dispatch(getCategories())
     }, [dispatch])
     const openCloseModal = () => {
-        setModal(!modal)
+        setIsModal(!isModal)
     }
-    const handleSubmit = (value) => {
-        dispatch(createCategories(value))
-        setModal(!modal)
+
+
+    const createCategory = (value) => {
+        setIsModal(!isModal)
+        setMethod('create')
     }
-    const removeCategory = (id) =>{
+    const removeCategory = (id) => {
         dispatch(deleteCategories(id))
     }
-    const updateProduct = () =>{
 
+    const updateCategory = (category) => {
+        setIsModal(!isModal)
+        setMethod('update')
+        setCategory(category)
     }
 
     return (
         <div className='container'>
             <HeaderContainer
-                openCloseModal={openCloseModal}
+                create={createCategory}
                 value={'Add Categories'}
                 title={'Categories'}/>
             <div className='products'>
-                {categories.map((item)=>{
-                    return  <Category
+                {categories.map((item) => {
+                    return <Category
                         key={item._id}
                         category={item}
                         removeCategory={removeCategory}
-                        updateProduct={updateProduct}/>
+                        updateCategory={updateCategory}/>
                 })}
             </div>
             {
-                modal ?
+                isModal ? method === 'create' ?
                     <ModalWindow
                         Component={FormAddCategory}
-                        handleSubmit={handleSubmit}
+                        openCloseModal={openCloseModal}/>
+                    : <ModalWindow
+                        Component={FormUpdateCategory}
+                        item={category}
                         openCloseModal={openCloseModal}/>
                     : null
             }

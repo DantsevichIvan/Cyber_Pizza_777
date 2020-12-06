@@ -1,39 +1,43 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {createProduct, deleteProduct, getProducts} from "../action/productsAction";
-import AddButton from "../component/AddButton";
+import {deleteProduct, getProducts} from "../action/productsAction";
 import '../style/Products.css'
 import '../style/Modal.css'
 import FormAddProduct from "../component/FormAddProduct";
 import Product from "../component/Product";
 import ModalWindow from "../component/ModalWindow";
 import HeaderContainer from "../component/HeaderContainer";
+import FormUpdateProduct from "../component/FormUpdateProduct";
 
 const Products = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.products.products)
-    const [modal, setModal] = useState(false)
+    const [isModal, setModal] = useState(false)
+    const [isMethod, setMethod] = useState('')
+    const [product, setProduct] = useState({})
     useEffect(() => {
         dispatch(getProducts())
     }, [dispatch])
     const openCloseModal = () => {
-        setModal(!modal)
+        setModal(!isModal)
     }
-    const handleSubmit = (value) => {
-        dispatch(createProduct(value))
-        setModal(!modal)
+    const createProduct = () => {
+        setModal(!isModal)
+        setMethod('create')
     }
     const removeProduct = (id) => {
         dispatch(deleteProduct(id))
     }
-    const updateProduct = () => {
-
+    const updateProduct = (product) => {
+        setModal(!isModal)
+        setMethod('update')
+        setProduct(product)
     }
 
     return (
         <div className='container'>
             <HeaderContainer
-                openCloseModal={openCloseModal}
+                create={createProduct}
                 value={'Add Products'}
                 title={'Products'}/>
             <div className='products'>
@@ -46,14 +50,16 @@ const Products = () => {
                 })}
             </div>
             {
-                modal ?
+                isModal ? isMethod === 'create' ?
                     <ModalWindow
                         Component={FormAddProduct}
-                        handleSubmit={handleSubmit}
                         openCloseModal={openCloseModal}/>
+                    : <ModalWindow
+                        Component={FormUpdateProduct}
+                        openCloseModal={openCloseModal}
+                        item={product}/>
                     : null
             }
-
         </div>
     );
 };

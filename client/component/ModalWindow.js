@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ModalWindow = ({handleSubmit,openCloseModal ,Component}) => {
+const ModalWindow = ({openCloseModal ,Component, item}) => {
     return (
-       <Component handleSubmit={handleSubmit} closeModal={openCloseModal}/>
+       <Component closeModal={openCloseModal} item={item}/>
     );
 };
 

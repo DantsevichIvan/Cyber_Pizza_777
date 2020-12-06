@@ -1,18 +1,19 @@
 import React from 'react';
-import {Formik} from "formik";
 import {useDispatch} from "react-redux";
-import {createCategories} from "../action/categoriesAction";
+import {Formik} from "formik";
+import {updateCategories} from "../action/categoriesAction";
 
-const FormAddCategory = ({closeModal}) => {
+const FormUpdateCategory = ({item, closeModal}) => {
     const dispatch = useDispatch()
     return (
         <Formik
             initialValues={{
-                name: '',
-                available: false
+                name: item.name,
+                available: item.available,
+                id: item._id
             }}
             onSubmit={(values => {
-                dispatch(createCategories(values))
+                dispatch(updateCategories(values))
                 closeModal()
             })}
         >
@@ -25,7 +26,7 @@ const FormAddCategory = ({closeModal}) => {
               }) => (
                 <form action="" className='form' onSubmit={handleSubmit}>
                     <div className='form-header'>
-                        <h3>Add new Category</h3>
+                        <h3>Update Category</h3>
                         <button onClick={closeModal} className='btn-close'>Close</button>
                     </div>
                     <div className='form-wrap'>
@@ -41,7 +42,7 @@ const FormAddCategory = ({closeModal}) => {
                         </div>
                     </div>
                     <div className='btn-add'>
-                        <button type="submit" disabled={isSubmitting}>Create Category</button>
+                        <button type="submit" disabled={isSubmitting}>Update Category</button>
                     </div>
                 </form>
             )}
@@ -49,4 +50,4 @@ const FormAddCategory = ({closeModal}) => {
     );
 };
 
-export default FormAddCategory;
+export default FormUpdateCategory;

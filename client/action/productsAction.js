@@ -20,12 +20,18 @@ export const createProduct = (product) => async (dispatch) => {
     const result = await res.json()
     dispatch(getProducts())
 }
-
-export const updateProduct = (formData, id) => async (dispatch) => {
-
+export const updateProduct = (product) => async (dispatch) => {
+    const id = product.id
+    const res = await fetch('http://localhost:3000/api/products/' + id, {
+        method: "PUT",
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({product:product})
+    })
+    const result = await res.json()
+    dispatch(getProducts())
 }
-
-
 export const deleteProduct = (id) => async (dispatch) => {
     const res = await fetch('http://localhost:3000/api/products/' + id, {
         method: 'DELETE',

@@ -55,7 +55,7 @@ async function createCategories(req, res) {
 async function updateCategories(req, res) {
     try {
         let categoriesId = req.params.id
-        const {name, available} = req.body
+        const {name, available} = req.body.categories
 
         Categories.findByIdAndUpdate(
             categoriesId,

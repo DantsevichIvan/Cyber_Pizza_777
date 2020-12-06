@@ -19,7 +19,6 @@ router.delete('/products/:id', async (req, res) => {
     await deleteProduct(req, res)
 })
 
-
 async function getProducts(req,res){
     Products.find({}, async function (err, products) {
         if (err) return console.log(err)
@@ -51,11 +50,10 @@ async function creatProduct(req, res) {
 async function updateProduct(req, res) {
     try {
         let productId = req.params.id
-        const {name, price} = req.body
-
+        const {name, price, description, weight, image} = req.body.product
         Products.findByIdAndUpdate(
             productId,
-            {name, price},
+            {name, price, description, weight, image},
             {new:true, upsert:true},
             async function (err, product){
                 if (err) return console.log(err)

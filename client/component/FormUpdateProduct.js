@@ -1,20 +1,26 @@
 import React from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Field, Formik} from "formik";
+import {updateProduct} from "../action/productsAction";
 
-const FormUpdateProduct = ({closeModal,handleSubmit,product}) => {
+const FormUpdateProduct = ({closeModal,item}) => {
     const categories = useSelector(state => state.categories.categories)
+    const dispatch = useDispatch()
     return (
         <Formik
             initialValues={{
-                name: product.name,
-                description: product.description,
-                weight: product.weight,
-                price: product.price,
-                categories: product.categories,
-                image: product.image
+                name: item.name,
+                description: item.description,
+                weight: item.weight,
+                price: item.price,
+                categories: item.categories,
+                image: item.image,
+                id: item._id
             }}
-            onSubmit={handleSubmit}
+            onSubmit={(values =>  {
+                dispatch(updateProduct(values))
+                closeModal()
+            })}
         >
             {({
                   values,
@@ -22,10 +28,11 @@ const FormUpdateProduct = ({closeModal,handleSubmit,product}) => {
                   handleBlur,
                   handleSubmit,
                   isSubmitting,
+
               }) => (
                 <form action="" className='form' onSubmit={handleSubmit}>
                     <div className='form-header'>
-                        <h3>Add new Product</h3>
+                        <h3>Update Product</h3>
                         <button onClick={closeModal} className='btn-close'>Close</button>
                     </div>
                     <div className='form-wrap'>
@@ -94,7 +101,7 @@ const FormUpdateProduct = ({closeModal,handleSubmit,product}) => {
                         </div>
                     </div>
                     <div className='btn-add'>
-                        <button type="submit" disabled={isSubmitting}>Create Product</button>
+                        <button type="submit" disabled={isSubmitting}>Update Product</button>
                     </div>
                 </form>
             )}
