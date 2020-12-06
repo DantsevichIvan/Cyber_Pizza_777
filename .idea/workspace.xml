@@ -25,22 +25,21 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
+    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="feat:">
+      <change afterPath="$PROJECT_DIR$/client/action/authAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/containers/LogOut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/containers/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/containers/Registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/reducers/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.sample" beforeDir="false" afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/categoriesAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/categoriesAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ButtonRemove.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ButtonRemove.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormAddCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ViewProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ViewProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/reducers/productsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/productsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,9 @@
       <workItem from="1607089009018" duration="2253000" />
       <workItem from="1607091410718" duration="934000" />
       <workItem from="1607093672507" duration="17352000" />
-      <workItem from="1607151517870" duration="10779000" />
+      <workItem from="1607151517870" duration="11695000" />
+      <workItem from="1607181933358" duration="2163000" />
+      <workItem from="1607241836929" duration="8023000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -334,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607157163422</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: add modal User&#10;feat: add login, logout, registration&#10;feat: add jwt token">
+      <created>1607163037259</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1607163037259</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: add user.js">
+      <created>1607182104190</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607182104190</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,51 +401,53 @@
     <MESSAGE value="feat: add FormUpdateProduct.js" />
     <MESSAGE value="feat: add layout Products.js and Product.js" />
     <MESSAGE value="feat: add layout Categories.js and Category.js&#10;feat: add CRUD methods for categories.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add layout Categories.js and Category.js&#10;feat: add CRUD methods for categories.js" />
+    <MESSAGE value="feat: add modal User&#10;feat: add login, logout, registration&#10;feat: add jwt token" />
+    <MESSAGE value="feat: add user.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add user.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606985501305">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606977301823" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607157162096">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1607241943274" />
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607182102867">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607157162096" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182102867" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607009396442" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607087752138" />
-    <state width="1003" height="259" key="GridCell.Tab.0.bottom" timestamp="1607151743431">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1259" height="217" key="GridCell.Tab.0.bottom" timestamp="1607256404609">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607151743431" />
-    <state width="1003" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607116985493" />
-    <state width="1003" height="259" key="GridCell.Tab.0.center" timestamp="1607151743431">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
+    <state width="1259" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
+    <state width="1259" height="217" key="GridCell.Tab.0.center" timestamp="1607256404609">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607151743431" />
-    <state width="1003" height="259" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607116985492" />
-    <state width="1003" height="259" key="GridCell.Tab.0.left" timestamp="1607151743431">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="259" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
+    <state width="1259" height="217" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
+    <state width="1259" height="217" key="GridCell.Tab.0.left" timestamp="1607256404609">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607151743431" />
-    <state width="1003" height="259" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607116985492" />
-    <state width="1003" height="259" key="GridCell.Tab.0.right" timestamp="1607151743431">
-      <screen x="1920" y="0" width="1024" height="779" />
+    <state width="1003" height="259" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624544" />
+    <state width="1259" height="217" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
+    <state width="1259" height="217" key="GridCell.Tab.0.right" timestamp="1607256404609">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607151743431" />
-    <state width="1003" height="259" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607116985493" />
+    <state width="1003" height="259" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
+    <state width="1259" height="217" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
     <state x="2174" y="92" key="RollbackChangesDialog" timestamp="1607071767004">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2174" y="92" key="RollbackChangesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607071767004" />
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607103221769">
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2" timestamp="1607182111639">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607103221769" />
+    <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182111639" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1607009400422" />
     <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1607157855251">
       <screen x="0" y="0" width="1280" height="680" />

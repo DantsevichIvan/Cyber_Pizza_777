@@ -4,23 +4,31 @@ const User = require('../../../models/User')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-router.post('/user/login', async (req, res, next) => {
+router.post('/user/login', async (req, res) => {
     //It's for authorizations
     await logIn(req, res)
 })
-router.post('/users', async (req, res, next) => {
+router.post('/users', async (req, res) => {
     //It's for new user registration
     await registration(req, res)
 })
-router.get('/user', async (req, res, next) => {
-    //It's for new user registration
+router.get('/user', async (req, res ) => {
+    //It's for get info user
+   await getUser(req,res)
 })
-router.post('/user/logout', async (req, res, next) => {
+router.post('/user/logout', async (req, res) => {
     //It's for new user registration
     await logOut(req, res)
 })
 
 
+async function getUser(req,res) {
+    const userId = req.params.id
+    User.findById({userId}, async function(err, user) {
+        if(err) return console.log('err ', err)
+        await res.status(200).json({user})
+    })
+}
 async function registration(req, res) {
     try {
         const {name, email, password} = req.body.data
@@ -66,7 +74,7 @@ async function logIn(req, res) {
             process.env.JWT_SECRET,
             {expiresIn: '1h'},
         )
-        res.status(201).json({token, userId: user.id })
+        res.status(201).json({token, userId: user._id })
     } catch (e) {
         res.status(500).json({message: 'Что-то пошло не так, попробуйте снова', success: false})
     }
@@ -81,8 +89,5 @@ async function logOut(req, res) {
     }
 }
 
-
 module.exports = router
 
-
-//Add get info User

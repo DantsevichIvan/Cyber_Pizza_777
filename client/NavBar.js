@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import './style/navBar.css'
+import LogOut from "./containers/LogOut";
 
 const NavBar = () => {
     return (
@@ -11,8 +12,13 @@ const NavBar = () => {
                 </div>
                 <NavLink to='/admin/categories'>Categories</NavLink>
                 <NavLink to='/admin/products'>Products</NavLink>
-            </div>
 
+                <NavLink to='/admin/login'>Login</NavLink>
+            </div>
+            {
+            //    auth ? <LogOut/>: null
+            }
+            <LogOut/>
         </div>
     );
 };

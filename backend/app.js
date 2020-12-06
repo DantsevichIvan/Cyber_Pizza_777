@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express')
 const connectDB = require('./db')
-const jwt = require('./middleware/auth.middleware')
+const auth = require('./middleware/auth.middleware');
 
 
 
@@ -11,7 +11,7 @@ const ENV = process.env.NODE_ENV || 'Development';
 
 app.use('/',express.static( 'dist'))
 
-app.use(jwt())
+// app.use(auth)
 require('./routers')(app)
 
 module.exports.start = async function start() {
