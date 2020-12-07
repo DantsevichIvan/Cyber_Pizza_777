@@ -26,19 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/component/AuthRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/Info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/user/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/authAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/productsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/LogOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/LogOut.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/authReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +88,7 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\routes\api\products" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server:watch">
+  <component name="RunManager" selected="npm.client:watch">
     <configuration name="client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -155,8 +148,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server:watch" />
         <item itemvalue="npm.client:watch" />
+        <item itemvalue="npm.server:watch" />
         <item itemvalue="npm.server" />
         <item itemvalue="npm.client" />
         <item itemvalue="npm.seed" />
@@ -183,6 +176,7 @@
       <workItem from="1607151517870" duration="11695000" />
       <workItem from="1607181933358" duration="2163000" />
       <workItem from="1607241836929" duration="14229000" />
+      <workItem from="1607359926186" duration="1446000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -366,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607341908999</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: add authAction.js,login registration methods">
+      <created>1607351623085</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607351623085</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,8 +398,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: new structure" />
-    <MESSAGE value="feat: add seed script" />
     <MESSAGE value="feat: add webpack.config.js and App.jsx&#10;Create count" />
     <MESSAGE value="feat: add get method: GetProducts" />
     <MESSAGE value="feat: update" />
@@ -422,7 +421,9 @@
     <MESSAGE value="feat: add user.js" />
     <MESSAGE value="feat: add Login and Registration and LogOut page&#10;feat: add authReducer.js and authAction.js" />
     <MESSAGE value="feat: fix layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: fix layout" />
+    <MESSAGE value="feat: add authActio,login registration methods" />
+    <MESSAGE value="feat: add authAction.js,login registration methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add authAction.js,login registration methods" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -434,34 +435,34 @@
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
-    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607341908048">
+    <state x="1984" y="0" key="CommitChangelistDialog2" timestamp="1607351621797">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341908048" />
+    <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351621797" />
     <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607258344921" />
     <state x="2213" y="145" key="FileChooserDialogImpl" timestamp="1607087752138">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607087752138" />
-    <state width="1003" height="195" key="GridCell.Tab.0.bottom" timestamp="1607351416965">
+    <state width="1003" height="195" key="GridCell.Tab.0.bottom" timestamp="1607360773619">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351416965" />
+    <state width="1003" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607360773619" />
     <state width="1259" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607340930203" />
-    <state width="1003" height="195" key="GridCell.Tab.0.center" timestamp="1607351416964">
+    <state width="1003" height="195" key="GridCell.Tab.0.center" timestamp="1607360773619">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="195" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351416964" />
+    <state width="1003" height="195" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607360773619" />
     <state width="1259" height="195" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
-    <state width="1003" height="195" key="GridCell.Tab.0.left" timestamp="1607351416964">
+    <state width="1003" height="195" key="GridCell.Tab.0.left" timestamp="1607360773618">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="195" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351416964" />
+    <state width="1003" height="195" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607360773618" />
     <state width="1259" height="195" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
-    <state width="1003" height="195" key="GridCell.Tab.0.right" timestamp="1607351416964">
+    <state width="1003" height="195" key="GridCell.Tab.0.right" timestamp="1607360773619">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="195" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351416964" />
+    <state width="1003" height="195" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607360773619" />
     <state width="1259" height="195" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
     <state x="2174" y="92" key="RollbackChangesDialog" timestamp="1607071767004">
       <screen x="1920" y="0" width="1024" height="779" />

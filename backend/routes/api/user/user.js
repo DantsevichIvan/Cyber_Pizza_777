@@ -12,7 +12,7 @@ router.post('/users', async (req, res) => {
     //It's for new user registration
     await registration(req, res)
 })
-router.get('/user/:id', async (req, res ) => {
+router.get('/user', async (req, res ) => {
     //It's for get info user
    await getUser(req,res)
 })
