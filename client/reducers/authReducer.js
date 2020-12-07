@@ -12,7 +12,6 @@ const initState = {
 const AuthReducer = (state = initState, action) => {
     switch (action.type) {
         case SET_AUTH_USER: {
-            debugger
             return {
                 ...state,
                 isAuth: true,

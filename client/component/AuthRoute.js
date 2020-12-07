@@ -5,7 +5,6 @@ import {Redirect,Route} from "react-router-dom";
 const AuthRoute = props => {
     const isAuth = useSelector(state=>state.auth.isAuth)
     const isAdmin = useSelector(state=>state.auth.isAdmin)
-    debugger
     if(isAuth) {
         if(!isAdmin) return <Redirect to='/admin/info'/>
         // return <Redirect to='/admin/products'/>
