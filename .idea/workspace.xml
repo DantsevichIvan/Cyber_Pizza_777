@@ -26,20 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/component/FormUpdateCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/style/BtnLogOut.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/categories/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/categoriesAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/categoriesAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/productsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/productsAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Category.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/FormAddCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/component/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormAddProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/HeaderContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/HeaderContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ModalWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ModalWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/LogOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/LogOut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/AddButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/AddButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/ButtonRemove.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/ButtonRemove.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/Products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/ViewProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/ViewProducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/style/navBar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Cyber_Pizza_777" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/style" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -84,12 +81,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\style" />
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client" />
       <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777\backend\routes\api\admin" />
       <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777\backend\routes\api\categories" />
       <recent name="C:\ivan-dansevitch\proj\Cyber_Pizza_777" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\backend\routes\api\products" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
     </key>
   </component>
   <component name="RunManager" selected="npm.server:watch">
@@ -419,6 +420,10 @@
     </state>
     <state x="1920" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1606985501305" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1607241943274" />
+    <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607341585178">
+      <screen x="1920" y="0" width="1024" height="779" />
+    </state>
+    <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1607258344921">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -428,26 +433,26 @@
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607087752138" />
-    <state width="1259" height="217" key="GridCell.Tab.0.bottom" timestamp="1607256404609">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1003" height="195" key="GridCell.Tab.0.bottom" timestamp="1607341457786">
+      <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
-    <state width="1259" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
-    <state width="1259" height="217" key="GridCell.Tab.0.center" timestamp="1607256404609">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1003" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341457786" />
+    <state width="1259" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607340930203" />
+    <state width="1003" height="195" key="GridCell.Tab.0.center" timestamp="1607341457786">
+      <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
-    <state width="1259" height="217" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
-    <state width="1259" height="217" key="GridCell.Tab.0.left" timestamp="1607256404609">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1003" height="195" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341457786" />
+    <state width="1259" height="195" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
+    <state width="1003" height="195" key="GridCell.Tab.0.left" timestamp="1607341457785">
+      <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624544" />
-    <state width="1259" height="217" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
-    <state width="1259" height="217" key="GridCell.Tab.0.right" timestamp="1607256404609">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1003" height="195" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341457785" />
+    <state width="1259" height="195" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
+    <state width="1003" height="195" key="GridCell.Tab.0.right" timestamp="1607341457786">
+      <screen x="1920" y="0" width="1024" height="779" />
     </state>
-    <state width="1003" height="259" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607182624545" />
-    <state width="1259" height="217" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607256404609" />
+    <state width="1003" height="195" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341457786" />
+    <state width="1259" height="195" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607340930202" />
     <state x="2174" y="92" key="RollbackChangesDialog" timestamp="1607071767004">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>

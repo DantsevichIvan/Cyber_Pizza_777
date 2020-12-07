@@ -9,7 +9,7 @@
     width: 30px;
     position: absolute;
     margin-top: 24px;
-    background-color:  #F4A259;
+    background-color:  black;
     border-radius: 2px;
     transform: rotate(45deg);
     transition: all .3s ease-in;
@@ -19,14 +19,14 @@
     width: 30px;
     position: absolute;
     margin-top: 24px;
-    background-color:  #F4A259;
+    background-color:  black;
     border-radius: 2px;
     transform: rotate(-45deg);
     transition: all .3s ease-in;
 }
 
 label{
-    color: white;
+    color: black;
     font-family: Helvetica, Arial, sans-serif;
     font-size: .6em;
     text-transform: uppercase;
@@ -41,12 +41,21 @@ label{
 
 .close-container:hover .leftright{
     transform: rotate(-45deg);
-    background-color: #F25C66;
+    background-color: red;
 }
 .close-container:hover .rightleft{
     transform: rotate(45deg);
-    background-color: #F25C66;
+    background-color: red;
 }
 .close-container:hover label{
     opacity: 1;
+}
+
+@media screen and (max-width: 1100px) {
+    .leftright{
+        width: 40px;
+    }
+    .rightleft{
+        width: 40px;
+    }
 }

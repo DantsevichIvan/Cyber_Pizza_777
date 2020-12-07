@@ -6,7 +6,7 @@ const Category = ({category, updateCategory, removeCategory}) => {
     return (
         <div className='item'>
             <div className='item_content'>
-                <ViewProducts/>
+                {/*<ViewProducts/>*/}
                 <span className='textInfo_name'>{category.name}</span>
             </div>
             <div className='btns'>

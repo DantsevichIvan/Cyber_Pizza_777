@@ -15,9 +15,18 @@ const FormAddCategory = ({closeModal}) => {
                 dispatch(createCategories(values))
                 closeModal()
             })}
+            validate={values => {
+                const errors = {}
+                if (!values.name) {
+                    errors.name = 'Required'
+                }
+                return errors
+            }}
         >
             {({
                   values,
+                  errors,
+                  touched,
                   handleChange,
                   handleBlur,
                   handleSubmit,
@@ -39,6 +48,7 @@ const FormAddCategory = ({closeModal}) => {
                                 value={values.name}
                             />
                         </div>
+                        {errors.name && touched.name && errors.name}
                     </div>
                     <div className='btn-add'>
                         <button type="submit" disabled={isSubmitting}>Create Category</button>

@@ -9,6 +9,7 @@ const NavBar = () => {
             <div className='header_container'>
                 <div className='header_title'>
                     <h2>Administrator</h2>
+                    <span>Name</span>
                 </div>
                 <NavLink to='/admin/categories'>Categories</NavLink>
                 <NavLink to='/admin/products'>Products</NavLink>

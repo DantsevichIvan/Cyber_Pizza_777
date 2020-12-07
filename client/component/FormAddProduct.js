@@ -8,6 +8,18 @@ import {createProduct} from "../action/productsAction";
 const FormAddProduct = ({closeModal}) => {
     const categories = useSelector(state => state.categories.categories)
     const dispatch = useDispatch()
+    const validation = (values) => {
+        const errors = {}
+        for (let key in values) {
+            if (!values[key]) {
+                errors[key] = "Required"
+            }
+        }
+        // if (values.categories !== ' '){
+        //     errors.categories = 'Selected category'
+        // }
+        return errors
+    }
     return (
         <Formik
             initialValues={{
@@ -22,9 +34,12 @@ const FormAddProduct = ({closeModal}) => {
                 dispatch(createProduct(values))
                 closeModal()
             }}
+            validate={validation}
         >
             {({
                   values,
+                  errors,
+                  touched,
                   handleChange,
                   handleBlur,
                   handleSubmit,
@@ -45,6 +60,7 @@ const FormAddProduct = ({closeModal}) => {
                                 onBlur={handleBlur}
                                 value={values.name}
                             />
+                            {errors.name && touched.name && errors.name}
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Description</label>
@@ -53,6 +69,7 @@ const FormAddProduct = ({closeModal}) => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.description}/>
+                            {errors.description && touched.description && errors.description}
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Weight</label>
@@ -63,6 +80,7 @@ const FormAddProduct = ({closeModal}) => {
                                 onBlur={handleBlur}
                                 value={values.weight}
                             />
+                            {errors.weight && touched.weight && errors.weight}
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Price</label>
@@ -73,6 +91,7 @@ const FormAddProduct = ({closeModal}) => {
                                 onBlur={handleBlur}
                                 value={values.price}
                             />
+                            {errors.price && touched.price && errors.price}
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Image</label>
@@ -83,21 +102,22 @@ const FormAddProduct = ({closeModal}) => {
                                 onBlur={handleBlur}
                                 value={values.image}
                             />
+                            {errors.image && touched.image && errors.image}
                             <a href="https://dantsevichivan.github.io/Search-Image/" target='_blank'>Image Search</a>
                         </div>
                         <div className='form-item'>
                             <label htmlFor="">Categories</label>
-                            <Field name="categories" as="select">
+                            <Field name="categories" as="select" onChange={handleChange}>
+                                <option value='' defaultValue>Select Categories</option>
                                 {
                                     categories.map((item) => {
-                                        return <option
-                                            key={item._id}
-                                            value={item.name}>
+                                        return <option key={item._id}>
                                             {item.name}
                                         </option>
                                     })
                                 }
                             </Field>
+                            {errors.categories && touched.categories && errors.categories}
                         </div>
                     </div>
                     <div className='btn-add'>
