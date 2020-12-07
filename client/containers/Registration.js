@@ -1,13 +1,15 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {Formik} from "formik";
-import {Link} from "react-router-dom";
+import {registration} from "../action/authAction";
 
 const Registration = ({}) => {
     const dispatch = useDispatch()
+
     const handleSubmit = (values) => {
-        // dispatch()
+        dispatch(registration(values))
     }
+
     const validation = (values) => {
         const errors = {}
         if (!values.email) {
@@ -29,6 +31,7 @@ const Registration = ({}) => {
         }
         return errors;
     }
+
     return (
         <div>
             <Formik

@@ -2,12 +2,18 @@ import React from 'react';
 import {Formik} from "formik";
 import {useDispatch} from "react-redux";
 import {login} from "../action/authAction";
-import {Link} from "react-router-dom";
+import Redirect, {Link} from "react-router-dom";
 
 const Login = () => {
+
+    function redirecting(){
+        return <Redirect to='/admin/products'/>
+    }
+
     const dispatch = useDispatch()
     const handleSubmit = (values) =>{
         dispatch(login(values))
+        redirecting()
     }
     const validation = (values) =>{
         const errors = {}

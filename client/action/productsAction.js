@@ -1,7 +1,9 @@
 import {setProducts} from "../reducers/productsReducer";
 import {getCategories} from "./categoriesAction";
+import {getUser} from "./authAction";
 
 export const getProducts = () => async (dispatch) => {
+    dispatch(getUser())
     const res = await fetch('http://localhost:3000/api/products', {
         method: 'GET',
     })

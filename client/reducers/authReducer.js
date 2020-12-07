@@ -12,8 +12,14 @@ const initState = {
 const AuthReducer = (state = initState, action) => {
     switch (action.type) {
         case SET_AUTH_USER: {
+            debugger
             return {
                 ...state,
+                isAuth: true,
+                userId: action.data.user._id,
+                email: action.data.user.email,
+                name: action.data.user.name,
+                isAdmin: action.data.user.isAdmin
             }
         }
         case SUCCESS_LOG_OUT: {
@@ -33,6 +39,9 @@ export const setAuthUser = (data) => {
         type: SET_AUTH_USER,
         data
     }
+}
+export const setUser = (data) =>{
+
 }
 
 export default AuthReducer

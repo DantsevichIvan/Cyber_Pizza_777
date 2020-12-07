@@ -12,7 +12,7 @@ router.post('/users', async (req, res) => {
     //It's for new user registration
     await registration(req, res)
 })
-router.get('/user', async (req, res ) => {
+router.get('/user/:id', async (req, res ) => {
     //It's for get info user
    await getUser(req,res)
 })
@@ -31,7 +31,7 @@ async function getUser(req,res) {
 }
 async function registration(req, res) {
     try {
-        const {name, email, password} = req.body.data
+        const {name, email, password} = req.body
         //checking whether there is a user
         const found = await User.exists({email});
         if (found) {
@@ -41,17 +41,21 @@ async function registration(req, res) {
         const hashedPassword = await bcrypt.hash(password, 12);
         const admin = await User.find({})
         if (admin.length === 0) {
+            //create new Admin
             await User.create({email, password: hashedPassword, name, isAdmin: true});
+        }else {
+            //create new User
+            await User.create({email, password: hashedPassword, name, isAdmin: false});
         }
-        //create new User
-        await User.create({email, password: hashedPassword, name, isAdmin: false});
+        // res.status(201).json({message: 'Пользователь созда'})
+         await logIn(req,res)
 
-        res.status(201).json({message: 'Пользователь созда'})
         //Add Redirect to Login Page
     } catch (err) {
         res.status(500).json({message: err})
     }
 }
+
 async function logIn(req, res) {
     try {
         // extract data from req
@@ -74,7 +78,7 @@ async function logIn(req, res) {
             process.env.JWT_SECRET,
             {expiresIn: '1h'},
         )
-        res.status(201).json({token, userId: user._id })
+        res.status(201).json({token, user})
     } catch (e) {
         res.status(500).json({message: 'Что-то пошло не так, попробуйте снова', success: false})
     }
