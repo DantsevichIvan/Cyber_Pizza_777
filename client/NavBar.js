@@ -14,11 +14,12 @@ const NavBar = () => {
                     <h2>Administrator</h2>
                     {isAuth ?  <span>{name}</span> :null}
                 </div>
-                <NavLink to='/admin/categories'>Categories</NavLink>
-                <NavLink to='/admin/products'>Products</NavLink>
-
-                {/*<NavLink to='/admin/login'>Login</NavLink>*/}
+                <div className='header_links'>
+                    <NavLink to='/admin/categories'>Categories</NavLink>
+                    <NavLink to='/admin/products'>Products</NavLink>
+                </div>
             </div>
+
             {
                isAuth ? <LogOut/>: null
             }

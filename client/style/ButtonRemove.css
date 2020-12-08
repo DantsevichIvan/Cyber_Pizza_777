@@ -53,9 +53,9 @@ label{
 
 @media screen and (max-width: 1100px) {
     .leftright{
-        width: 40px;
+        width: 30px;
     }
     .rightleft{
-        width: 40px;
+        width: 30px;
     }
 }

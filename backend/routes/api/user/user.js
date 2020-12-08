@@ -28,7 +28,6 @@ router.post('/user/logout', async (req, res) => {
 
 
 async function getUser(req, res) {
-    debugger
     const userId = req.user.userId
     User.findById(userId, async function(err, user) {
         if(err) return console.log('err ', err)
@@ -85,7 +84,7 @@ async function logIn(req, res) {
             process.env.JWT_SECRET,
             {expiresIn: '1h'},
         )
-        res.cookie('token', token).json({token})
+        res.cookie('token', token).json({token}).status(200)
 
     } catch (e) {
         res.status(500).json({message: 'Что-то пошло не так, попробуйте снова', success: false})
@@ -96,7 +95,7 @@ async function logOut(req, res) {
     try {
         const token = req.user
         jwt.decode(token)
-        res.status(200).json({message: 'out in the system'})
+        res.clearCookie('token').json({message: 'out in the system'})
     } catch (e) {
         res.status(500).json({message: 'Что-то пошло не так, попробуйте снова'})
     }

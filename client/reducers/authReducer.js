@@ -1,12 +1,17 @@
 const SET_AUTH_USER = 'SET_AUTH_USER';
 const SET_USER = 'SET_USER';
 const SUCCESS_LOG_OUT = 'SUCCESS_LOG_OUT';
+const SUCCESS_ERROR_DATA = 'SUCCESS_ERROR';
+const SUCCESS_ERROR_AUTH = 'SUCCESS_ERROR_AUTH';
+
 
 const initState = {
     isAuth: false,
     email: '',
     name: '',
-    isAdmin: false
+    isAdmin: false,
+    errorData:'',
+    errorAuth:'',
 }
 
 const AuthReducer = (state = initState, action) => {
@@ -23,11 +28,27 @@ const AuthReducer = (state = initState, action) => {
                 email: action.data.email,
                 name: action.data.name,
                 isAdmin: action.data.isAdmin,
+                isAuth: true
+            }
+        }
+        case SUCCESS_ERROR_DATA: {
+            return {
+                ...state,
+                errorData: action.data.message,
+                isAuth: false
+            }
+        }
+        case SUCCESS_ERROR_AUTH: {
+            return {
+                ...state,
+                errorAuth: action.data.message,
+                isAuth: false
             }
         }
         case SUCCESS_LOG_OUT: {
             return {
                 ...state,
+                isAuth: false
             }
         }
         default:
@@ -36,15 +57,31 @@ const AuthReducer = (state = initState, action) => {
             }
     }
 }
-
 export const setAuthUser = () => {
     return {
         type: SET_AUTH_USER,
     }
 }
+export const successLogOut = () => {
+    return {
+        type: SUCCESS_LOG_OUT,
+    }
+}
 export const setUser = (data) => {
     return {
         type: SET_USER,
+        data
+    }
+}
+export const successErrorData = (data) => {
+    return {
+        type: SUCCESS_ERROR_DATA,
+        data
+    }
+}
+export const successErrorAuth = (data) => {
+    return {
+        type: SUCCESS_ERROR_AUTH,
         data
     }
 }

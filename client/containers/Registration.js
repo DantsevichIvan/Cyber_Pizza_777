@@ -3,12 +3,15 @@ import {useDispatch} from "react-redux";
 import {Formik} from "formik";
 import {registration} from "../action/authAction";
 import '../style/Registration.css'
+import {useHistory} from "react-router-dom";
 
 
 const Registration = ({}) => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const handleSubmit = (values) => {
         dispatch(registration(values))
+        history.push('/')
     }
     const validation = (values) => {
         const errors = {}

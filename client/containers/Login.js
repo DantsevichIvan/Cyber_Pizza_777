@@ -1,6 +1,6 @@
 import React from 'react';
 import {Formik} from "formik";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {login} from "../action/authAction";
 import {Link, useHistory} from "react-router-dom";
 import '../style/Login.css'
@@ -8,9 +8,14 @@ import '../style/Login.css'
 const Login = () => {
     const history = useHistory()
     const dispatch = useDispatch()
+    const errorMessage = useSelector(state=> state.auth.errorData)
+    const auth = useSelector(state=>state.auth.isAuth)
+    console.log(errorMessage)
+    if (auth){
+        history.push('/')
+    }
     const handleSubmit = (values) => {
         dispatch(login(values))
-        history.push('/')
     }
     const validation = (values) => {
         const errors = {}
@@ -43,7 +48,6 @@ const Login = () => {
                       handleChange,
                       handleBlur,
                       handleSubmit,
-                      isSubmitting,
                   }) => (
                     <form action="" className='form_login' onSubmit={handleSubmit}>
                         <div className='form_login_header'>
@@ -76,7 +80,9 @@ const Login = () => {
                                     {errors.password && touched.password && errors.password}
                                 </span>
                             </div>
+                            { errorMessage? <span className='form_login_item_error'>{errorMessage}</span>:null }
                         </div>
+
                         <div className='form_login_link'>
                             <Link to='/admin/registration'>Registration</Link>
                         </div>

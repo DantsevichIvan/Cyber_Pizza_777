@@ -1,4 +1,4 @@
-import {setAuthUser, setUser} from "../reducers/authReducer";
+import {setAuthUser, setUser, successErrorAuth, successErrorData, successLogOut} from "../reducers/authReducer";
 
 export const login = (values) => async (dispatch) => {
     const res = await fetch('http://localhost:3000/api/user/login', {
@@ -9,15 +9,20 @@ export const login = (values) => async (dispatch) => {
         credentials: 'include',
         body: JSON.stringify(values)
     })
-    const result = await res.json()
-    dispatch(setAuthUser(result))
+    if (res.status === 200){
+        await res.json()
+        dispatch(setAuthUser())
+    }else if(res.status === 400){
+        const result = await res.json()
+        dispatch(successErrorData(result))
+    }
 }
 export const logOut = () => async (dispatch) => {
     const res = await fetch('http://localhost:3000/api/user/logout', {
         method: "POST",
     })
     const result = await res.json()
-    console.log(result)
+    dispatch(successLogOut())
 };
 export const registration = (values) => async (dispatch) => {
     const res = await fetch('http://localhost:3000/api/users', {
@@ -27,17 +32,24 @@ export const registration = (values) => async (dispatch) => {
         },
         body: JSON.stringify(values)
     })
-    const result = await res.json()
-    console.log(result)
-    dispatch(setAuthUser())
+    if (res.status === 200){
+        const result = await res.json()
+        dispatch(setAuthUser())
+    }else if(res.status === 400){
+        const result = await res.json()
+        dispatch(successErrorData(result))
+    }
 
 };
-
 export const getUser = () => async (dispatch) => {
-    debugger
     const res = await fetch('http://localhost:3000/api/user', {
         method: "GET",
     })
-    const result = await res.json()
-    dispatch(setUser(result.data))
+    if (res.status === 200){
+        const result = await res.json()
+        dispatch(setUser(result.data))
+    }else if(res.status === 401){
+        const result = await res.json()
+        dispatch(successErrorAuth(result))
+    }
 }

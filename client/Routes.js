@@ -17,6 +17,9 @@ const Routes = () => {
             <AuthRoute path="/admin/categories" >
                 <Categories/>
             </AuthRoute>
+            {/*<AuthRoute path="/admin/login" >*/}
+            {/*    <Login/>*/}
+            {/*</AuthRoute>*/}
             {/*<Route path="/admin/products" component={Products}/>*/}
             {/*<Route path="/admin/categories" component={Categories}/>*/}
             <Route path="/admin/login" component={Login}/>
