@@ -2,21 +2,21 @@ import React from 'react';
 import {Formik} from "formik";
 import {useDispatch} from "react-redux";
 import {login} from "../action/authAction";
-import Redirect, {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import '../style/Login.css'
 
 const Login = () => {
-
-    function redirecting(){
-        return <Redirect to='/admin/products'/>
-    }
-
+    const history = useHistory()
     const dispatch = useDispatch()
-    const handleSubmit = (values) =>{
+    const handleSubmit = (values) => {
         dispatch(login(values))
-        redirecting()
+        history.push('/')
     }
-    const validation = (values) =>{
+    const validation = (values) => {
         const errors = {}
+        if (!values.password) {
+            errors.password = 'Required';
+        }
         if (!values.email) {
             errors.email = 'Required';
         } else if (
@@ -27,7 +27,7 @@ const Login = () => {
         return errors;
     }
     return (
-        <div>
+        <div className='wrap_login'>
             <Formik
                 initialValues={{
                     email: '',
@@ -37,46 +37,53 @@ const Login = () => {
                 onSubmit={handleSubmit}
             >
                 {({
+                      errors,
+                      touched,
                       values,
                       handleChange,
                       handleBlur,
                       handleSubmit,
                       isSubmitting,
                   }) => (
-                    <form action="" className='form' onSubmit={handleSubmit}>
-                        <div className='form-header'>
+                    <form action="" className='form_login' onSubmit={handleSubmit}>
+                        <div className='form_login_header'>
                             <h3>Login</h3>
                         </div>
-                        <div className='form-wrap'>
-                            <div className='form-item'>
-                                <label htmlFor="">Email</label>
+                        <div className='form_login_wrap'>
+                            <div className='form_login_item'>
                                 <input
                                     type="email"
                                     name="email"
+                                    placeholder='email'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.email}
                                 />
+                                <span>
+                                     {errors.email && touched.email && errors.email}
+                                </span>
                             </div>
-                            <div className='form-item'>
-                                <label htmlFor="">Password</label>
+                            <div className='form_login_item'>
                                 <input
                                     type="password"
                                     name="password"
+                                    placeholder='password'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.password}
                                 />
+                                <span>
+                                    {errors.password && touched.password && errors.password}
+                                </span>
                             </div>
                         </div>
-                        <div>
+                        <div className='form_login_link'>
                             <Link to='/admin/registration'>Registration</Link>
                         </div>
-                        <div className='btn-add'>
-                            <button type="submit" disabled={isSubmitting}>Login</button>
+                        <div className='form_login_btn'>
+                            <button type="submit">Login</button>
                         </div>
                     </form>
-
                 )}
             </Formik>
         </div>

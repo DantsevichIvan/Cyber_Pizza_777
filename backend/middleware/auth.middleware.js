@@ -1,18 +1,30 @@
 const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
-
-module.exports = async function (req, res, next){
+module.exports = async function (req, res, next) {
     try {
-        const token = req.headers.authorization.split(' ')[1]; // "Bearer TOKEN"
+        // const token = req.headers.cookie.split(' ')[0]
+        const token = req.cookies.token
+
         if (!token) {
-            return res.status(401).json({ message: 'Нет авторизации' })
-            //Redirect to Login Page
+            return res.status(401).json({message: 'Нет авторизации'})
         }
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded;
+
+         jwt.verify(token,
+            process.env.JWT_SECRET,
+            function (err, decoded) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        message: "Failed to authenticate token.",
+                    });
+                }
+                req.user = decoded;
+            });
+
         next()
     } catch (e) {
-        res.status(401).json({ message: 'Нет авторизации' })
+        res.status(401).json({message: 'Нет авторизации'})
         //Redirect to Login Page
     }
 }

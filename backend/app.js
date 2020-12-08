@@ -1,18 +1,22 @@
 require('dotenv').config();
 const express = require('express')
+const path = require('path')
 const connectDB = require('./db')
-const auth = require('./middleware/auth.middleware');
-
-
+const cookieParser = require('cookie-parser')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 const ENV = process.env.NODE_ENV || 'Development';
 
-app.use('/',express.static( 'dist'))
+app.use(cookieParser())
 
-// app.use(auth)
 require('./routers')(app)
+app.use(express.static( 'dist'))
+app.get('*', (req,res)=>{
+    res.sendFile(path.resolve('dist/index.html'))
+})
+
+
 
 module.exports.start = async function start() {
     try {

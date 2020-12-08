@@ -6,7 +6,6 @@ const ButtonRemove = ({remove, id}) => {
         <div className="close-container" onClick={()=>remove(id)}>
             <div className="leftright"></div>
             <div className="rightleft"></div>
-            <label className="close">remove</label>
         </div>
     );
 };

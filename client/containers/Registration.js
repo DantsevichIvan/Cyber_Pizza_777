@@ -2,14 +2,14 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import {Formik} from "formik";
 import {registration} from "../action/authAction";
+import '../style/Registration.css'
+
 
 const Registration = ({}) => {
     const dispatch = useDispatch()
-
     const handleSubmit = (values) => {
         dispatch(registration(values))
     }
-
     const validation = (values) => {
         const errors = {}
         if (!values.email) {
@@ -25,15 +25,15 @@ const Registration = ({}) => {
         let passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
         if (!values.password) {
             errors.password = 'Required';
-        }else if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(values.password)){
+        } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(values.password)) {
             errors.password = 'Password is not good'
-        //    !errors.password.match(passw)
+            //    !errors.password.match(passw)
         }
         return errors;
     }
 
     return (
-        <div>
+        <div className='registration_wrap'>
             <Formik
                 initialValues={{
                     email: '',
@@ -50,51 +50,54 @@ const Registration = ({}) => {
                       touched,
                       handleBlur,
                       handleSubmit,
-                      isSubmitting,
                   }) => (
-                    <form action="" className='form' onSubmit={handleSubmit}>
-                        <div className='form-header'>
+                    <form action="" className='registration_form' onSubmit={handleSubmit}>
+                        <div className='registration_form_header'>
                             <h3>Registration</h3>
                         </div>
-                        <div className='form-wrap'>
-                            <div className='form-item'>
-                                <label htmlFor="">Email</label>
+                        <div className='registration_form_wrap'>
+                            <div className='registration_form_item'>
                                 <input
                                     type="email"
                                     name="email"
+                                    placeholder='email'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.email}
                                 />
-                                {errors.email && touched.email && errors.email}
+                                <span>
+                                     {errors.email && touched.email && errors.email}
+                                </span>
                             </div>
-                            <div className='form-item'>
-                                <label htmlFor="">Name</label>
+                            <div className='registration_form_item'>
                                 <input
                                     type="text"
                                     name="name"
+                                    placeholder='name'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.name}
                                 />
-                                {errors.name && touched.name && errors.name}
+                                <span>
+                                      {errors.name && touched.name && errors.name}
+                                </span>
                             </div>
-
-                            <div className='form-item'>
-                                <label htmlFor="">Password</label>
+                            <div className='registration_form_item'>
                                 <input
                                     type="password"
                                     name="password"
+                                    placeholder='password'
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     value={values.password}
                                 />
-                                {errors.password && touched.password && errors.password}
+                                <span>
+                                     {errors.password && touched.password && errors.password}
+                                </span>
                             </div>
-
                         </div>
-                        <div className='btn-add'>
-                            <button type="submit" disabled={isSubmitting}>Registration</button>
+                        <div className='registration_form_btn'>
+                            <button type="submit">Registration</button>
                         </div>
                     </form>
 

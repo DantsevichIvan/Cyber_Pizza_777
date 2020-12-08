@@ -1,12 +1,12 @@
 const SET_AUTH_USER = 'SET_AUTH_USER';
+const SET_USER = 'SET_USER';
 const SUCCESS_LOG_OUT = 'SUCCESS_LOG_OUT';
 
 const initState = {
     isAuth: false,
-    userId: '',
     email: '',
     name: '',
-    isAdmin:false
+    isAdmin: false
 }
 
 const AuthReducer = (state = initState, action) => {
@@ -14,11 +14,15 @@ const AuthReducer = (state = initState, action) => {
         case SET_AUTH_USER: {
             return {
                 ...state,
-                isAuth: true,
-                userId: action.data.user._id,
-                email: action.data.user.email,
-                name: action.data.user.name,
-                isAdmin: action.data.user.isAdmin
+                isAuth: true
+            }
+        }
+        case SET_USER: {
+            return {
+                ...state,
+                email: action.data.email,
+                name: action.data.name,
+                isAdmin: action.data.isAdmin,
             }
         }
         case SUCCESS_LOG_OUT: {
@@ -33,14 +37,16 @@ const AuthReducer = (state = initState, action) => {
     }
 }
 
-export const setAuthUser = (data) => {
+export const setAuthUser = () => {
     return {
         type: SET_AUTH_USER,
-        data
     }
 }
-export const setUser = (data) =>{
-
+export const setUser = (data) => {
+    return {
+        type: SET_USER,
+        data
+    }
 }
 
 export default AuthReducer

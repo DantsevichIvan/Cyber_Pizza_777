@@ -16,8 +16,10 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "bcryptjs": "^2.4.3",
+    "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -44,6 +46,7 @@
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
+    "mongodb-memory-server": "^6.9.2",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.9.0",

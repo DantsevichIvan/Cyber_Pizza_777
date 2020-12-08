@@ -1,18 +1,20 @@
 const path = require('path')
-const {CleanWebpackPlugin} =require('clean-webpack-plugin')
-const HTMLWebpackPlugin =require('html-webpack-plugin')
-
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
-    entry:['@babel/polyfill', path.resolve(__dirname, './client/index.js')],
+    entry: ['@babel/polyfill', path.resolve(__dirname, './client/index.js')],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: "[name].[hash].js"
     },
     watch: false,
     plugins: [
-        new HTMLWebpackPlugin({template: "./client/index.html"}),
+        new HTMLWebpackPlugin({
+            template: "./client/index.html",
+            publicPath: '/'
+        }),
         new CleanWebpackPlugin()
     ],
 
@@ -20,11 +22,11 @@ module.exports = {
         rules: [
             {
                 test: /\.(css)$/,
-                use:['style-loader','css-loader']
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(jpg|jpeg|png|svg)/,
-                use:['file-loader']
+                use: ['file-loader']
             },
             // {
             //     test: /\.m?js$/,
