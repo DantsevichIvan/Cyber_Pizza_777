@@ -1,9 +1,11 @@
 require('dotenv').config();
 const express = require('express')
 const path = require('path')
-const connectDB = require('./db')
+const db = require('./db')
 const cookieParser = require('cookie-parser')
 
+
+const urlDB = process.env.DB_HOST
 const app = express()
 const PORT = process.env.PORT || 3000
 const ENV = process.env.NODE_ENV || 'Development';
@@ -20,7 +22,7 @@ app.get('*', (req,res)=>{
 
 module.exports.start = async function start() {
     try {
-        await connectDB()
+        await db.connect(urlDB)
         app.listen(PORT, () => console.log(`server is listing in ${PORT} - ${ENV} environment`))
     }catch (e){
         console.log(e)
