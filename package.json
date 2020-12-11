@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "server:watch": "nodemon --inspect backend/server.js",
     "db:seed": "node backend/seed.js",
-    "client:watch": "webpack --config webpack.dev.js"
+    "client:watch": "webpack --config webpack.dev.js",
+    "test": "jest --runInBand test --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -34,18 +35,24 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "util": "^0.12.3"
+    "util": "^0.12.3",
+    "yup": "^0.32.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@webpack-cli/serve": "^1.1.0",
+    "babel-cli": "^6.26.0",
     "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
+    "mocha": "^8.2.1",
     "mongodb-memory-server": "^6.9.2",
     "style-loader": "^2.0.0",
     "supertest": "^6.0.1",
