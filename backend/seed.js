@@ -2,8 +2,9 @@ require("dotenv").config();
 const { promisify } = require("util");
 const seeder = require("mongoose-seed");
 const mongoose = require("mongoose");
-// const db = process.env.DB_HOST;
+const MONGO_URL = process.env.DB_HOST;
 const _ObjectId = mongoose.Types._ObjectId;
+const bcrypt = require("bcryptjs");
 seeder.connect = promisify(seeder.connect);
 seeder.clearModels = promisify(seeder.clearModels);
 seeder.populateModels = promisify(seeder.populateModels);
@@ -27,7 +28,7 @@ async function main(db) {
   }
 }
 
-// main();
+main(MONGO_URL);
 
 const data = [
   {
@@ -65,25 +66,6 @@ const data = [
         _id: _ObjectId,
         name: "drink",
         available: "false",
-      },
-    ],
-  },
-  {
-    model: "User",
-    documents: [
-      {
-        _id: _ObjectId,
-        email: "iw.dantsevich@gmail.com",
-        password: "Didkps123",
-        name: "Ivan",
-        isAdmin: true,
-      },
-      {
-        _id: _ObjectId,
-        email: "iw.ivanIvan@gmail.com",
-        password: "Didkps111",
-        name: "Igor",
-        isAdmin: false,
       },
     ],
   },

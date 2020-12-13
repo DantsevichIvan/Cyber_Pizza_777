@@ -1,7 +1,6 @@
 require("dotenv").config();
 const { prepareApp } = require("./app");
 const MONGO_URL = process.env.DB_HOST;
-const seed = require("./seed");
 
 async function start() {
   try {
@@ -18,5 +17,3 @@ async function start() {
   }
 }
 start();
-
-seed.main(MONGO_URL);

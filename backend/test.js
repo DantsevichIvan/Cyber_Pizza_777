@@ -4,24 +4,23 @@ const request = require("supertest");
 const Products = require("./models/Products");
 const User = require("./models/User");
 const mongoose = require("mongoose");
-const { main } = require("./seed");
+// const { main } = require("./seed");
+const userData = {
+  email: "iw.dantsevich@gmail.com",
+  password: "Didkps123",
+  confirmPassword: "Didkps123",
+  name: "Ivan",
+};
 
 describe("Test", function () {
   let mongod, app;
-  const userData = {
-    email: "iw.dantsevich@gmail.com",
-    password: "Didkps123",
-    confirmPassword: "Didkps123",
-    name: "Ivan",
-  };
+
   beforeEach(async () => {
     mongod = new MongoMemoryServer();
     const mongoUrl = await mongod.getUri();
     console.log(mongoUrl);
-    // const dbModule = require("./models");
-    const server = await prepareApp(mongoUrl);
     // await main(mongoUrl);
-    // console.log(seed);
+    const server = await prepareApp(mongoUrl);
     app = request(server);
   });
   //Registration
