@@ -12,7 +12,7 @@ const Registration = ({}) => {
   const auth = useSelector((state) => state.auth.isAuth);
 
   if (auth) {
-    history.push("/");
+    history.push("/admin");
   }
   const handleSubmit = (values) => {
     dispatch(registration(values));

@@ -5,6 +5,7 @@ const Products = require("./models/Products");
 const User = require("./models/User");
 const mongoose = require("mongoose");
 // const { main } = require("./seed");
+
 const userData = {
   email: "iw.dantsevich@gmail.com",
   password: "Didkps123",
@@ -23,6 +24,7 @@ describe("Test", function () {
     const server = await prepareApp(mongoUrl);
     app = request(server);
   });
+
   //Registration
   test("Validation password", async function (done) {
     const res = await app
@@ -66,9 +68,7 @@ describe("Test", function () {
     });
     expect(res.statusCode).toEqual(400);
   }, 30000);
-
   //Cookie?
-
   //Login
   test("User submit empty form", async function (done) {
     const res = await app.post("/api/user/login").send({
@@ -80,24 +80,14 @@ describe("Test", function () {
   }, 30000);
   test("User submit incorrect password", async function (done) {
     const userAdmin = new User({ userData });
-    const saveUser = await userAdmin.save();
+    await userAdmin.save();
 
     const res = await app.post("/api/user/login").send({
       email: "iw.dantsevich@gmail.com",
       password: "Didkps",
     });
     expect(res.statusCode).toEqual(400);
-    done();
-  }, 30000);
-  test("User submit incorrect email", async function (done) {
-    const userAdmin = new User({ userData });
-    const saveUser = await userAdmin.save();
-
-    const res = await app.post("/api/user/login").send({
-      email: "iw.dantsevic@gmail.com",
-      password: "Didkps",
-    });
-    expect(res.statusCode).toEqual(400);
+    console.log(res.body);
     done();
   }, 30000);
   test("User login in system", async function (done) {
@@ -111,25 +101,41 @@ describe("Test", function () {
     expect(res.statusCode).toEqual(200);
     done();
   }, 30000);
+  test("User submit incorrect email", async function (done) {
+    const userAdmin = new User({ userData });
+    const saveUser = await userAdmin.save();
 
+    const res = await app.post("/api/user/login").send({
+      email: "iw.dantsevic@gmail.com",
+      password: "Didkps",
+    });
+    expect(res.statusCode).toEqual(400);
+    done();
+  });
   //Get user
 
   test("Get user when not cookie", async function (done) {
     const res = await app.get("/api/user");
-    console.log(res.body);
+    expect(res.statusCode).toEqual(200);
+    done();
+  }, 30000); // ???
+
+  //LogOut
+  test("Cookie remove", async (done) => {
+    const res = await app.post("/api/user/logout");
     expect(res.statusCode).toEqual(200);
     done();
   }, 30000);
 
-  //LogOut
-
   //Products
-  test("Get Products", async function () {
+  test("Get Products", async function (done) {
     const res = await app.get("/api/products");
     expect(res.statusCode).toEqual(200);
-    const products = new Products({});
-    console.log(products);
-  });
+    const productsCount = await mongoose.model("Products").countDocuments();
+    expect(productsCount).toEqual(0);
+    done();
+  }, 30000);
+
   test("Add new product", async function () {
     let product = {
       name: "paperoni",
@@ -141,9 +147,17 @@ describe("Test", function () {
     const res = await app.post("/api/products").send({ product });
     expect(res.statusCode).toEqual(200);
   });
-  //Categories
 
-  afterAll(async () => {
+  //Categories
+  test("Get Categories", async function (done) {
+    const res = await app.get("/api/categories");
+    expect(res.statusCode).toEqual(200);
+    const categoriesCount = await mongoose.model("Categories").countDocuments();
+    expect(categoriesCount).toEqual(0);
+    done();
+  }, 30000);
+
+  afterEach(async () => {
     await mongod.stop();
   });
 });

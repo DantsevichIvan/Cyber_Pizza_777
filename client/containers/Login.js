@@ -11,7 +11,7 @@ const Login = () => {
   const errorMessage = useSelector((state) => state.auth.errorData);
   const auth = useSelector((state) => state.auth.isAuth);
   if (auth) {
-    history.push("/");
+    history.push("/admin");
   }
   const handleSubmit = (values) => {
     dispatch(login(values));

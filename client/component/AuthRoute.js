@@ -6,7 +6,11 @@ const AuthRoute = (props) => {
   const isAuth = useSelector((state) => state.auth.isAuth);
   const isAdmin = useSelector((state) => state.auth.isAdmin);
   if (isAuth) {
-    if (!isAdmin) return <Redirect to="/admin/info" />;
+    if (!isAdmin) {
+      return <Redirect to="/admin/info" />;
+    } else {
+      <Redirect to="/admin" />;
+    }
   } else if (!isAuth) return <Redirect to="/admin/login" />;
 
   return <Route {...props} />;
