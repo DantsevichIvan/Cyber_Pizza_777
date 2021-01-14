@@ -1,11 +1,11 @@
 import React, { useEffect, Suspense } from "react";
 import Routes from "./Routes";
-import "./style/App.css";
-import Loading from "./component/Loading";
+import s from "./App.module.css";
+import Loading from "./component/Loading/Loading";
 
 const App = () => {
   return (
-    <div className="wrap">
+    <div className={s.wrap}>
       <Suspense fallback={<Loading />}>
         <Routes />
       </Suspense>

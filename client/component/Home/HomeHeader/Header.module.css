@@ -1,0 +1,73 @@
+/*Header*/
+.header_home {
+  height: 26%;
+  display: flex;
+}
+.header_home_title {
+  width: 30%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+}
+.header_home_title h3 {
+  font-size: 3.0rem;
+  font-weight: 800;
+}
+.header_home_info {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  padding: 20px;
+  align-items: center;
+}
+.header_home_info_filter {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+}
+.header_home_info_filter_title span {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.header_home_info_filter_container {
+  display: flex;
+  align-items: center;
+}
+.header_home_info_filter_tags {
+  display: flex;
+}
+.header_home_info_filter_btn {
+  background-color: white;
+  border: none;
+  color: gray;
+  padding: 0 16px;
+  text-transform: uppercase;
+}
+.header_home_info_filter_btn:focus {
+  outline: none;
+}
+.header_home_info_orderStatus {
+  display: flex;
+  align-items: center;
+}
+.header_home_info_orderStatus svg {
+  font-size: 2rem;
+}
+.header_home_info_orderStatus_title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+.header_home_info_orderStatus_count {
+  font-size: 1.2rem;
+  background-color: pink;
+  display: inline-block;
+  width: 16px;
+  border-radius: 50%;
+  text-align: center;
+  color: #ffffff;
+}
