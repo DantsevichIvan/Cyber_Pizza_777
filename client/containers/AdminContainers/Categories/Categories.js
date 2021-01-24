@@ -5,7 +5,7 @@ import {
   getCategories,
 } from "../../../action/categoriesAction";
 import Category from "../../../component/Admin/Category/Category";
-import ModalWindow from "../../../component/Modal/ModalWindow";
+import ModalWindow from "../../../component/common/Modal/ModalWindow";
 import FormAddCategory from "../../../component/Admin/Form/FormCategories/FormAddCategory";
 import HeaderComponent from "../../../component/Admin/HeaderContainer/HeaderComponent";
 import FormUpdateCategory from "../../../component/Admin/Form/FormCategories/FormUpdateCategory";

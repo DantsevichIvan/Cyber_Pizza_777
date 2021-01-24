@@ -12,7 +12,7 @@ module.exports = {
   watch: false,
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./client/index.html",
+      template: "./client/public/index.html",
       publicPath: "/",
     }),
     new MiniCssExtractPlugin(),

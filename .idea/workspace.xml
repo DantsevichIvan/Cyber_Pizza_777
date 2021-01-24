@@ -19,84 +19,45 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:client" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/testing-node" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/models/Carts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/api/carts/carts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/RoutesAdmin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/RoutesHome.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/action/cartsAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Category/Category.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Category/Category.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Form/Form.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Form/FormCategories/FormAddCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Form/FormCategories/FormUpdateCategory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/HeaderContainer/HeaderComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/HeaderContainer/HeaderComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/NavBar/NavBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Product/Product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Product/Product.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Button/AddBtn/AddButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Button/RemoveBtn/ButtonRemove.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Home/HomeHeader/Header.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Home/Tags/Tags.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/AdminContainers/Categories/Categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/AdminContainers/Container.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/AuthContainers/LogOut/LogOut.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/reducers/cartsReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/Home/Product/Product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/ProductPage/ProductPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/ProductPage/ProductPage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/component/common/OrderStatus/OrderStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/r_99_280x280.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/NavBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/App.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/AddButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/AuthRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/AuthRouter/AuthRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ButtonRemove.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Category.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormAddCategory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/Form/FormProducts/FormAddProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormUpdateCategory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/FormUpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/Form/FormProducts/FormUpdateProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/HeaderContainer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/HeaderHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeHeader/HeaderHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Loading/Loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ModalWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Modal/ModalWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Product.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/Tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/Tags/Tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/ViewProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Button/ViewItems/ViewProducts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/AdminPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AdminContainers/AdminPage/AdminPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Categories.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Info.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/LogOut.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AuthContainers/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AdminContainers/Products/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AuthContainers/Registration/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/AddButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Button/AddBtn/AddButton.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AdminContainers/AdminPage/Admin.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/App.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/BtnLogOut.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AuthContainers/LogOut/BtnLogOut.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/ButtonRemove.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Button/RemoveBtn/ButtonRemove.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/HomePage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Loading.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Loading/Loading.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AuthContainers/Login/Login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Products.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/Registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AuthContainers/Registration/Registration.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/ViewProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Button/ViewItems/ViewProducts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/style/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/NavBar/NavBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Admin/Category/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/Category/Category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Admin/HeaderContainer/HeaderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/HeaderContainer/HeaderComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Admin/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Admin/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/AddBtn/AddButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/AddBtn/AddButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/AddBtn/AddButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/AddBtn/AddButton.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/RemoveBtn/ButtonRemove.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/RemoveBtn/ButtonRemove.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/RemoveBtn/ButtonRemove.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/RemoveBtn/ButtonRemove.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/ViewItems/ViewProducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/ViewItems/ViewProducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Button/ViewItems/ViewProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/ViewItems/ViewProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/HomeHeader/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeHeader/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/HomeHeader/HeaderHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeHeader/HeaderHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeSideBar/HomeSideBar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Loading/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/Loading/Loading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Loading/Loading.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/Loading/Loading.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Modal/ModalWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/Modal/ModalWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/AdminContainers/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AdminContainers/Categories/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/AdminContainers/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/AdminContainers/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/HomeContainers/HomePage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.common.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,8 +69,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -149,7 +110,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\iwdan\AppData\Roaming\npm\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -158,11 +119,11 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\common" />
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Home\Product" />
+      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\public" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Admin\Form" />
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Admin" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Form" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Home\Tags" />
-      <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\Home\HomeHeader" />
     </key>
   </component>
   <component name="RunManager" selected="npm.client:watch">
@@ -292,6 +253,12 @@
       <workItem from="1608278965140" duration="7283000" />
       <workItem from="1608633182078" duration="5449000" />
       <workItem from="1608707009792" duration="185000" />
+      <workItem from="1610645299934" duration="763000" />
+      <workItem from="1610658709647" duration="231000" />
+      <workItem from="1610693978183" duration="180000" />
+      <workItem from="1611238055982" duration="1626000" />
+      <workItem from="1611296172308" duration="8376000" />
+      <workItem from="1611489586509" duration="11284000" />
     </task>
     <task id="LOCAL-00001" summary="feat: new structure">
       <created>1606897721377</created>
@@ -538,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608138521268</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update project">
+      <created>1610645384772</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1610645384772</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +529,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/testing-node" />
                       </list>
                     </value>
                   </entry>
@@ -569,7 +543,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add webpack.dev.js and webpack.prod.js" />
     <MESSAGE value="feat: update webpack.prod.js" />
     <MESSAGE value="feat: update app.js" />
     <MESSAGE value="feat: update seed and fix products.js" />
@@ -594,7 +567,8 @@
     <MESSAGE value="feat: add test for Registration and Login" />
     <MESSAGE value="feat: fix formating and fix error" />
     <MESSAGE value="Create HomePage.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create HomePage.js" />
+    <MESSAGE value="update project" />
+    <option name="LAST_COMMIT_MESSAGE" value="update project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -608,12 +582,12 @@
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="2376" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608201166196" />
     <state x="304" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1608151135824" />
-    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1608138519803">
+    <state x="144" y="0" key="CommitChangelistDialog2" timestamp="1610645383200">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361979671" />
     <state x="2177" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684799125" />
-    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1608138519803" />
+    <state x="144" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1610645383200" />
     <state width="798" height="408" key="DebuggerActiveHint" timestamp="1607931330664">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -624,41 +598,41 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="28" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1607850862108" />
-    <state x="366" y="127" key="FileChooserDialogImpl" timestamp="1608707193640">
+    <state x="366" y="127" key="FileChooserDialogImpl" timestamp="1611513004418">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1608299034611" />
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612355862" />
     <state x="2469" y="194" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608192986809" />
-    <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608707193640" />
-    <state width="1259" height="226" key="GridCell.Tab.0.bottom" timestamp="1608675520507">
+    <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1611513004418" />
+    <state width="1259" height="228" key="GridCell.Tab.0.bottom" timestamp="1611516622613">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="122" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1608299038700" />
     <state width="1259" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801102" />
     <state width="1899" height="216" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608214594628" />
-    <state width="1259" height="226" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608675520507" />
-    <state width="1259" height="226" key="GridCell.Tab.0.center" timestamp="1608675520506">
+    <state width="1259" height="228" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1611516622613" />
+    <state width="1259" height="228" key="GridCell.Tab.0.center" timestamp="1611516622613">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="122" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1608299038700" />
     <state width="1259" height="217" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="216" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608214594628" />
-    <state width="1259" height="226" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608675520506" />
-    <state width="1259" height="226" key="GridCell.Tab.0.left" timestamp="1608675520506">
+    <state width="1259" height="228" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1611516622613" />
+    <state width="1259" height="228" key="GridCell.Tab.0.left" timestamp="1611516622613">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="122" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1608299038700" />
     <state width="1259" height="217" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="216" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608214594628" />
-    <state width="1259" height="226" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608675520506" />
-    <state width="1259" height="226" key="GridCell.Tab.0.right" timestamp="1608675520506">
+    <state width="1259" height="228" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1611516622613" />
+    <state width="1259" height="228" key="GridCell.Tab.0.right" timestamp="1611516622613">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="122" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1608299038700" />
     <state width="1259" height="217" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="216" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608214594628" />
-    <state width="1259" height="226" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608675520506" />
+    <state width="1259" height="228" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1611516622613" />
     <state width="1259" height="203" key="GridCell.Tab.1.bottom" timestamp="1607980397979">
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
@@ -747,11 +721,12 @@
       <screen x="1920" y="0" width="1024" height="779" />
     </state>
     <state x="2174" y="92" key="RollbackChangesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607071767004" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1608104036483">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1610658785701">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1024.779@0.0.1280.680" timestamp="1608104036483" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612432334" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1610658785701" />
     <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1608138528502">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

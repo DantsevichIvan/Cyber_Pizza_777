@@ -1,7 +1,7 @@
 /*Header*/
 .header_home {
-  height: 26%;
   display: flex;
+  width: 88%;
 }
 .header_home_title {
   width: 30%;
@@ -16,8 +16,8 @@
 .header_home_info {
   display: flex;
   justify-content: space-between;
-  width: 70%;
-  padding: 20px;
+  width: 100%;
+  padding: 40px 40px 60px;
   align-items: center;
 }
 .header_home_info_filter {
@@ -53,21 +53,46 @@
   display: flex;
   align-items: center;
 }
-.header_home_info_orderStatus svg {
+.icon {
+  position: relative;
+}
+.icon svg {
   font-size: 2rem;
+  z-index: 3;
+}
+.icon:before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: -27px;
+  left: -32px;
+  background-color: #fee8ae;
+  z-index: -1;
 }
 .header_home_info_orderStatus_title {
   font-size: 1.4rem;
   font-weight: bold;
-  padding: 0 10px;
+  margin: 0 20px;
   text-transform: uppercase;
 }
 .header_home_info_orderStatus_count {
   font-size: 1.2rem;
-  background-color: pink;
-  display: inline-block;
-  width: 16px;
-  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+.header_home_info_orderStatus_count:before{
+  content: '';
+  position: absolute;
+  background-color: #fc7a67;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: -1;
 }

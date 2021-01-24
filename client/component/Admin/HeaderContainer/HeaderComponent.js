@@ -1,5 +1,5 @@
 import React from "react";
-import AddButton from "../../Button/AddBtn/AddButton";
+import AddButton from "../../common/AddBtn/AddButton";
 import s from "./HeaderComponent.module.css";
 
 const HeaderComponent = ({ create, value, title }) => {

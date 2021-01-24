@@ -5,6 +5,9 @@ import AuthRoute from "./component/AuthRouter/AuthRoute";
 const HomePage = React.lazy(() =>
   import("./containers/HomeContainers/HomePage")
 );
+const ProductPage = React.lazy(() =>
+  import("./component/ProductPage/ProductPage")
+);
 const RoutesAdmin = React.lazy(() => import("./RoutesAdmin"));
 
 const Login = React.lazy(() =>
@@ -24,6 +27,8 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/product" component={ProductPage} />
+
       <Route exact path="/admin" component={RoutesAdmin} />
 
       <Route path="/admin/login" component={Login} />

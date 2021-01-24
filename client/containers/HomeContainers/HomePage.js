@@ -5,6 +5,7 @@ import { getCategories, getCategory } from "../../action/categoriesAction";
 import { createCarts } from "../../action/cartsAction";
 import HomeSideBar from "../../component/Home/HomeSideBar/HomeSideBar";
 import s from "./HomePage.module.css";
+import Product from "../../component/Home/Product/Product";
 
 const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,13 +25,13 @@ const HomePage = () => {
 
   return (
     <div className={s.home_wrap}>
-      <HeaderHomePage cartsProducts={cartsProducts} />
+      <HomeSideBar
+        categories={categories}
+        activeIndex={activeIndex}
+        handleClick={handleClick}
+      />
       <div className={s.home_container}>
-        <HomeSideBar
-          categories={categories}
-          activeIndex={activeIndex}
-          handleClick={handleClick}
-        />
+        <HeaderHomePage cartsProducts={cartsProducts} />
         <div className={s.home_list_products}>
           <div className={s.home_list_products_title}>
             <span>
@@ -38,28 +39,15 @@ const HomePage = () => {
             </span>
           </div>
           <div className={s.home_list_products_items}>
-            <div className={s.item_product}>
-              <div className={s.item_product_img}>
-                <img
-                  src="https://www.pizzatempo.by/i/photo/catalog/products/t/r_99_280x280.jpg?v=1605510590"
-                  alt=""
-                />
-                <div className={s.item_product_btn_Add}>
-                  <button className="icon-btn add-btn">+</button>
-                </div>
-              </div>
-              <div className={s.item_product_price}>
-                <span>
-                  <span>price</span>
-                </span>
-              </div>
-              <div className={s.item_product_name}>
-                <span>Name</span>
-              </div>
-              <div className={s.item_product_description}>
-                <span>Description</span>
-              </div>
-            </div>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
           </div>
         </div>
       </div>

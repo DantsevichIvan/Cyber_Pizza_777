@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonRemove from "../../Button/RemoveBtn/ButtonRemove";
+import ButtonRemove from "../../common/RemoveBtn/ButtonRemove";
 import s from "./Product.module.css";
 
 const Product = ({ removeProduct, product, updateProduct }) => {

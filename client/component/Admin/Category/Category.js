@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonRemove from "../../Button/RemoveBtn/ButtonRemove";
-import ViewProducts from "../../Button/ViewItems/ViewProducts";
+import ButtonRemove from "../../common/RemoveBtn/ButtonRemove";
+import ViewProducts from "../../common/ViewItems/ViewProducts";
 import s from "./Category.module.css";
 
 const Category = ({ category, updateCategory, removeCategory }) => {

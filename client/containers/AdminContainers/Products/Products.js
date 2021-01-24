@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FormAddProduct from "../../../component/Admin/Form/FormProducts/FormAddProduct";
 import Product from "../../../component/Admin/Product/Product";
-import ModalWindow from "../../../component/Modal/ModalWindow";
+import ModalWindow from "../../../component/common/Modal/ModalWindow";
 import HeaderComponent from "../../../component/Admin/HeaderContainer/HeaderComponent";
 import FormUpdateProduct from "../../../component/Admin/Form/FormProducts/FormUpdateProduct";
 import { deleteProduct, getProducts } from "../../../action/productsAction";
