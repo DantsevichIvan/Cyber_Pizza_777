@@ -23,7 +23,7 @@
 
 .container {
   display: flex;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .img {
   width: 50%;
@@ -43,12 +43,16 @@
   color: #c3c3c3;
   margin-bottom: 16px;
 }
+/*size*/
 .size{
-  font-size: 1.4rem;
-  color: #c3c3c3;
-  margin-bottom: 16px;
+  margin-bottom: 21px;
   display: flex;
   flex-direction: column;
+}
+.title{
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  color: #c3c3c3;
 }
 .form_radio_group {
   display: inline-block;
@@ -57,7 +61,6 @@
 .form_radio_group-item {
   display: inline-block;
   float: left;
-  background-color: #e3e3e3;
   margin-left: 4px;
 }
 .form_radio_group input[type=radio] {
@@ -86,19 +89,102 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
+.form_radio_group input[type=radio] + label{
+  background-color: #e3e3e3;
+}
 /* Checked */
 .form_radio_group input[type=radio]:checked + label {
   background: #ffe0a6;
 }
-
-/* Hover */
-.form_radio_group label:hover {
-  color: #666;
-}
-
 /* Disabled */
 .form_radio_group input[type=radio]:disabled + label {
   background: #efefef;
   color: #666;
+}
+
+
+/*toppings*/
+.toppings{
+  margin-bottom: 21px;
+  width: 70%;
+}
+.toppingsWrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+.topping{
+  margin-right: 4px;
+  margin-top: 5px;
+  background-color: #f6cd39;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.topping span{
+  font-weight: 600;
+  line-height: 34px;
+  padding: 0px 15px;
+  text-transform: uppercase;
+}
+.addTopping {
+  margin-top: 8px;
+  background-color: #c3c3c3;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+}
+.addTopping span{
+  font-weight: 600;
+  line-height: 34px;
+  padding: 0px 15px;
+  text-transform: uppercase;
+}
+/*price*/
+.price{
+  margin-bottom: 21px;
+  display: flex;
+}
+.priceValue{
+  font-size: 3rem;
+  font-weight: 600;
+}
+.priceWrap{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.priceCount button{
+  background-color: transparent;
+  border: none;
+  margin: 0 10px;
+}
+.priceCount button ,button:active,
+button:focus {
+  outline: none;
+}
+.priceCount button svg{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.priceCount{
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e3e3e3;
+  border-radius: 20px;
+  height: 85%;
+}
+/*btn*/
+.btn {
+  width: 140px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: #fc7a67;
+  color: #ffffff;
+  border: none;
+  font-size: 1.6rem;
 }

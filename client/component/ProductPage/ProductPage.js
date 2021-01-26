@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import OrderStatus from "../common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faPlus,
+  faMinus,
+} from "@fortawesome/free-solid-svg-icons";
 import s from "./ProductPage.module.css";
-import { Form } from "formik";
+
+const toppings = [
+  "Roast Beef",
+  "Bell Peppers",
+  "Mushrooms",
+  "Onions",
+  "Tomatoes",
+  "Marinara",
+];
 
 const ProductPage = () => {
   const products = [];
+  const [count, setCount] = useState(1);
 
   return (
     <div className={s.wrap}>
@@ -32,16 +45,10 @@ const ProductPage = () => {
             <p>Description</p>
           </div>
           <div className={s.size}>
-            <span>Size</span>
+            <span className={s.title}>Size</span>
             <div className={s["form_radio_group"]}>
               <div className={s["form_radio_group-item"]}>
-                <input
-                  id="radio-1"
-                  type="radio"
-                  name="radio"
-                  value="1"
-                  checked
-                />
+                <input id="radio-1" type="radio" name="radio" value="1" />
                 <label htmlFor="radio-1">
                   Small <span>320g</span>
                 </label>
@@ -60,13 +67,42 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-          <div>
-            <span>Toppings</span>
+          <div className={s.toppings}>
+            <span className={s.title}>Toppings</span>
+            <div className={s.toppingsWrap}>
+              {toppings.map((el) => {
+                return (
+                  <div className={s.topping}>
+                    <span>{el}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className={s.addTopping}>
+              <span>+ More Toppings</span>
+            </div>
           </div>
-          <div>
-            <span>Price</span>
+          <div className={s.price}>
+            <span className={s.priceValue}>${(13.4 * count).toFixed(1)}</span>
+            <div className={s.priceWrap}>
+              <div className={s.priceCount}>
+                <button
+                  disabled={count === 1}
+                  onClick={() => setCount(count - 1)}
+                >
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <span>{count}</span>
+                <button
+                  onClick={() => setCount(count + 1)}
+                  disabled={count === 10}
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+              </div>
+            </div>
           </div>
-          <button>Place Order</button>
+          <button className={s.btn}>Place Order</button>
         </div>
       </div>
     </div>
