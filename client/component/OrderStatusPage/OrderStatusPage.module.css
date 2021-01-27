@@ -1,0 +1,71 @@
+.container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  background-color: #ffffff;
+  z-index: 333;
+}
+/*header*/
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header span {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.header a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.header a svg {
+  margin-left: 10px;
+}
+
+/*progress bar*/
+.progress{
+  width: 100%;
+  height: 50%;
+  background-color: #ffffff;
+}
+
+/*price*/
+.price{
+  border-top: 1px solid silver;
+}
+.price-wrap {
+  box-sizing: border-box;
+  padding: 0px 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.price-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  color: #c3c3c3;
+  padding: 15px 0;
+  border-bottom: 1px solid silver;
+}
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 15px 0;
+  font-weight: 600;
+}
+.price-content span:last-child {
+  font-weight: 600;
+}
+.price-total span:last-child {
+  font-weight: 700;
+}

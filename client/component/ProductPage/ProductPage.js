@@ -8,6 +8,7 @@ import {
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import s from "./ProductPage.module.css";
+import OrderStatusPage from "../OrderStatusPage/OrderStatusPage";
 
 const toppings = [
   "Roast Beef",
@@ -21,6 +22,11 @@ const toppings = [
 const ProductPage = () => {
   const products = [];
   const [count, setCount] = useState(1);
+  const [isOrderStatus, setIsOrderStatus] = useState(false);
+
+  const handleSubmit = () => {
+    setIsOrderStatus(!isOrderStatus);
+  };
 
   return (
     <div className={s.wrap}>
@@ -35,7 +41,10 @@ const ProductPage = () => {
       </div>
       <div className={s.container}>
         <div className={s.img}>
-          <img src="" alt="" />
+          <img
+            src="https://www.pizzatempo.by/i/photo/catalog/products/t/r_99_280x280.jpg?v=1605510590"
+            alt=""
+          />
         </div>
         <div className={s.infoProduct}>
           <div className={s.name}>
@@ -102,9 +111,14 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-          <button className={s.btn}>Place Order</button>
+          <button className={s.btn} onClick={handleSubmit}>
+            Place Order
+          </button>
         </div>
       </div>
+      {isOrderStatus ? (
+        <OrderStatusPage setIsOrderStatus={setIsOrderStatus} />
+      ) : null}
     </div>
   );
 };
