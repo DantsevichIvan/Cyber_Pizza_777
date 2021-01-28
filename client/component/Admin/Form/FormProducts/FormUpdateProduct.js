@@ -25,14 +25,14 @@ const FormUpdateProduct = ({ closeModal, item }) => {
     >
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
-          <div className={s.formHeader}>
+          <div className={s["form-header"]}>
             <h3>Update Product</h3>
-            <button onClick={closeModal} className={s.btnClose}>
+            <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
           </div>
-          <div className={s.formWrap}>
-            <div className={s.formItem}>
+          <div className={s["form-wrap"]}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Name</label>
               <input
                 type="text"
@@ -42,7 +42,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 value={values.name}
               />
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Description</label>
               <textarea
                 name="description"
@@ -51,7 +51,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 value={values.description}
               />
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Weight</label>
               <input
                 type="number"
@@ -61,7 +61,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 value={values.weight}
               />
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Price</label>
               <input
                 type="number"
@@ -71,7 +71,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 value={values.price}
               />
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Image</label>
               <input
                 type="text"
@@ -87,7 +87,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 Image Search
               </a>
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Categories</label>
               <Field name="categories" as="select">
                 {categories.map((item) => {
@@ -100,7 +100,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
               </Field>
             </div>
           </div>
-          <div className={s.btnAdd}>
+          <div className={s["btn-add"]}>
             <button type="submit" disabled={isSubmitting}>
               Update Product
             </button>

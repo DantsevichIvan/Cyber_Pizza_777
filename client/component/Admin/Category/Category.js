@@ -1,13 +1,11 @@
 import React from "react";
 import ButtonRemove from "../../common/RemoveBtn/ButtonRemove";
-import ViewProducts from "../../common/ViewItems/ViewProducts";
 import s from "./Category.module.css";
 
 const Category = ({ category, updateCategory, removeCategory }) => {
   return (
     <div className={s.item}>
       <div className={s.item_content}>
-        {/*<ViewProducts/>*/}
         <span className={s.textInfo_name}>{category.name}</span>
       </div>
       <div className={s.btns}>

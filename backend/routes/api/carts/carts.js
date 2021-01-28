@@ -27,13 +27,31 @@ async function createCarts(req, res) {
   } else {
     await Carts.create({}, function (err, carts) {
       if (err) console.log(err);
-      debugger;
       res.cookie("carts", carts._id).status(201).json({ carts });
     });
   }
 }
+async function addNewProduct(req, res) {
+  try {
+    const { product } = req.body;
+    let cartsId = req.params.id;
 
-async function addNewProduct(req, res) {}
+    Carts.findByIdAndUpdate(
+      cartsId,
+      { $push: { products: product } },
+      {},
+      async function (err) {
+        if (err) return console.log(err);
+        res.status(200).json({ message: "Product add to cart", id: cartsId });
+      }
+    );
+  } catch (e) {
+    res.status(500).json({
+      message: "Что-то пошло не так, попробуйте снова",
+    });
+  }
+}
+
 async function updateCarts(req, res) {}
 async function deleteProductFromCarts(req, res) {}
 async function addCouponToCarts(req, res) {}

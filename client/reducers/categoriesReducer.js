@@ -1,35 +1,32 @@
-export const SET_CATEGORIES = 'SET_CATEGORIES'
+export const SET_CATEGORIES = "SET_CATEGORIES";
 
 const initState = {
-    categories: []
-}
+  categories: [],
+  category: {
+    product: [],
+  },
+};
 
 const CategoriesReducer = (state = initState, action) => {
-    switch (action.type) {
-        case SET_CATEGORIES: {
-            return {
-                ...state,
-                categories: [...action.data]
-            }
-        }
-
-        default:
-            return {
-                ...state
-            }
+  switch (action.type) {
+    case SET_CATEGORIES: {
+      return {
+        ...state,
+        categories: [...action.data],
+      };
     }
-}
+    default:
+      return {
+        ...state,
+      };
+  }
+};
 
+export const setCategories = (data) => {
+  return {
+    type: SET_CATEGORIES,
+    data,
+  };
+};
 
-export const setCategories = (data) =>{
-    return{
-        type:SET_CATEGORIES,
-        data
-    }
-}
-
-
-
-
-
-export default CategoriesReducer
+export default CategoriesReducer;

@@ -1,5 +1,4 @@
 import { setCategories } from "../reducers/categoriesReducer";
-import { getProducts } from "./productsAction";
 
 export const getCategories = () => async (dispatch) => {
   const res = await fetch("http://localhost:3000/api/categories", {

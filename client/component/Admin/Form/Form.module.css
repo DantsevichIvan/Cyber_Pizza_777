@@ -12,14 +12,15 @@
   flex-direction: column;
 }
 
-.form-header{
+.form-header {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 10px;
 }
-.btn-close{
+
+.btn-close {
   height: 30px;
 }
 
@@ -35,10 +36,12 @@
   margin: 15px;
   width: 150px;
 }
-.form-item input,textarea{
+
+.form-item input, textarea {
   border: 1px solid #000;
 }
-.btn-add{
+
+.btn-add {
   display: flex;
   justify-content: center;
   align-items: center;

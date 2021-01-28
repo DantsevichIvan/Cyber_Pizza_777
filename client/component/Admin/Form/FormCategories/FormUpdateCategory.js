@@ -20,14 +20,14 @@ const FormUpdateCategory = ({ item, closeModal }) => {
     >
       {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
-          <div className="form-header">
+          <div className={s["form-header"]}>
             <h3>Update Category</h3>
-            <button onClick={closeModal} className={s.btnClose}>
+            <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
           </div>
-          <div className={s.formWrap}>
-            <div className={s.formItem}>
+          <div className={s["form-wrap"]}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Name</label>
               <input
                 type="text"
@@ -38,7 +38,7 @@ const FormUpdateCategory = ({ item, closeModal }) => {
               />
             </div>
           </div>
-          <div className={s.btnAdd}>
+          <div className={s["btn-add"]}>
             <button type="submit" disabled={isSubmitting}>
               Update Category
             </button>

@@ -3,37 +3,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./action/authAction";
 import s from "./containers/AdminContainers/AdminPage/Admin.module.css";
 import NavBar from "./component/Admin/NavBar/NavBar";
-import AuthRoute from "./component/AuthRouter/AuthRoute";
-import { Switch } from "react-router-dom";
+import { Redirect, Switch } from "react-router-dom";
+import { RouteWithSubRoutes } from "./Routes";
 
-const Products = React.lazy(() =>
-  import("./containers/AdminContainers/Products/Products")
-);
-const Categories = React.lazy(() =>
-  import("./containers/AdminContainers/Categories/Categories")
-);
-
-const RoutesAdmin = () => {
+const RoutesAdmin = ({ routes }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth.isAuth);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
+
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch, auth]);
+
+  if (isAdmin === false) {
+    return <Redirect to="/" />;
+  }
   return (
     <div className={s.admin_wrap}>
       <NavBar />
-      <div>
+      <div className={s.container}>
         <Switch>
-          <AuthRoute path="/admin/products">
-            <Products />
-          </AuthRoute>
-          <AuthRoute path="/admin/categories">
-            <Categories />
-          </AuthRoute>
+          {routes.map((route, i) => (
+            <RouteWithSubRoutes key={i} {...route} />
+          ))}
         </Switch>
       </div>
     </div>
   );
 };
-
 export default RoutesAdmin;

@@ -46,14 +46,14 @@ const FormAddProduct = ({ closeModal }) => {
         isSubmitting,
       }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
-          <div className={s.formHeader}>
+          <div className={s["form-header"]}>
             <h3>Add new Product</h3>
-            <button onClick={closeModal} className={s.btnClose}>
+            <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
           </div>
-          <div className={s.formWrap}>
-            <div className={s.formItem}>
+          <div className={s["form-wrap"]}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Name</label>
               <input
                 type="text"
@@ -64,7 +64,7 @@ const FormAddProduct = ({ closeModal }) => {
               />
               {errors.name && touched.name && errors.name}
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Description</label>
               <textarea
                 name="description"
@@ -74,7 +74,7 @@ const FormAddProduct = ({ closeModal }) => {
               />
               {errors.description && touched.description && errors.description}
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Weight</label>
               <input
                 type="number"
@@ -85,7 +85,7 @@ const FormAddProduct = ({ closeModal }) => {
               />
               {errors.weight && touched.weight && errors.weight}
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Price</label>
               <input
                 type="number"
@@ -96,7 +96,7 @@ const FormAddProduct = ({ closeModal }) => {
               />
               {errors.price && touched.price && errors.price}
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Image</label>
               <input
                 type="text"
@@ -113,7 +113,7 @@ const FormAddProduct = ({ closeModal }) => {
                 Image Search
               </a>
             </div>
-            <div className={s.formItem}>
+            <div className={s["form-item"]}>
               <label htmlFor="">Categories</label>
               <Field name="categories" as="select" onChange={handleChange}>
                 <option value="" defaultValue>
@@ -130,7 +130,7 @@ const FormAddProduct = ({ closeModal }) => {
               {errors.categories && touched.categories && errors.categories}
             </div>
           </div>
-          <div className={s.btnAdd}>
+          <div className={s["btn-add"]}>
             <button type="submit" disabled={isSubmitting}>
               Create Product
             </button>

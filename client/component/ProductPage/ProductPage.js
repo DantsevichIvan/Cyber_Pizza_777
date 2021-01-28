@@ -79,9 +79,9 @@ const ProductPage = () => {
           <div className={s.toppings}>
             <span className={s.title}>Toppings</span>
             <div className={s.toppingsWrap}>
-              {toppings.map((el) => {
+              {toppings.map((el, index) => {
                 return (
-                  <div className={s.topping}>
+                  <div className={s.topping} key={index}>
                     <span>{el}</span>
                   </div>
                 );

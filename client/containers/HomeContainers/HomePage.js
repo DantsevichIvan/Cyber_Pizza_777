@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeaderHomePage from "../../component/Home/HomeHeader/HeaderHomePage";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories, getCategory } from "../../action/categoriesAction";
-import { createCarts } from "../../action/cartsAction";
+import { addProductForCarts, createCarts } from "../../action/cartsAction";
 import HomeSideBar from "../../component/Home/HomeSideBar/HomeSideBar";
 import s from "./HomePage.module.css";
 import Product from "../../component/Home/Product/Product";
@@ -11,9 +11,11 @@ const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
-  const cartsProducts = useSelector((state) => state.carts.products);
-  console.log(cartsProducts);
+  const cart = useSelector((state) => state.carts.cart);
+
+  console.log(categories?.[activeIndex]?._id);
   useEffect(() => {
+    const id = categories?.[activeIndex]?._id;
     dispatch(getCategories());
     dispatch(createCarts());
   }, [dispatch]);
@@ -21,6 +23,11 @@ const HomePage = () => {
   const handleClick = (index, id) => {
     setActiveIndex(index);
     dispatch(getCategory(id));
+  };
+
+  const addProduct = (product) => {
+    const id = cart.id;
+    dispatch(addProductForCarts(product, id));
   };
 
   return (
@@ -31,7 +38,7 @@ const HomePage = () => {
         handleClick={handleClick}
       />
       <div className={s.home_container}>
-        <HeaderHomePage cartsProducts={cartsProducts} />
+        <HeaderHomePage cartsProducts={cart.products} />
         <div className={s.home_list_products}>
           <div className={s.home_list_products_title}>
             <span>
@@ -39,15 +46,7 @@ const HomePage = () => {
             </span>
           </div>
           <div className={s.home_list_products_items}>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <Product addProductForCarts={addProduct} />
           </div>
         </div>
       </div>

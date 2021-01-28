@@ -2,7 +2,7 @@ import React from "react";
 import s from "../../../containers/HomeContainers/HomePage.module.css";
 import { NavLink } from "react-router-dom";
 
-const Product = () => {
+const Product = ({ addProductForCarts }) => {
   const product = { _id: "fdssgj12334" };
   return (
     <div className={s.item_product}>
@@ -14,7 +14,12 @@ const Product = () => {
           />
         </NavLink>
         <div className={s.item_product_btn_Add}>
-          <button className="icon-btn add-btn">+</button>
+          <button
+            className="icon-btn add-btn"
+            onClick={() => addProductForCarts(product)}
+          >
+            +
+          </button>
         </div>
       </div>
       <div className={s.item_product_price}>

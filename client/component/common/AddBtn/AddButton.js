@@ -4,9 +4,9 @@ import s from "./AddButton.module.css";
 const AddButton = ({ value, method }) => {
   return (
     <div className={s.btn_Add}>
-      <button className={`{s.iconBtn} + {s.addBtn}`} onClick={method}>
-        <div className={s.addIcon}></div>
-        <div className={s.btnTxt}>{value}</div>
+      <button className={s["icon-btn"] + s["add-btn"]} onClick={method}>
+        <div className={s["add-icon"]}></div>
+        <div className={s["btn-txt"]}>{value}</div>
       </button>
     </div>
   );

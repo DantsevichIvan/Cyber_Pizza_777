@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100vh;
 }
 .registration_form{
     box-shadow: 0 0 12px 0 #d8d8d8;

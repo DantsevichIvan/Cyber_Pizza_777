@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import s from "./HomeSideBar.module.css";
+import { useSelector } from "react-redux";
+import LogOut from "../../../containers/AuthContainers/LogOut/LogOut";
 
 const HomeSideBar = ({ categories, activeIndex, handleClick }) => {
+  const isAuth = useSelector((state) => state.auth.isAuth);
   return (
     <div className={s.home_list_categories}>
       <div className={s.side_bar_title}>
@@ -32,7 +35,7 @@ const HomeSideBar = ({ categories, activeIndex, handleClick }) => {
           </div>
         </div>
         <div className={s.home_list_categories_link}>
-          <Link to="#">Login</Link>
+          {isAuth ? <LogOut /> : <Link to="/admin/login">Login</Link>}
         </div>
       </div>
     </div>
