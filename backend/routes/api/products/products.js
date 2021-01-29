@@ -20,10 +20,16 @@ router.delete("/products/:id", auth, async (req, res) => {
 });
 
 async function getProducts(req, res) {
-  Products.find({}, async function (err, products) {
-    if (err) return console.log(err);
-    await res.status(200).json({ products });
-  });
+  try {
+    Products.find({}, async function (err, products) {
+      if (err) return console.log(err);
+      await res.status(200).json({ products });
+    });
+  } catch (e) {
+    res.status(500).json({
+      message: "Что-то пошло не так, попробуйте снова",
+    });
+  }
 }
 async function getProduct(req, res) {
   try {
@@ -36,11 +42,19 @@ async function getProduct(req, res) {
     res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
   }
 }
+
 async function creatProduct(req, res) {
   try {
-    const { name, price, description, weight, image } = req.body.product;
+    const {
+      name,
+      price,
+      description,
+      weight,
+      image,
+      categories,
+    } = req.body.product;
     await Products.create(
-      { name, price, description, weight, image },
+      { name, price, description, weight, image, categories },
       function (err) {
         if (err) return console.log(err);
         res.status(200).json({ message: "Products create" });
@@ -49,17 +63,24 @@ async function creatProduct(req, res) {
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
-      success: false,
     });
   }
 }
 async function updateProduct(req, res) {
   try {
     let productId = req.params.id;
-    const { name, price, description, weight, image } = req.body.product;
+    const {
+      name,
+      price,
+      description,
+      weight,
+      image,
+      categories,
+    } = req.body.product;
+
     Products.findByIdAndUpdate(
       productId,
-      { name, price, description, weight, image },
+      { name, price, description, weight, image, categories },
       { new: true, upsert: true },
       async function (err, product) {
         if (err) return console.log(err);
@@ -69,7 +90,6 @@ async function updateProduct(req, res) {
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
-      success: false,
     });
   }
 }
@@ -83,7 +103,6 @@ async function deleteProduct(req, res) {
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
-      success: false,
     });
   }
 }

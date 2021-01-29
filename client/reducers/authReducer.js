@@ -8,7 +8,7 @@ const initState = {
   isAuth: false,
   email: "",
   name: "",
-  isAdmin: false,
+  isAdmin: null,
   errorData: "",
   errorAuth: "",
 };
@@ -49,6 +49,7 @@ const AuthReducer = (state = initState, action) => {
       return {
         ...state,
         isAuth: false,
+        isAdmin: null,
       };
     }
     default:

@@ -50,7 +50,7 @@ const data = [
         description: "Tomato sauce, mozzarella, and oregano",
         weight: "8",
         image: "",
-        category: _ObjectId,
+        category: { _ObjectId, name: "Pizza" },
       },
     ],
   },

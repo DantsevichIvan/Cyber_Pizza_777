@@ -1,33 +1,75 @@
-import React from 'react';
-import {Switch, Route} from "react-router-dom";
-import Products from "./containers/Products";
-import Categories from "./containers/Categories";
-import Login from "./containers/Login";
-import Registration from "./containers/Registration";
-import LogOut from "./containers/LogOut";
-import AuthRoute from "./component/AuthRoute";
-import Info from "./containers/Info";
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Products from "./containers/AdminContainers/Products/Products";
+import Categories from "./containers/AdminContainers/Categories/Categories";
+import { routes } from "./shared/constants";
+
+const HomePage = React.lazy(() =>
+  import("./containers/HomeContainers/HomePage")
+);
+const ProductPage = React.lazy(() =>
+  import("./component/ProductPage/ProductPage")
+);
+const RoutesAdmin = React.lazy(() => import("./RoutesAdmin"));
+
+const Login = React.lazy(() =>
+  import("./containers/AuthContainers/Login/Login")
+);
+const Registration = React.lazy(() =>
+  import("./containers/AuthContainers/Registration/Registration")
+);
+
+const marketplaceRoutes = [
+  {
+    path: routes.HOME,
+    exact: true,
+    component: HomePage,
+  },
+  {
+    path: routes.PRODUCT,
+    component: ProductPage,
+  },
+  {
+    path: routes.REGISTER,
+    component: Registration,
+  },
+  {
+    path: routes.SIGN_IN,
+    component: Login,
+  },
+  {
+    path: routes.ADMIN,
+    component: RoutesAdmin,
+    routes: [
+      {
+        path: routes.ADMIN_PRODUCTS,
+        component: Products,
+      },
+      {
+        path: routes.ADMIN_CATEGORIES,
+        component: Categories,
+      },
+    ],
+  },
+];
+
+export function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={(props) => <route.component {...props} routes={route.routes} />}
+    />
+  );
+}
 
 const Routes = () => {
-    return (
-        <Switch>
-            <AuthRoute path="/admin/products" >
-                <Products/>
-            </AuthRoute>
-            <AuthRoute path="/admin/categories" >
-                <Categories/>
-            </AuthRoute>
-            {/*<AuthRoute path="/admin/login" >*/}
-            {/*    <Login/>*/}
-            {/*</AuthRoute>*/}
-            {/*<Route path="/admin/products" component={Products}/>*/}
-            {/*<Route path="/admin/categories" component={Categories}/>*/}
-            <Route path="/admin/login" component={Login}/>
-            <Route path="/admin/info" component={Info}/>
-            <Route path="/admin/registration" component={Registration}/>
-            <Route path="/admin/logout" component={LogOut}/>
-        </Switch>
-    );
+  return (
+    <Switch>
+      {marketplaceRoutes.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route} />
+      ))}
+    </Switch>
+  );
 };
 
 export default Routes;

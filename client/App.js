@@ -1,24 +1,16 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, Suspense } from "react";
 import Routes from "./Routes";
-import NavBar from "./NavBar";
-import {getUser} from "./action/authAction";
-import {useDispatch, useSelector} from "react-redux";
-import './style/App.css'
-
+import s from "./App.module.css";
+import Loading from "./component/common/Loading/Loading";
 
 const App = () => {
-    const dispatch = useDispatch()
-    const auth = useSelector(state=>state.auth.isAuth)
-    useEffect(()=>{
-        dispatch(getUser())
-    },[dispatch,auth])
-
-    return (
-        <div className='wrap'>
-            <NavBar/>
-            <Routes/>
-        </div>
-    );
+  return (
+    <div className={s.wrap}>
+      <Suspense fallback={<Loading />}>
+        <Routes />
+      </Suspense>
+    </div>
+  );
 };
 
 export default App;

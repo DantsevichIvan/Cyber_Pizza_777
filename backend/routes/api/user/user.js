@@ -23,21 +23,19 @@ router.post("/user/logout", async (req, res) => {
 });
 
 async function getUser(req, res) {
-  debugger;
-  // if (!req.cookie) {
-  //   //if cookie not
-  //   return res.status(400);
-  // }
+  //if cookie not
+  if (!req.cookies) {
+    return res.status(400);
+  }
   const userId = req.user.userId;
+  //userId not find
   if (!userId) {
-    //userId not find
     return res.status(400).json({ message: "id not find" });
   }
-
   User.findById(userId, async function (err, user) {
     if (err) return console.log("err ", err);
+    //user isAuth not active
     if (!user.isAuth) {
-      //user isAuth not active
       await res.status(400);
     }
     await res.status(200).json({
@@ -45,12 +43,11 @@ async function getUser(req, res) {
     });
   });
 }
-
 async function registration(req, res) {
   try {
     const { name, email, password, confirmPassword } = req.body;
 
-    if (!name || !email || !password || !confirmPassword) {
+    if (!name && !email && !password && !confirmPassword) {
       return res.status(400).json({ message: "Введине данные" });
     }
     //check validation password
@@ -92,11 +89,14 @@ async function registration(req, res) {
     res.status(500).json({ message: err });
   }
 }
-
 async function logIn(req, res) {
   try {
     // extract data from req
     const { email, password } = req.body;
+    //required body
+    if (!email && !password) {
+      return res.status(400).json({ message: "Введите данные" });
+    }
     //find user
     const user = await User.findOne({ email });
     //check find user

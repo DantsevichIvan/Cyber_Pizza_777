@@ -5,6 +5,8 @@ import {
   successErrorData,
   successLogOut,
 } from "../reducers/authReducer";
+import { Redirect } from "react-router-dom";
+import React from "react";
 
 export const login = (values) => async (dispatch) => {
   const res = await fetch("http://localhost:3000/api/user/login", {
@@ -18,6 +20,7 @@ export const login = (values) => async (dispatch) => {
   if (res.status === 200) {
     await res.json();
     dispatch(setAuthUser());
+    dispatch(getUser());
   } else if (res.status === 400) {
     const result = await res.json();
     dispatch(successErrorData(result));
