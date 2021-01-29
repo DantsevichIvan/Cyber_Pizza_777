@@ -19,18 +19,32 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:client" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/client" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d777ba40-5bc7-444d-97da-ec25ccb5fdd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/test.js" afterDir="false" />
+    <list default="true" id="17fdfe05-e472-4909-b9d4-e1b328e10698" name="Default Changelist" comment="Merge branch 'testing-node' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/backend/db-handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/test-helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test-helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middleware/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test-helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/authAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/AuthRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/AuthRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/reducers/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -89,69 +103,42 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test.Validation password">
-    <configuration name="Test.Registration" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/backend/test.js" />
-      <test-names>
-        <test-name value="Test" />
-        <test-name value="Registration" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test.Registration.validation required" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/test.js" />
-      <test-names>
-        <test-name value="Test" />
-        <test-name value="Registration" />
-        <test-name value="validation required" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test.User submit empty form" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/test.js" />
-      <test-names>
-        <test-name value="Test" />
-        <test-name value="User submit empty form" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Test.Validation password" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/backend/test.js" />
-      <test-names>
-        <test-name value="Test" />
-        <test-name value="Validation password" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="db:seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.server:watch">
+    <configuration name="client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="db:seed" />
+        <script value="client" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="client:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="client:watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="seed" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="server" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -168,19 +155,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Jest.Test.Validation password" />
-      <item itemvalue="npm.db:seed" />
-      <item itemvalue="Jest.Test.User submit empty form" />
-      <item itemvalue="Jest.Test.Registration" />
-      <item itemvalue="Jest.Test.Registration.validation required" />
+      <item itemvalue="npm.client" />
+      <item itemvalue="npm.client:watch" />
+      <item itemvalue="npm.seed" />
+      <item itemvalue="npm.server" />
+      <item itemvalue="npm.server:watch" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.Test.Registration.validation required" />
-        <item itemvalue="Jest.Test.Registration" />
-        <item itemvalue="Jest.Test.User submit empty form" />
-        <item itemvalue="npm.db:seed" />
-        <item itemvalue="Jest.Test.Validation password" />
+        <item itemvalue="npm.server:watch" />
+        <item itemvalue="npm.client:watch" />
+        <item itemvalue="npm.server" />
+        <item itemvalue="npm.client" />
+        <item itemvalue="npm.seed" />
       </list>
     </recent_temporary>
   </component>
