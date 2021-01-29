@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import HeaderHomePage from "../../component/Home/HomeHeader/HeaderHomePage";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories, getCategory } from "../../action/categoriesAction";
@@ -12,12 +12,20 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
   const cart = useSelector((state) => state.carts.cart);
+  const productsList = useSelector(
+    (state) => state.categories.category.products
+  );
 
-  console.log(categories?.[activeIndex]?._id);
-  useEffect(() => {
+  console.log(productsList);
+  useEffect(async () => {
+    await initialState();
     const id = categories?.[activeIndex]?._id;
-    dispatch(getCategories());
-    dispatch(createCarts());
+    console.log(id);
+  }, []);
+
+  const initialState = useCallback(async () => {
+    await dispatch(getCategories());
+    await dispatch(createCarts());
   }, [dispatch]);
 
   const handleClick = (index, id) => {
@@ -46,7 +54,13 @@ const HomePage = () => {
             </span>
           </div>
           <div className={s.home_list_products_items}>
-            <Product addProductForCarts={addProduct} />
+            {productsList.map((product) => (
+              <Product
+                key={product._id}
+                product={product}
+                addProductForCarts={addProduct}
+              />
+            ))}
           </div>
         </div>
       </div>

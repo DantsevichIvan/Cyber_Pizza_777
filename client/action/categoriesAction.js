@@ -1,4 +1,4 @@
-import { setCategories } from "../reducers/categoriesReducer";
+import { setCategories, setCategory } from "../reducers/categoriesReducer";
 
 export const getCategories = () => async (dispatch) => {
   const res = await fetch("http://localhost:3000/api/categories", {
@@ -12,7 +12,7 @@ export const getCategory = (id) => async (dispatch) => {
     method: "GET",
   });
   const result = await res.json();
-  console.log(result);
+  dispatch(setCategory(result));
 };
 
 export const createCategories = (categories) => async (dispatch) => {

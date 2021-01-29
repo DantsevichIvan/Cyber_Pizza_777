@@ -43,7 +43,9 @@ async function getCategory(req, res) {
       if (err) return console.log("err ", err);
       if (!!category) {
         await Products.find()
-          .populate(category.name)
+          .populate({
+            path: category.name,
+          })
           .exec(function (err, products) {
             if (err) return console.log(err);
             res.status(200).json({ products });

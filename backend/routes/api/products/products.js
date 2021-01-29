@@ -77,7 +77,6 @@ async function updateProduct(req, res) {
       image,
       categories,
     } = req.body.product;
-    debugger;
 
     Products.findByIdAndUpdate(
       productId,
