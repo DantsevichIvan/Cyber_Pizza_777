@@ -89,42 +89,69 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.server:watch">
-    <configuration name="client" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="client" />
-      </scripts>
+  <component name="RunManager" selected="Jest.Test.Validation password">
+    <configuration name="Test.Registration" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/backend/test.js" />
+      <test-names>
+        <test-name value="Test" />
+        <test-name value="Registration" />
+      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="client:watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="client:watch" />
-      </scripts>
+    <configuration name="Test.Registration.validation required" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/test.js" />
+      <test-names>
+        <test-name value="Test" />
+        <test-name value="Registration" />
+        <test-name value="validation required" />
+      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="seed" />
-      </scripts>
+    <configuration name="Test.User submit empty form" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/test.js" />
+      <test-names>
+        <test-name value="Test" />
+        <test-name value="User submit empty form" />
+      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="Test.Validation password" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/backend/test.js" />
+      <test-names>
+        <test-name value="Test" />
+        <test-name value="Validation password" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="db:seed" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="server" />
+        <script value="db:seed" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -141,19 +168,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.client" />
-      <item itemvalue="npm.client:watch" />
-      <item itemvalue="npm.seed" />
-      <item itemvalue="npm.server" />
-      <item itemvalue="npm.server:watch" />
+      <item itemvalue="Jest.Test.Validation password" />
+      <item itemvalue="npm.db:seed" />
+      <item itemvalue="Jest.Test.User submit empty form" />
+      <item itemvalue="Jest.Test.Registration" />
+      <item itemvalue="Jest.Test.Registration.validation required" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server:watch" />
-        <item itemvalue="npm.client:watch" />
-        <item itemvalue="npm.server" />
-        <item itemvalue="npm.client" />
-        <item itemvalue="npm.seed" />
+        <item itemvalue="Jest.Test.Registration.validation required" />
+        <item itemvalue="Jest.Test.Registration" />
+        <item itemvalue="Jest.Test.User submit empty form" />
+        <item itemvalue="npm.db:seed" />
+        <item itemvalue="Jest.Test.Validation password" />
       </list>
     </recent_temporary>
   </component>
