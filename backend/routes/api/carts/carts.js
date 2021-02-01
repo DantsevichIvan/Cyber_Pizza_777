@@ -43,11 +43,6 @@ async function addNewProduct(req, res) {
 
     const carts = await Carts.findById(cartsId);
 
-    carts.products.findOne({ products: { name: name } }, async (err, item) => {
-      if (err) console.log(err);
-      console.log(item);
-    });
-
     await carts.products.push({ name, price });
     await carts.save();
 
@@ -66,17 +61,12 @@ async function deleteProductFromCarts(req, res) {
   try {
     const cart_id = req.params.cart_id;
     const item_id = req.params.item_id;
-
-    Carts.findByIdAndUpdate(
-      cart_id,
-      { $pull: { products: { _id: item_id } } },
-      {},
-      async function (err) {
-        if (err) return console.log(err);
-        res.status(200).json({ message: "Product Delete", id: cart_id });
-      }
-    );
+    const carts = await Carts.findById(cart_id);
+    await carts.products.remove({ _id: item_id });
+    await carts.save();
+    res.status(200).json({ message: "Product Delete", id: cart_id });
   } catch (e) {
+    console.log(e);
     throw new Error("Product not delete");
   }
 }
