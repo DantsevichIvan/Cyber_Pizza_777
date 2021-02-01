@@ -2,8 +2,9 @@ import React from "react";
 import Tags from "../Tags/Tags";
 import s from "./Header.module.css";
 import OrderStatus from "../../common/OrderStatus/OrderStatus";
+import HomeSideBar from "../HomeSideBar/HomeSideBar";
 
-const HeaderHomePage = ({ cartsProducts }) => {
+const HeaderHomePage = ({ cartsProducts, setIsOrderStatus }) => {
   return (
     <div className={s.header_home}>
       <div className={s.header_home_info}>
@@ -12,16 +13,16 @@ const HeaderHomePage = ({ cartsProducts }) => {
             <span>Filters</span>
           </div>
           <div className={s.header_home_info_filter_container}>
-            <div className={s.header_home_info_filter_tags}>
-              <Tags />
-              <Tags />
-            </div>
+            <div className={s.header_home_info_filter_tags}></div>
             <button className={s.header_home_info_filter_btn}>
               All filters
             </button>
           </div>
         </div>
-        <OrderStatus cartsProducts={cartsProducts} />
+        <OrderStatus
+          cartsProducts={cartsProducts}
+          setIsOrderStatus={setIsOrderStatus}
+        />
       </div>
     </div>
   );

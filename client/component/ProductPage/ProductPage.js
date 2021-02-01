@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import OrderStatus from "../common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import s from "./ProductPage.module.css";
 import OrderStatusPage from "../OrderStatusPage/OrderStatusPage";
+import { getProduct } from "../../action/productsAction";
+import { useDispatch, useSelector } from "react-redux";
+import not_image from "../../images/not-img.png";
 
 const toppings = [
   "Roast Beef",
@@ -19,11 +22,17 @@ const toppings = [
   "Marinara",
 ];
 
-const ProductPage = () => {
-  const products = [];
+const ProductPage = (props) => {
+  const dispatch = useDispatch();
   const [count, setCount] = useState(1);
   const [isOrderStatus, setIsOrderStatus] = useState(false);
+  const cart = useSelector((state) => state.carts.cart);
+  const product = useSelector((state) => state.products.product);
 
+  useEffect(() => {
+    const id = props.match.params.prodId;
+    dispatch(getProduct(id));
+  }, [props, dispatch]);
   const handleSubmit = () => {
     setIsOrderStatus(!isOrderStatus);
   };
@@ -37,21 +46,21 @@ const ProductPage = () => {
             Back to Menu
           </NavLink>
         </div>
-        <OrderStatus cartsProducts={products} />
+        <OrderStatus
+          cartsProducts={cart.products}
+          setIsOrderStatus={setIsOrderStatus}
+        />
       </div>
       <div className={s.container}>
         <div className={s.img}>
-          <img
-            src="https://www.pizzatempo.by/i/photo/catalog/products/t/r_99_280x280.jpg?v=1605510590"
-            alt=""
-          />
+          <img src={product.image ? product.image : not_image} alt="" />
         </div>
         <div className={s.infoProduct}>
           <div className={s.name}>
-            <span>Name</span>
+            <span>{product.name}</span>
           </div>
           <div className={s.description}>
-            <p>Description</p>
+            <p>{product.description}</p>
           </div>
           <div className={s.size}>
             <span className={s.title}>Size</span>
@@ -92,7 +101,9 @@ const ProductPage = () => {
             </div>
           </div>
           <div className={s.price}>
-            <span className={s.priceValue}>${(13.4 * count).toFixed(1)}</span>
+            <span className={s.priceValue}>
+              ${(product.price * count).toFixed(1)}
+            </span>
             <div className={s.priceWrap}>
               <div className={s.priceCount}>
                 <button

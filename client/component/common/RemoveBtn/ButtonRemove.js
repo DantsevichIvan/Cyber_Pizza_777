@@ -1,11 +1,21 @@
 import React from "react";
 import s from "./ButtonRemove.module.css";
+import cn from "classnames";
 
-const ButtonRemove = ({ remove, id }) => {
+const ButtonRemove = ({
+  remove,
+  id,
+  classNameRoot,
+  classNameLeft,
+  classNameRight,
+}) => {
   return (
-    <div className={s.close_container} onClick={() => remove(id)}>
-      <div className={s.leftright}></div>
-      <div className={s.rightleft}></div>
+    <div
+      className={cn(s.close_container, classNameRoot)}
+      onClick={() => remove(id)}
+    >
+      <div className={cn(s.leftright, classNameLeft)}></div>
+      <div className={cn(s.rightleft, classNameRight)}></div>
     </div>
   );
 };

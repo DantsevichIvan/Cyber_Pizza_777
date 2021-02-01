@@ -6,7 +6,7 @@ const auth = require("./../../../middleware/auth.middleware");
 router.get("/products", async (req, res) => {
   await getProducts(req, res);
 });
-router.get("/products/:id", auth, async (req, res) => {
+router.get("/products/:id", async (req, res) => {
   await getProduct(req, res);
 });
 router.post("/products", auth, async (req, res) => {
@@ -34,7 +34,8 @@ async function getProducts(req, res) {
 async function getProduct(req, res) {
   try {
     const productId = req.params.id;
-    Products.find(productId, async function (err, product) {
+    console.log(productId);
+    Products.findById(productId, async function (err, product) {
       if (err) return console.log(err);
       await res.status(200).json({ product });
     });

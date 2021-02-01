@@ -20,14 +20,10 @@ router.delete("/categories/:id", auth, async (req, res) => {
   await deleteCategories(req, res);
 });
 
-//finish update and geCategory
-
 async function getCategories(req, res) {
   try {
-    Categories.find({}, async function (err, categories) {
-      if (err) return console.log(err);
-      await res.status(200).json({ categories });
-    });
+    const categories = await Categories.find();
+    res.json({ categories });
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
@@ -39,21 +35,12 @@ async function getCategories(req, res) {
 async function getCategory(req, res) {
   try {
     const CategoryId = req.params.id;
-    await Categories.findById(CategoryId, async function (err, category) {
-      if (err) return console.log("err ", err);
-      if (!!category) {
-        await Products.find()
-          .populate({
-            path: category.name,
-          })
-          .exec(function (err, products) {
-            if (err) return console.log(err);
-            res.status(200).json({ products });
-          });
-      } else {
-        await res.status(200).json({ message: "Products are missing" });
-      }
-    });
+
+    const category = await Categories.findById(CategoryId).populate("products");
+    if (!category) {
+      throw new Error("Category not found");
+    }
+    return res.json({ products: category.products });
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",

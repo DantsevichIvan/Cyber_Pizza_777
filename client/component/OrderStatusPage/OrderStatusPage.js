@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./OrderStatusPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
+import OrderPrice from "./OrderPrice/OrderPrice";
+import OrderProgressTitle from "./OrderProgressTitle/OrderProgressTitle";
+import OrderProgressContainer from "./OrderProgressContainer/OrderProgressContainer";
+import { deleteProductToCart } from "../../action/cartsAction";
 
 const OrderStatusPage = ({ setIsOrderStatus }) => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
+  const [subtotal, setSubtotal] = useState(0);
 
+  useEffect(() => {
+    let sum = 0;
+    for (let i = 0; i < cart.products.length; i++) {
+      sum += cart.products[i].price;
+    }
+    setSubtotal(sum);
+  }, [subtotal, cart]);
+
+  const removeProduct = (id) => {
+    let [id_Cart, id_Prod] = [cart.id, id];
+    dispatch(deleteProductToCart(id_Cart, id_Prod));
+  };
   return (
     <Formik
       initialValues={{
@@ -23,27 +41,29 @@ const OrderStatusPage = ({ setIsOrderStatus }) => {
           <div className={s.container}>
             <div className={s.header}>
               <span>Order Status</span>
-              <span onClick={() => setIsOrderStatus(false)}>
+              <span className={s.link} onClick={() => setIsOrderStatus(false)}>
                 Hide <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </div>
-            <div className={s.progress}></div>
-            <div className={s.price}>
-              <div className={s["price-wrap"]}>
-                <div className={s["price-content"]}>
-                  <span>Subtotal</span>
-                  <span>$51.80</span>
-                </div>
-                <div className={s["price-content"]}>
-                  <span>Discount {values.discount}%</span>
-                  <span>$5.18</span>
-                </div>
-                <div className={s["price-total"]}>
-                  <span>Total</span>
-                  <span>${values.price}</span>
+
+            <div className={s.progress}>
+              <div className={s["progress-container"]}>
+                <OrderProgressTitle title={"Ordered"} />
+                <div className={s["list-products"]}>
+                  {cart.products.map((product, index) => (
+                    <div key={index}>
+                      <OrderProgressContainer
+                        product={product}
+                        remove={removeProduct}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+
+            <OrderPrice values={values} subtotal={subtotal} />
+
             <div className={s.btn}></div>
           </div>
         </form>

@@ -20,12 +20,10 @@
   font-size: 2.4rem;
   font-weight: 700;
 }
-.header a {
-  font-size: 1.8rem;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
+.link {
+  font-size: 1.6rem!important;
   font-weight: 500;
+  text-transform: uppercase;
 }
 .header a svg {
   margin-left: 10px;
@@ -36,6 +34,92 @@
   width: 100%;
   height: 50%;
   background-color: #ffffff;
+  padding: 10px 20px;
+}
+.progress-container {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.progressTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.progressTitle h2 {
+  position: relative;
+  font-size: 1.8rem;
+  padding-left: 25px;
+}
+.progressTitle span {
+  color: #c3c3c3;
+  text-transform: uppercase;
+}
+.progressTitle h2:before {
+  content: '\2022';
+  position: absolute;
+  font-size: xx-large;
+  line-height: 18px;
+  left: 0;
+}
+.not-active{
+  color: #c3c3c3;
+}
+.list-products{
+  padding-left: 25px;
+}
+.product-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.product-content {
+  display: flex;
+  align-items: center;
+}
+.product-content span{
+  font-size: 1.6rem;
+}
+.product-content img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.product-count {
+  display: flex;
+  align-items: center;
+}
+.product-count span{
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 0;
+  color: #ffffff;
+}
+.product-count span:before{
+  content: '';
+  position: absolute;
+  background-color: #fc7a67;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -3px;
+  left: -7px;
+}
+.product-delete {
+  width: 30px!important;
+  height: 50px!important;
+  padding-left: 15px;
+}
+.product-delete-left {
+  width: 15px;
+  height: 2px;
+}
+.product-delete-right {
+  width: 15px;
+  height: 2px;
 }
 
 /*price*/
@@ -69,3 +153,4 @@
 .price-total span:last-child {
   font-weight: 700;
 }
+

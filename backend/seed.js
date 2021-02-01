@@ -3,7 +3,6 @@ const { promisify } = require("util");
 const seeder = require("mongoose-seed");
 const mongoose = require("mongoose");
 const MONGO_URL = process.env.DB_HOST;
-const _ObjectId = mongoose.Types._ObjectId;
 const bcrypt = require("bcryptjs");
 seeder.connect = promisify(seeder.connect);
 seeder.clearModels = promisify(seeder.clearModels);
@@ -30,42 +29,54 @@ async function main(db) {
 
 main(MONGO_URL);
 
+const pizzas = [
+  {
+    _id: new mongoose.Types.ObjectId(),
+    name: "Carbonara",
+    price: "30",
+    description: "Tomato sauce, mozzarella, parmesan, eggs, and bacon",
+    weight: "10",
+    image: "",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    name: "Margherita",
+    price: "25",
+    description: "Tomato sauce, mozzarella, and oregano",
+    weight: "8",
+    image: "",
+  },
+];
+const drinks = [
+  {
+    _id: new mongoose.Types.ObjectId(),
+    name: "Coca-cola",
+    price: "5",
+    description: "Prazdnik k nam prihodit",
+    weight: "10",
+    image: "",
+  },
+];
+
 const data = [
   {
     model: "Products",
-    documents: [
-      {
-        _id: _ObjectId,
-        name: "Carbonara",
-        price: "30",
-        description: "Tomato sauce, mozzarella, parmesan, eggs, and bacon",
-        weight: "10",
-        image: "",
-        category: _ObjectId,
-      },
-      {
-        _id: _ObjectId,
-        name: "Margherita",
-        price: "25",
-        description: "Tomato sauce, mozzarella, and oregano",
-        weight: "8",
-        image: "",
-        category: { _ObjectId, name: "Pizza" },
-      },
-    ],
+    documents: [...pizzas, ...drinks],
   },
   {
     model: "Categories",
     documents: [
       {
-        _id: _ObjectId,
+        _id: new mongoose.Types.ObjectId(),
         name: "Pizza",
         available: "true",
+        products: pizzas.map((pizza) => pizza._id),
       },
       {
-        _id: _ObjectId,
+        _id: new mongoose.Types.ObjectId(),
         name: "drink",
         available: "false",
+        products: drinks.map((drink) => drink._id),
       },
     ],
   },
