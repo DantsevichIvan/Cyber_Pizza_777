@@ -68,7 +68,7 @@ const data = [
     documents: [
       {
         _id: new mongoose.Types.ObjectId(),
-        name: "Pizza",
+        name: "pizza",
         available: "true",
         products: pizzas.map((pizza) => pizza._id),
       },

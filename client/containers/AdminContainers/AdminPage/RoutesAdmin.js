@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "./action/authAction";
-import s from "./containers/AdminContainers/AdminPage/Admin.module.css";
-import NavBar from "./component/Admin/NavBar/NavBar";
+import { getUser } from "../../../action/authAction";
+import s from "./Admin.module.css";
+import NavBar from "../../../component/Admin/NavBar/NavBar";
 import { Redirect, Switch } from "react-router-dom";
-import { RouteWithSubRoutes } from "./Routes";
+import { RouteWithSubRoutes } from "../../../Routes";
 
 const RoutesAdmin = ({ routes }) => {
   const dispatch = useDispatch();

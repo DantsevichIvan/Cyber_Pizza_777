@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import s from "./HomeSideBar.module.css";
 import { useSelector } from "react-redux";
 import LogOut from "../../../containers/AuthContainers/LogOut/LogOut";
 
-const HomeSideBar = ({ categories, activeIndex, handleClick }) => {
+const HomeSideBar = ({ categories }) => {
   const isAuth = useSelector((state) => state.auth.isAuth);
   return (
     <div className={s.home_list_categories}>
@@ -18,18 +18,15 @@ const HomeSideBar = ({ categories, activeIndex, handleClick }) => {
           </div>
           <div className={s.home_list_categories_items}>
             {categories.map((item, index) => {
-              const cn =
-                activeIndex === index
-                  ? s.active_item
-                  : s.home_list_categories_item;
               return (
-                <span
-                  className={cn}
+                <NavLink
+                  activeClassName={s.active_item}
+                  className={s.home_list_categories_item}
                   key={index}
-                  onClick={() => handleClick(index, item._id)}
+                  to={`/${item.name}`}
                 >
                   {item.name}
-                </span>
+                </NavLink>
               );
             })}
           </div>

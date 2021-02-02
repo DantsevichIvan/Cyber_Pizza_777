@@ -10,13 +10,18 @@ const HomePage = React.lazy(() =>
 const ProductPage = React.lazy(() =>
   import("./component/ProductPage/ProductPage")
 );
-const RoutesAdmin = React.lazy(() => import("./RoutesAdmin"));
+const RoutesAdmin = React.lazy(() =>
+  import("./containers/AdminContainers/AdminPage/RoutesAdmin")
+);
 
 const Login = React.lazy(() =>
   import("./containers/AuthContainers/Login/Login")
 );
 const Registration = React.lazy(() =>
   import("./containers/AuthContainers/Registration/Registration")
+);
+const HomeListProducts = React.lazy(() =>
+  import("./component/Home/HomeListProducts/HomeListProducts")
 );
 
 const marketplaceRoutes = [

@@ -61,11 +61,12 @@
   color: black;
 }
 
-.home_list_categories_items span {
+.home_list_categories_items a {
   font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: bold;
   padding-bottom: 10px;
+  text-decoration: none;
 }
 
 .home_list_categories_link a {
