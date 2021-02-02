@@ -3,7 +3,8 @@ const SET_CARTS = "SET_CARTS";
 const initState = {
   cart: {
     products: [],
-    price: 0,
+    total: 0,
+    subtotal: 0,
     discount: 0,
     id: "",
   },
@@ -16,7 +17,8 @@ const CartsReducer = (state = initState, action) => {
         ...state,
         cart: {
           products: action.data.carts.products,
-          price: action.data.carts.price,
+          subtotal: action.data.carts.subtotal,
+          total: action.data.carts.total,
           discount: action.data.carts.discount,
           id: action.data.carts._id,
         },

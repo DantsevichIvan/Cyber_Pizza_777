@@ -8,7 +8,9 @@ const cartsSchema = new Schema({
       count: { type: Number, default: 1 },
     },
   ],
-  price: { type: Number, default: 0 },
+
+  subtotal: { type: Number, default: 0 },
+  total: { type: Number, default: 0 },
   discount: { type: Number, default: 0 },
 });
 

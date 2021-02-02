@@ -9,4 +9,5 @@ module.exports = function (app) {
   app.use("/api", require("./routes/api/categories/categories"));
   app.use("/api", require("./routes/api/user/user"));
   app.use("/api", require("./routes/api/carts/carts"));
+  app.use("/api", require("./routes/api/order/order"));
 };

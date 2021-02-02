@@ -35,7 +35,7 @@ export const addCoupon = (id, value) => async (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ coupon: value }),
+    body: JSON.stringify({ coupon: value.coupon }),
   });
   const result = await res.json();
   dispatch(getCarts(result.id));

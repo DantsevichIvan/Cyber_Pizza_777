@@ -38,17 +38,19 @@ async function createCarts(req, res) {
 
 async function addNewProduct(req, res) {
   try {
-    const { name, price } = req.body.product;
+    const { name, subtotal, discount } = req.body.product;
     let cartsId = req.params.id;
+    let total = subtotal - (subtotal / 100) * discount;
 
     const carts = await Carts.findById(cartsId);
 
-    await carts.products.push({ name, price });
+    await carts.products.push({ name, subtotal, total });
+
+    await carts.update({ subtotal, total });
     await carts.save();
 
     res.status(200).json({ message: "Product add to cart", id: cartsId });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
     });
@@ -66,7 +68,6 @@ async function deleteProductFromCarts(req, res) {
     await carts.save();
     res.status(200).json({ message: "Product Delete", id: cart_id });
   } catch (e) {
-    console.log(e);
     throw new Error("Product not delete");
   }
 }
@@ -75,10 +76,15 @@ async function addCouponToCarts(req, res) {
   try {
     const { coupon } = req.body;
     let cartsId = req.params.id;
-
+    let discount;
+    if (!coupon.match(/[a-z]/)) {
+      return res.status(400).json({ message: "Coupon not validate" });
+    } else {
+      discount = coupons.find((el) => el.coupon === coupon).discount;
+    }
     Carts.findByIdAndUpdate(
       cartsId,
-      { discount: coupon },
+      { discount: discount },
       {},
       async function (err) {
         if (err) return console.log(err);
@@ -99,8 +105,19 @@ async function getCarts(req, res) {
   }
   Carts.findById(id, async function (err, carts) {
     if (err) return console.log("err", err);
+
     await res.status(200).json({ carts });
   });
 }
+
+const coupons = [
+  { coupon: "coupon5", discount: 5 },
+  { coupon: "coupon10", discount: 10 },
+  { coupon: "coupon20", discount: 20 },
+  { coupon: "coupon30", discount: 30 },
+  { coupon: "coupon40", discount: 40 },
+  { coupon: "coupon50", discount: 50 },
+  { coupon: "coupon55", discount: 55 },
+];
 
 module.exports = router;

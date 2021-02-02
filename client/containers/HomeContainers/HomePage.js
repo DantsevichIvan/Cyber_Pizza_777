@@ -7,6 +7,8 @@ import HomeSideBar from "../../component/Home/HomeSideBar/HomeSideBar";
 import s from "./HomePage.module.css";
 import Product from "../../component/Home/Product/Product";
 import OrderStatusPage from "../../component/OrderStatusPage/OrderStatusPage";
+import ModalWindow from "../../component/common/Modal/ModalWindow";
+import CouponForm from "../../component/OrderStatusPage/Form/CouponForm";
 
 const HomePage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -15,7 +17,11 @@ const HomePage = () => {
   const categories = useSelector((state) => state.categories.categories);
   const cart = useSelector((state) => state.carts.cart);
   const products = useSelector((state) => state.products.products);
+  const [isModal, setIsModal] = useState(false);
 
+  const openCloseCouponWindow = () => {
+    setIsModal(!isModal);
+  };
   useEffect(() => {
     dispatch(getCategories());
     dispatch(createCarts());
@@ -33,7 +39,11 @@ const HomePage = () => {
   };
 
   const addProduct = (product) => {
-    let newProd = { name: product.name, price: product.price };
+    let newProd = {
+      name: product.name,
+      subtotal: product.price + cart.subtotal,
+      discount: cart.discount,
+    };
     const id = cart.id;
     dispatch(addProductForCarts(newProd, id));
   };
@@ -68,7 +78,16 @@ const HomePage = () => {
         </div>
       </div>
       {isOrderStatus ? (
-        <OrderStatusPage setIsOrderStatus={setIsOrderStatus} />
+        <OrderStatusPage
+          openCloseCouponWindow={openCloseCouponWindow}
+          setIsOrderStatus={setIsOrderStatus}
+        />
+      ) : null}
+      {isModal ? (
+        <ModalWindow
+          Component={CouponForm}
+          openCloseModal={openCloseCouponWindow}
+        />
       ) : null}
     </div>
   );
