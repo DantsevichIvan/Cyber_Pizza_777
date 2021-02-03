@@ -129,7 +129,7 @@
 }
 .price-wrap {
   box-sizing: border-box;
-  padding: 0px 20px 30px;
+  padding: 0px 20px 15px;
   display: flex;
   flex-direction: column;
 }
@@ -155,3 +155,8 @@
   font-weight: 700;
 }
 
+/*button*/
+.btn{
+  display: flex;
+  justify-content: center;
+}

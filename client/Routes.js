@@ -20,11 +20,15 @@ const Login = React.lazy(() =>
 const Registration = React.lazy(() =>
   import("./containers/AuthContainers/Registration/Registration")
 );
-const HomeListProducts = React.lazy(() =>
-  import("./component/Home/HomeListProducts/HomeListProducts")
+const PlaceOrderPage = React.lazy(() =>
+  import("./component/PlaceOrderPage/PlaceOrderPage")
 );
 
 const marketplaceRoutes = [
+  {
+    path: routes.PLACE_ORDER,
+    component: PlaceOrderPage,
+  },
   {
     path: routes.PRODUCT,
     exact: true,
@@ -43,6 +47,7 @@ const marketplaceRoutes = [
     path: routes.SIGN_IN,
     component: Login,
   },
+
   {
     path: routes.ADMIN,
     component: RoutesAdmin,

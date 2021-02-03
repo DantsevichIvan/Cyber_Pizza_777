@@ -29,8 +29,3 @@ const HeaderHomePage = ({ cartsProducts, setIsOrderStatus }) => {
 };
 
 export default HeaderHomePage;
-// /}
-//   {/*  tags.map((item)=>{*/}
-//   {/*   return <Tags/>*/}
-//   {/*  })*/}
-//   {/*}

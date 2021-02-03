@@ -8,6 +8,7 @@ import OrderProgressTitle from "./OrderProgressTitle/OrderProgressTitle";
 import OrderProgressContainer from "./OrderProgressContainer/OrderProgressContainer";
 import { deleteProductToCart } from "../../action/cartsAction";
 import { createOrder } from "../../action/orderAction";
+import PlaceAnOrderBtn from "./PlaceAnOrderBtn/PlaceAnOrderBtn";
 
 const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
@@ -51,7 +52,9 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
 
       <OrderPrice values={cart} />
 
-      <div className={s.btn}></div>
+      <div className={s.btn}>
+        <PlaceAnOrderBtn />
+      </div>
     </div>
   );
 };
