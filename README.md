@@ -1,2 +1,2 @@
-###### heroku - https://cyberpizza.herokuapp.com/api/products/
+###### heroku - https://cyberpizza.herokuapp.com
 ****
