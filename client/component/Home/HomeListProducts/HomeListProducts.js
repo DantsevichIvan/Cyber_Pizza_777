@@ -4,9 +4,10 @@ import Product from "../Product/Product";
 import { getCategory } from "../../../action/categoriesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductForCarts } from "../../../action/cartsAction";
+import { useParams } from "react-router-dom";
 
 const HomeListProducts = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { id } = useParams();
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
   const products = useSelector((state) => state.products.products);
@@ -14,8 +15,7 @@ const HomeListProducts = () => {
 
   useEffect(() => {
     if (categories.length) {
-      setActiveIndex(0);
-      dispatch(getCategory(categories[0]._id));
+      dispatch(getCategory(id));
     }
   }, [categories]);
 
@@ -32,7 +32,7 @@ const HomeListProducts = () => {
   return (
     <div className={s.home_list_products}>
       <div className={s.home_list_products_title}>
-        <span>{!!categories.length ? categories[activeIndex].name : null}</span>
+        <span>{categories.name}</span>
       </div>
       <div className={s.home_list_products_items}>
         {products.map((product) => (

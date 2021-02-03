@@ -31,6 +31,10 @@ const marketplaceRoutes = [
     component: HomePage,
   },
   {
+    path: `${routes.HOME}:name?/:id?`,
+    component: HomeListProducts,
+  },
+  {
     path: routes.PRODUCT,
     component: ProductPage,
   },
@@ -62,6 +66,7 @@ export function RouteWithSubRoutes(route) {
   return (
     <Route
       path={route.path}
+      exact={route.exact}
       render={(props) => <route.component {...props} routes={route.routes} />}
     />
   );

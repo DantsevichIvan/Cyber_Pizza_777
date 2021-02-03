@@ -43,7 +43,10 @@ async function addNewProduct(req, res) {
     let total = subtotal - (subtotal / 100) * discount;
 
     const carts = await Carts.findById(cartsId);
-
+    carts.find({ products: { name } }, function (err, docs) {
+      console.log(err);
+      console.log(docs);
+    });
     await carts.products.push({ name, subtotal, total });
 
     await carts.update({ subtotal, total });

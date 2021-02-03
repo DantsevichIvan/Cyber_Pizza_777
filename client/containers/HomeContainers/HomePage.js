@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import HeaderHomePage from "../../component/Home/HomeHeader/HeaderHomePage";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, getCategory } from "../../action/categoriesAction";
-import { addProductForCarts, createCarts } from "../../action/cartsAction";
+import { getCategories } from "../../action/categoriesAction";
+import { createCarts } from "../../action/cartsAction";
 import HomeSideBar from "../../component/Home/HomeSideBar/HomeSideBar";
 import s from "./HomePage.module.css";
 import OrderStatusPage from "../../component/OrderStatusPage/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
 import CouponForm from "../../component/OrderStatusPage/Form/CouponForm";
-import Route, { Switch } from "react-router-dom";
-import { RouteWithSubRoutes } from "../../Routes";
-import HomeListProducts from "../../component/Home/HomeListProducts/HomeListProducts";
+import { Switch, Route } from "react-router-dom";
 
-const HomePage = () => {
+const HomeListProducts = React.lazy(() =>
+  import("../../component/Home/HomeListProducts/HomeListProducts")
+);
+
+const HomePage = ({ match }) => {
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
@@ -37,8 +39,15 @@ const HomePage = () => {
         />
       </div>
       <Switch>
-        <Route path={"/:categories"} component={HomeListProducts} />
+        {categories.map((el) => (
+          <Route
+            path={match.url + `:${el.name}`}
+            key={el._id}
+            component={HomeListProducts}
+          />
+        ))}
       </Switch>
+
       {isOrderStatus ? (
         <OrderStatusPage
           openCloseCouponWindow={openCloseCouponWindow}
