@@ -26,17 +26,14 @@ const HomeListProducts = React.lazy(() =>
 
 const marketplaceRoutes = [
   {
-    path: routes.HOME,
+    path: routes.PRODUCT,
+    exact: true,
+    component: ProductPage,
+  },
+  {
+    path: `${routes.HOME}:category?/:id?`,
     exact: true,
     component: HomePage,
-  },
-  {
-    path: `${routes.HOME}:name?/:id?`,
-    component: HomeListProducts,
-  },
-  {
-    path: routes.PRODUCT,
-    component: ProductPage,
   },
   {
     path: routes.REGISTER,

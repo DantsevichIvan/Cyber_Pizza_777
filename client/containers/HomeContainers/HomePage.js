@@ -8,13 +8,11 @@ import s from "./HomePage.module.css";
 import OrderStatusPage from "../../component/OrderStatusPage/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
 import CouponForm from "../../component/OrderStatusPage/Form/CouponForm";
-import { Switch, Route } from "react-router-dom";
-
-const HomeListProducts = React.lazy(() =>
-  import("../../component/Home/HomeListProducts/HomeListProducts")
-);
+import HomeListProducts from "../../component/Home/HomeListProducts/HomeListProducts";
+import { useParams } from "react-router-dom";
 
 const HomePage = ({ match }) => {
+  const { id, name } = useParams();
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
@@ -37,17 +35,8 @@ const HomePage = ({ match }) => {
           cartsProducts={cart.products}
           setIsOrderStatus={setIsOrderStatus}
         />
+        <HomeListProducts id={id} name={name} />
       </div>
-      <Switch>
-        {categories.map((el) => (
-          <Route
-            path={match.url + `:${el.name}`}
-            key={el._id}
-            component={HomeListProducts}
-          />
-        ))}
-      </Switch>
-
       {isOrderStatus ? (
         <OrderStatusPage
           openCloseCouponWindow={openCloseCouponWindow}

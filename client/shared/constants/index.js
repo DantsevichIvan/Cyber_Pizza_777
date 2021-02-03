@@ -3,7 +3,7 @@ export const routes = {
   REGISTER: "/admin/registration",
   SIGN_IN: "/admin/login",
   ADMIN: "/admin",
-  PRODUCT: "/product/:prodId?",
+  PRODUCT: `/product/:prodId?`,
   ADMIN_PRODUCTS: "/admin/products",
   ADMIN_CATEGORIES: "/admin/categories",
 };

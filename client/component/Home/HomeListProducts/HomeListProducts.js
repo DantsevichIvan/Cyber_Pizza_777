@@ -4,20 +4,18 @@ import Product from "../Product/Product";
 import { getCategory } from "../../../action/categoriesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductForCarts } from "../../../action/cartsAction";
-import { useParams } from "react-router-dom";
 
-const HomeListProducts = () => {
-  const { id } = useParams();
+const HomeListProducts = ({ id, name }) => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.categories.categories);
   const products = useSelector((state) => state.products.products);
   const cart = useSelector((state) => state.carts.cart);
 
   useEffect(() => {
-    if (categories.length) {
+    if (id) {
       dispatch(getCategory(id));
     }
-  }, [categories]);
+  }, [categories, id]);
 
   const addProduct = (product) => {
     let newProd = {
@@ -35,13 +33,16 @@ const HomeListProducts = () => {
         <span>{categories.name}</span>
       </div>
       <div className={s.home_list_products_items}>
-        {products.map((product) => (
-          <Product
-            key={product._id}
-            product={product}
-            addProductForCarts={addProduct}
-          />
-        ))}
+        {id
+          ? products.map((product) => (
+              <Product
+                key={product._id}
+                product={product}
+                addProductForCarts={addProduct}
+                name={name}
+              />
+            ))
+          : null}
       </div>
     </div>
   );
