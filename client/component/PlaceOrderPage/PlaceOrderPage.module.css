@@ -44,6 +44,8 @@
 .header-back button svg{
   margin-right: 8px;
 }
+
+
 .container {
   display: flex;
   margin-top: 8px;
@@ -157,7 +159,7 @@
   justify-content: center;
   align-items: center;
 }
-.btn button{
+.btn button {
   width: 150px;
   background-color: #ffffff;
   color: black;
@@ -172,7 +174,7 @@
   border: 2px solid black;
   font-weight: bold;
 }
-.btn button:hover{
+.btn button:hover {
   background-color: #000000;
   color: white;
   transition: 0.1s;

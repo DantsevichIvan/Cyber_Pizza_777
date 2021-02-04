@@ -9,6 +9,7 @@ import OrderProgressContainer from "./OrderProgressContainer/OrderProgressContai
 import { deleteProductToCart } from "../../action/cartsAction";
 import { createOrder } from "../../action/orderAction";
 import PlaceAnOrderBtn from "./PlaceAnOrderBtn/PlaceAnOrderBtn";
+import Button from "../common/Button/Button";
 
 const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
@@ -46,7 +47,13 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
               </div>
             ))}
           </div>
-          <button onClick={() => openCloseCouponWindow()}>Add Coupon</button>
+        </div>
+        <div className={s["btn"]}>
+          <Button
+            classname={s["coupon-btn"]}
+            title={"Add Coupon"}
+            method={openCloseCouponWindow}
+          />
         </div>
       </div>
 

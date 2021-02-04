@@ -28,6 +28,7 @@ const marketplaceRoutes = [
   {
     path: routes.PLACE_ORDER,
     component: PlaceOrderPage,
+    exact: true,
   },
   {
     path: routes.PRODUCT,
@@ -35,30 +36,35 @@ const marketplaceRoutes = [
     component: ProductPage,
   },
   {
-    path: `${routes.HOME}:category?/:id?`,
+    path: routes.HOME,
     exact: true,
     component: HomePage,
   },
   {
     path: routes.REGISTER,
     component: Registration,
+    exact: true,
   },
   {
     path: routes.SIGN_IN,
     component: Login,
+    exact: true,
   },
 
   {
     path: routes.ADMIN,
     component: RoutesAdmin,
+    exact: true,
     routes: [
       {
         path: routes.ADMIN_PRODUCTS,
         component: Products,
+        exact: true,
       },
       {
         path: routes.ADMIN_CATEGORIES,
         component: Categories,
+        exact: true,
       },
     ],
   },
