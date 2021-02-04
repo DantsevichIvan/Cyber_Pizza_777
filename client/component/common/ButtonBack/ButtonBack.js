@@ -7,7 +7,7 @@ import cn from "classnames";
 const ButtonBack = ({ goBack, title, classname }) => {
   return (
     <div className={cn(s["button-back"], classname)}>
-      <button onClick={goBack}>
+      <button onClick={goBack} type="button">
         <FontAwesomeIcon icon={faArrowLeft} />
         {title}
       </button>

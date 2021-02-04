@@ -55,6 +55,7 @@ const PlaceOrderPage = () => {
           handleChange,
           handleBlur,
           handleSubmit,
+          isSubmitting,
         }) => (
           <form action="" className={s.form} onSubmit={handleSubmit}>
             <div className={s.header}>
@@ -129,7 +130,9 @@ const PlaceOrderPage = () => {
               </div>
             </div>
             <div className={s.btn}>
-              <button type="submit">Confirm Order</button>
+              <button type="submit" disabled={isSubmitting}>
+                Confirm Order
+              </button>
             </div>
           </form>
         )}
