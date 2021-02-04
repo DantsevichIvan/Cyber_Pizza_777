@@ -1,5 +1,5 @@
 import React from "react";
-import s from "../../PlaceOrderPage/PlaceOrderPage.module.css";
+import s from "./Input.module.css";
 
 const Input = ({
   classname,
@@ -8,11 +8,11 @@ const Input = ({
   value,
   onChange,
   onBlur,
-  errors,
-  touched,
+  error,
 }) => {
+  console.log(error);
   return (
-    <div className={s[classname]}>
+    <div className={classname}>
       <label htmlFor="">{name}</label>
       <input
         type="text"
@@ -22,7 +22,7 @@ const Input = ({
         onBlur={onBlur}
         value={value}
       />
-      <span>{errors && touched && errors}</span>
+      <span className={s["error-message"]}>{error}</span>
     </div>
   );
 };

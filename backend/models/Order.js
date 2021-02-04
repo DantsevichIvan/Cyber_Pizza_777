@@ -1,13 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const orderSchema = new Schema({
-  products: [
-    {
-      name: { type: String },
-      price: { type: Number },
-      count: { type: Number, default: 1 },
-    },
-  ],
+  products: [],
   price: { type: Number, default: 0 },
   status: { type: String, default: "Ordered" },
   user: {

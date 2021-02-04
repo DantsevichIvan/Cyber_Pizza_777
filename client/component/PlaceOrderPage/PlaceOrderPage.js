@@ -7,6 +7,15 @@ import { useHistory } from "react-router-dom";
 import ButtonBack from "../common/ButtonBack/ButtonBack";
 import { createOrder } from "../../action/orderAction";
 import { useDispatch } from "react-redux";
+import * as yup from "yup";
+
+const orderSchema = yup.object().shape({
+  name: yup.string().required("Required"),
+  phone: yup.number().required("Required"),
+  street: yup.string().required("Required"),
+  house: yup.number().required("Required"),
+  flat: yup.number().required("Required"),
+});
 
 const PlaceOrderPage = () => {
   const dispatch = useDispatch();
@@ -37,6 +46,7 @@ const PlaceOrderPage = () => {
           products: [{ name: "paperoni", count: 2 }],
         }}
         onSubmit={handleSubmit}
+        validationSchema={orderSchema}
       >
         {({
           errors,
@@ -61,51 +71,46 @@ const PlaceOrderPage = () => {
                   name={"name"}
                   placeholder={"Name"}
                   value={values.name}
-                  errors={errors.name}
-                  touched={touched.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  classname={"form-item"}
+                  error={errors.name}
+                  classname={s["form-item"]}
                 />
                 <Input
                   name={"phone"}
                   placeholder={"Phone"}
                   value={values.phone}
-                  errors={errors.phone}
-                  touched={touched.phone}
                   onChange={handleChange}
+                  error={errors.phone}
                   onBlur={handleBlur}
-                  classname={"form-item"}
+                  classname={s["form-item"]}
                 />
                 <Input
                   name={"street"}
                   placeholder={"Street"}
                   value={values.street}
-                  errors={errors.street}
-                  touched={touched.street}
+                  error={errors.street}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  classname={"form-item"}
+                  classname={s["form-item"]}
                 />
                 <Input
                   name={"house"}
                   placeholder={"House"}
                   value={values.house}
-                  errors={errors.house}
-                  touched={touched.house}
+                  error={errors.house}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  classname={"form-item"}
+                  classname={s["form-item"]}
                 />
                 <Input
                   name={"flat"}
                   placeholder={"Flat"}
                   value={values.flat}
-                  errors={errors.flat}
-                  touched={touched.flat}
+                  error={errors.flat}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  classname={"form-item"}
+                  classname={s["form-item"]}
                 />
               </div>
               <div className={s.order}>
@@ -124,7 +129,7 @@ const PlaceOrderPage = () => {
               </div>
             </div>
             <div className={s.btn}>
-              <button>Confirm Order</button>
+              <button type="submit">Confirm Order</button>
             </div>
           </form>
         )}
