@@ -1,0 +1,14 @@
+.button-back button{
+  background-color: #ffffff;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+}
+.button-back button:active,.header-back button:focus {
+  outline: none;
+}
+.button-back button svg{
+  margin-right: 8px;
+}

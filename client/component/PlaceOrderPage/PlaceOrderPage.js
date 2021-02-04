@@ -6,6 +6,7 @@ import Product from "./Product/Product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import ButtonBack from "../common/ButtonBack/ButtonBack";
 
 const PlaceOrderPage = () => {
   const history = useHistory();
@@ -39,12 +40,7 @@ const PlaceOrderPage = () => {
         }) => (
           <form action="" className={s.form}>
             <div className={s.header}>
-              <div className={s["header-back"]}>
-                <button onClick={goBack}>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                  Back
-                </button>
-              </div>
+              <ButtonBack goBack={goBack} title={"Back"} />
               <h3>Place Order</h3>
             </div>
             <div className={s.container}>

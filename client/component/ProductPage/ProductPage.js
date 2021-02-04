@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import OrderStatus from "../common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +12,7 @@ import OrderStatusPage from "../OrderStatusPage/OrderStatusPage";
 import { getProduct } from "../../action/productsAction";
 import { useDispatch, useSelector } from "react-redux";
 import not_image from "../../images/not-img.png";
+import ButtonBack from "../common/ButtonBack/ButtonBack";
 
 const toppings = [
   "Roast Beef",
@@ -28,6 +29,7 @@ const ProductPage = (props) => {
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const cart = useSelector((state) => state.carts.cart);
   const product = useSelector((state) => state.products.product);
+  const history = useHistory();
 
   useEffect(() => {
     const id = props.match.params.prodId;
@@ -36,16 +38,12 @@ const ProductPage = (props) => {
   const handleSubmit = () => {
     setIsOrderStatus(!isOrderStatus);
   };
+  const goBack = () => history.goBack();
 
   return (
     <div className={s.wrap}>
       <div className={s.header}>
-        <div className={s.linkBack}>
-          <NavLink to="/">
-            <FontAwesomeIcon icon={faArrowLeft} />
-            Back to Menu
-          </NavLink>
-        </div>
+        <ButtonBack title={"Back to Menu"} goBack={goBack} />
         <OrderStatus
           cartsProducts={cart.products}
           setIsOrderStatus={setIsOrderStatus}

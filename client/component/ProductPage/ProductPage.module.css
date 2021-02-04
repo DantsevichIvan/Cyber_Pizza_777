@@ -11,17 +11,6 @@
   padding: 50px 40px 0;
   justify-content: space-between;
 }
-
-.linkBack a {
-  color: black;
-  text-decoration: none;
-  font-size: 1.8rem;
-}
-
-.linkBack a svg {
-  margin-right: 12px;
-}
-
 .container {
   display: flex;
   margin-top: 50px;
