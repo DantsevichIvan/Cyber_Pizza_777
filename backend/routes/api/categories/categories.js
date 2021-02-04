@@ -4,7 +4,7 @@ const Categories = require("../../../models/Categories");
 const auth = require("../../../middleware/auth.middleware");
 
 router.get("/categories", getCategories);
-router.get("/categories/:id", getCategory);
+router.get("/categories/:category", getCategory);
 router.post("/categories", auth, createCategories);
 router.put("/categories/:id", auth, updateCategories);
 router.delete("/categories/:id", auth, deleteCategories);
@@ -23,12 +23,15 @@ async function getCategories(req, res) {
 
 async function getCategory(req, res) {
   try {
-    const CategoryId = req.params.id;
+    const categorySearch = req.params.category;
 
-    const category = await Categories.findById(CategoryId).populate("products");
+    const category = await Categories.findOne({
+      name: categorySearch,
+    }).populate("products");
     if (!category) {
       throw new Error("Category not found");
     }
+
     return res.json({ products: category.products });
   } catch (e) {
     res.status(500).json({

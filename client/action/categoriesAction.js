@@ -8,8 +8,8 @@ export const getCategories = () => async (dispatch) => {
   const result = await res.json();
   dispatch(setCategories(result.categories));
 };
-export const getCategory = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/categories/" + id, {
+export const getCategory = (category) => async (dispatch) => {
+  const res = await fetch(`http://localhost:3000/api/categories/${category}`, {
     method: "GET",
   });
   const result = await res.json();

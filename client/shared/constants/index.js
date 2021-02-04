@@ -1,5 +1,5 @@
 export const routes = {
-  HOME: "/:category?/:id?",
+  HOME: "/:category?",
   REGISTER: "/admin/registration",
   SIGN_IN: "/admin/login",
   ADMIN: "/admin",

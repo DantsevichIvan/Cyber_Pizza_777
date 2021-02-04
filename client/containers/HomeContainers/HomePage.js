@@ -12,7 +12,8 @@ import HomeListProducts from "../../component/Home/HomeListProducts/HomeListProd
 import { useParams } from "react-router-dom";
 
 const HomePage = ({ match }) => {
-  const { id, name } = useParams();
+  const { category } = useParams();
+  console.log(name);
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
@@ -35,7 +36,7 @@ const HomePage = ({ match }) => {
           cartsProducts={cart.products}
           setIsOrderStatus={setIsOrderStatus}
         />
-        <HomeListProducts id={id} name={name} />
+        <HomeListProducts category={category} />
       </div>
       {isOrderStatus ? (
         <OrderStatusPage

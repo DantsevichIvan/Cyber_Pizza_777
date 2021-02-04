@@ -23,7 +23,7 @@ const HomeSideBar = ({ categories }) => {
                   activeClassName={s.active_item}
                   className={s.home_list_categories_item}
                   key={index}
-                  to={`/${item.name}/${item._id}`}
+                  to={`/${item.name}`}
                 >
                   {item.name}
                 </NavLink>
