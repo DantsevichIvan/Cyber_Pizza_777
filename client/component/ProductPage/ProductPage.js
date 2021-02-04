@@ -13,6 +13,7 @@ import { getProduct } from "../../action/productsAction";
 import { useDispatch, useSelector } from "react-redux";
 import not_image from "../../images/not-img.png";
 import ButtonBack from "../common/ButtonBack/ButtonBack";
+import { addProductForCarts } from "../../action/cartsAction";
 
 const toppings = [
   "Roast Beef",
@@ -25,7 +26,7 @@ const toppings = [
 
 const ProductPage = (props) => {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const cart = useSelector((state) => state.carts.cart);
   const product = useSelector((state) => state.products.product);
@@ -36,10 +37,17 @@ const ProductPage = (props) => {
     dispatch(getProduct(id));
   }, [props, dispatch]);
   const handleSubmit = () => {
+    let newProd = {
+      name: product.name,
+      subtotal: Number((product.price * quantity).toFixed(1) + cart.subtotal),
+      discount: cart.discount,
+      count: quantity,
+    };
+    const id = cart.id;
+    dispatch(addProductForCarts(newProd, id));
     setIsOrderStatus(!isOrderStatus);
   };
   const goBack = () => history.goBack();
-
   return (
     <div className={s.wrap}>
       <div className={s.header}>
@@ -100,20 +108,20 @@ const ProductPage = (props) => {
           </div>
           <div className={s.price}>
             <span className={s.priceValue}>
-              ${(product.price * count).toFixed(1)}
+              ${(product.price * quantity).toFixed(1)}
             </span>
             <div className={s.priceWrap}>
               <div className={s.priceCount}>
                 <button
-                  disabled={count === 1}
-                  onClick={() => setCount(count - 1)}
+                  disabled={quantity === 1}
+                  onClick={() => setQuantity(quantity - 1)}
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </button>
-                <span>{count}</span>
+                <span>{quantity}</span>
                 <button
-                  onClick={() => setCount(count + 1)}
-                  disabled={count === 10}
+                  onClick={() => setQuantity(quantity + 1)}
+                  disabled={quantity === 10}
                 >
                   <FontAwesomeIcon icon={faPlus} />
                 </button>

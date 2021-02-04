@@ -15,7 +15,7 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
   const status = useSelector((state) => state.order.order.status);
-
+  console.log(cart);
   useEffect(() => {
     dispatch(createOrder());
   }, [dispatch]);

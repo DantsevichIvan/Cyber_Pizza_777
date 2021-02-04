@@ -22,6 +22,7 @@ const HomeListProducts = ({ id, name }) => {
       name: product.name,
       subtotal: product.price + cart.subtotal,
       discount: cart.discount,
+      count: 1,
     };
     const id = cart.id;
     dispatch(addProductForCarts(newProd, id));
