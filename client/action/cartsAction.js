@@ -29,13 +29,13 @@ export const getCarts = (id) => async (dispatch) => {
   dispatch(setCarts(result));
 };
 
-export const addCoupon = (id, value) => async (dispatch) => {
+export const addCoupon = (id, value, total) => async (dispatch) => {
   const res = await fetch(`http://localhost:3000/api/carts/${id}/code`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ coupon: value.coupon }),
+    body: JSON.stringify({ coupon: value.coupon, total }),
   });
   const result = await res.json();
   dispatch(getCarts(result.id));

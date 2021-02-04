@@ -45,6 +45,7 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
         </div>
         <div className={s["btn"]}>
           <Button
+            disabled={cart.discount}
             classname={s["coupon-btn"]}
             title={"Add Coupon"}
             method={openCloseCouponWindow}

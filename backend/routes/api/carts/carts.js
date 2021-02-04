@@ -73,15 +73,21 @@ async function deleteProductFromCarts(req, res) {
 
 async function addCouponToCarts(req, res) {
   try {
-    const { coupon } = req.body;
+    const { coupon, total } = req.body;
     let cartsId = req.params.id;
-    let discount;
+    let discount, newTotal;
     if (!coupon.match(/[a-z]/)) {
       return res.status(400).json({ message: "Coupon not validate" });
     } else {
       discount = coupons.find((el) => el.coupon === coupon).discount;
+      newTotal = total - (total / 100) * discount;
     }
-    const carts = await Carts.findByIdAndUpdate(cartsId, { discount: discount });
+
+    const carts = await Carts.findByIdAndUpdate(cartsId, {
+      discount,
+      total: newTotal,
+    });
+
     if (!carts) {
       throw new Error("Carts not update");
     }
@@ -98,11 +104,11 @@ async function getCarts(req, res) {
   if (!id) {
     return res.status(400).json({});
   }
-  const carts = await Carts.findById(id)
+  const carts = await Carts.findById(id);
   if (!carts) {
     throw new Error("Carts not found");
   }
-  return  res.status(200).json({ carts });
+  return res.status(200).json({ carts });
 }
 
 const coupons = [

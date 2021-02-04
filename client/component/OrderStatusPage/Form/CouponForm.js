@@ -13,7 +13,7 @@ const CouponForm = ({ closeModal }) => {
         coupon: "",
       }}
       onSubmit={(values) => {
-        dispatch(addCoupon(cart.id, values));
+        dispatch(addCoupon(cart.id, values, cart.total));
         closeModal();
       }}
       validate={(values) => {
