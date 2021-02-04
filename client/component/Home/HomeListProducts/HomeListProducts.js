@@ -4,6 +4,7 @@ import Product from "../Product/Product";
 import { getCategory } from "../../../action/categoriesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductForCarts } from "../../../action/cartsAction";
+import { getAllProduct } from "../../../action/productsAction";
 
 const HomeListProducts = ({ category }) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const HomeListProducts = ({ category }) => {
   useEffect(() => {
     if (category) {
       dispatch(getCategory(category));
-    }
+    } else dispatch(getAllProduct());
   }, [categories, category]);
 
   const addProduct = (product) => {

@@ -9,6 +9,13 @@ export const getProducts = () => async (dispatch) => {
   dispatch(getCategories());
   dispatch(setProducts(result.products));
 };
+export const getAllProduct = () => async (dispatch) => {
+  const res = await fetch("http://localhost:3000/api/products", {
+    method: "GET",
+  });
+  const result = await res.json();
+  dispatch(setProducts(result.products));
+};
 export const getProduct = (id) => async (dispatch) => {
   const res = await fetch("http://localhost:3000/api/products/" + id, {
     method: "GET",
