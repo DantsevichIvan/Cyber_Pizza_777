@@ -30,22 +30,6 @@
   left: 0;
   top: 25%;
 }
-.header-back button{
-  background-color: #ffffff;
-  border: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #000;
-  text-transform: uppercase;
-}
-.header-back button:active,.header-back button:focus {
-  outline: none;
-}
-.header-back button svg{
-  margin-right: 8px;
-}
-
-
 .container {
   display: flex;
   margin-top: 8px;

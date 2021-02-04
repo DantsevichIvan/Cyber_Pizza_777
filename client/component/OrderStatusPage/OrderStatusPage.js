@@ -7,7 +7,6 @@ import OrderPrice from "./OrderPrice/OrderPrice";
 import OrderProgressTitle from "./OrderProgressTitle/OrderProgressTitle";
 import OrderProgressContainer from "./OrderProgressContainer/OrderProgressContainer";
 import { deleteProductToCart } from "../../action/cartsAction";
-import { createOrder } from "../../action/orderAction";
 import PlaceAnOrderBtn from "./PlaceAnOrderBtn/PlaceAnOrderBtn";
 import Button from "../common/Button/Button";
 
@@ -15,10 +14,6 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
   const status = useSelector((state) => state.order.order.status);
-  console.log(cart);
-  useEffect(() => {
-    dispatch(createOrder());
-  }, [dispatch]);
 
   const removeProduct = (id) => {
     let [id_Cart, id_Prod] = [cart.id, id];

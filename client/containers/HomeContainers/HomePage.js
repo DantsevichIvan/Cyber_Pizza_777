@@ -11,9 +11,8 @@ import CouponForm from "../../component/OrderStatusPage/Form/CouponForm";
 import HomeListProducts from "../../component/Home/HomeListProducts/HomeListProducts";
 import { useParams } from "react-router-dom";
 
-const HomePage = ({ match }) => {
+const HomePage = () => {
   const { category } = useParams();
-  console.log(name);
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);

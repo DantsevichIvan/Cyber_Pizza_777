@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../action/authAction";
 import { Link, useHistory } from "react-router-dom";
 import s from "./Login.module.css";
+import ButtonBack from "../../../component/common/ButtonBack/ButtonBack";
 
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.errorData);
   const auth = useSelector((state) => state.auth.isAuth);
+  const goBack = () => history.goBack();
+
   if (auth) {
     history.push("/admin");
   }
@@ -48,6 +51,11 @@ const Login = () => {
         }) => (
           <form action="" className={s.form_login} onSubmit={handleSubmit}>
             <div className={s.form_login_header}>
+              <ButtonBack
+                classname={s["header-back"]}
+                goBack={goBack}
+                title={"Home"}
+              />
               <h3>Login</h3>
             </div>
             <div className={s.form_login_wrap}>

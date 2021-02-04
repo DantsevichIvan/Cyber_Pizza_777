@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import { registration } from "../../../action/authAction";
 import s from "./Registration.module.css";
 import { useHistory } from "react-router-dom";
+import ButtonBack from "../../../component/common/ButtonBack/ButtonBack";
 
 const Registration = ({}) => {
   const history = useHistory();
@@ -17,6 +18,7 @@ const Registration = ({}) => {
   const handleSubmit = (values) => {
     dispatch(registration(values));
   };
+  const goBack = () => history.goBack();
   const validation = (values) => {
     const errors = {};
     if (!values.email) {
@@ -65,6 +67,11 @@ const Registration = ({}) => {
             onSubmit={handleSubmit}
           >
             <div className={s.registration_form_header}>
+              <ButtonBack
+                classname={s["header-back"]}
+                goBack={goBack}
+                title={"Login"}
+              />
               <h3>Registration</h3>
             </div>
             <div className={s.registration_form_wrap}>

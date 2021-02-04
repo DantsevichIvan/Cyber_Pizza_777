@@ -10,11 +10,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 30px;
+    padding: 40px 60px;
 }
 .registration_form_header{
     font-size: 2rem;
     font-weight: 700;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .registration_form_wrap{
     display: flex;
@@ -51,4 +55,10 @@
     background-color: #000000;
     color: white;
     transition: 0.1s;
+}
+.header-back{
+    position: absolute;
+    left: -60px;
+    top: -30px;
+    font-size: 1.2rem!important;
 }

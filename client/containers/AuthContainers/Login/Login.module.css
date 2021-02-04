@@ -6,16 +6,25 @@
     width: 100%;
     height: 100vh;
 }
+.header-back{
+    position: absolute;
+    left: -40px;
+    top: -30px;
+}
 .form_login {
     box-shadow: 0 0 12px 0 #d8d8d8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 30px;
+    padding: 40px 60px;
 }
 .form_login_header{
     font-size: 2rem;
     font-weight: 700;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .form_login_wrap{
     display: flex;

@@ -6,7 +6,7 @@
   color: #000;
   text-transform: uppercase;
 }
-.button-back button:active,.header-back button:focus {
+.button-back button:active,.button-back button:focus {
   outline: none;
 }
 .button-back button svg{

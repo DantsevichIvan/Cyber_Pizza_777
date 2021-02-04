@@ -7,7 +7,7 @@ const PlaceAnOrderBtn = () => {
   const history = useHistory();
 
   const redirectPlaceOrder = () => {
-    history.push("/place_order");
+    history.push("/orders/:order_id");
   };
   return (
     <button className={s["learn-more"]} onClick={redirectPlaceOrder}>

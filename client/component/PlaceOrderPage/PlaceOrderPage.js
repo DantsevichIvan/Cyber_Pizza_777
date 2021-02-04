@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik } from "formik";
 import s from "./PlaceOrderPage.module.css";
 import Input from "../common/Input/Input";
 import Product from "./Product/Product";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import ButtonBack from "../common/ButtonBack/ButtonBack";
+import { createOrder } from "../../action/orderAction";
+import { useDispatch } from "react-redux";
 
 const PlaceOrderPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(createOrder());
+  }, [dispatch]);
+
   const history = useHistory();
   const goBack = () => history.goBack();
-  const handleSubmit = (values) => {};
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <div className={s.wrap}>
       <Formik
@@ -38,9 +46,13 @@ const PlaceOrderPage = () => {
           handleBlur,
           handleSubmit,
         }) => (
-          <form action="" className={s.form}>
+          <form action="" className={s.form} onSubmit={handleSubmit}>
             <div className={s.header}>
-              <ButtonBack goBack={goBack} title={"Back"} />
+              <ButtonBack
+                classname={s["header-back"]}
+                goBack={goBack}
+                title={"Back"}
+              />
               <h3>Place Order</h3>
             </div>
             <div className={s.container}>

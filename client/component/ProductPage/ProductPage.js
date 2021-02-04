@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import OrderStatus from "../common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faPlus,
-  faMinus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import s from "./ProductPage.module.css";
 import OrderStatusPage from "../OrderStatusPage/OrderStatusPage";
 import { getProduct } from "../../action/productsAction";
