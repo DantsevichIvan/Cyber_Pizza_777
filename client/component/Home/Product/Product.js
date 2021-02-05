@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import not_image from "../../../images/not-img.png";
 
 const Product = ({ product, addProductForCarts }) => {
-  debugger;
   return (
     <div className={s.item_product}>
       <div className={s.item_product_img}>

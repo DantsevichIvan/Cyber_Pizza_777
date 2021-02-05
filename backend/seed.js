@@ -36,7 +36,8 @@ const pizzas = [
     price: "30",
     description: "Tomato sauce, mozzarella, parmesan, eggs, and bacon",
     weight: "10",
-    image: "",
+    image:
+      "https://www.pizzatempo.by/i/photo/catalog/products/t/r_3899_280x280.jpg?v=1611389686",
   },
   {
     _id: new mongoose.Types.ObjectId(),
@@ -44,7 +45,8 @@ const pizzas = [
     price: "25",
     description: "Tomato sauce, mozzarella, and oregano",
     weight: "8",
-    image: "",
+    image:
+      "https://kobrin.pizza-italiana.by/wp-content/uploads/2020/09/s-kapri_norm_-bort.jpg",
   },
 ];
 const drinks = [
@@ -54,7 +56,8 @@ const drinks = [
     price: "5",
     description: "Prazdnik k nam prihodit",
     weight: "10",
-    image: "",
+    image:
+      "https://c0.klipartz.com/pngpicture/518/323/gratis-png-botella-de-coca-cola-refresco-de-coca-cola-coca-cola-coca-cola-s.png",
   },
 ];
 
