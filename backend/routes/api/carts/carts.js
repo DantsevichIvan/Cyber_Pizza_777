@@ -23,7 +23,7 @@ async function createCarts(req, res) {
 
 async function addNewProduct(req, res) {
   try {
-    const { name, subtotal, discount, count } = req.body.product;
+    const { name, subtotal, discount, count, price } = req.body.product;
     let cartsId = req.params.id;
     let total = subtotal - (subtotal / 100) * discount;
     const carts = await Carts.findById(cartsId);
@@ -35,7 +35,7 @@ async function addNewProduct(req, res) {
     });
 
     if (!found.length) {
-      await carts.products.push({ name, count });
+      await carts.products.push({ name, count, price });
     } else {
       await Carts.findOneAndUpdate(
         { "products.name": name },
@@ -62,7 +62,15 @@ async function deleteProductFromCarts(req, res) {
     const item_id = req.params.item_id;
 
     const carts = await Carts.findById(cart_id);
+
+    const found = await Carts.findOne({
+      products: { $elemMatch: { _id: item_id } },
+    });
+
+    console.log(found);
+
     await carts.products.remove({ _id: item_id });
+    await carts.update({ subtotal: 0, total: 0 });
 
     await carts.save();
     res.status(200).json({ message: "Product Delete", id: cart_id });

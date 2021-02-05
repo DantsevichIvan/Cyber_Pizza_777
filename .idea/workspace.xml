@@ -26,10 +26,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d1c197d-c164-43b0-9015-58b55a4bf1e5" name="Default Changelist" comment="fix issue Add form validation on create order form #11">
+    <list default="true" id="1d1c197d-c164-43b0-9015-58b55a4bf1e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/PlaceOrderPage/PlaceOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/PlaceOrderPage/PlaceOrderPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/common/ButtonBack/ButtonBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/ButtonBack/ButtonBack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/carts/carts.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/carts/carts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/products/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/HomeListProducts/HomeListProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/HomeListProducts/HomeListProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/Home/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/Home/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/component/ProductPage/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/ProductPage/ProductPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/shared/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/shared/constants/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,14 +215,8 @@
       <workItem from="1612163754447" duration="30974000" />
       <workItem from="1612249022062" duration="19182000" />
       <workItem from="1612337419443" duration="29913000" />
-      <workItem from="1612427618961" duration="19124000" />
-    </task>
-    <task id="LOCAL-00002" summary="feat: add seed script">
-      <created>1606909005905</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1606909005905</updated>
+      <workItem from="1612427618961" duration="20488000" />
+      <workItem from="1612530950233" duration="4511000" />
     </task>
     <task id="LOCAL-00003" summary="feat: add webpack.config.js and App.jsx&#10;Create count">
       <created>1606917646371</created>
@@ -556,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612453851661</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix ButtonBack.js">
+      <created>1612454397092</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1612454397092</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +592,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add Login and Registration and LogOut page&#10;feat: add authReducer.js and authAction.js" />
     <MESSAGE value="feat: fix layout" />
     <MESSAGE value="feat: add authActio,login registration methods" />
     <MESSAGE value="feat: add authAction.js,login registration methods" />
@@ -612,7 +616,8 @@
     <MESSAGE value="fix issue Login button doesn't working #9&#10;fix issue After order creating form I cannot return back #8" />
     <MESSAGE value="fix issue Discount not applied to total balance #15" />
     <MESSAGE value="fix issue Add form validation on create order form #11" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix issue Add form validation on create order form #11" />
+    <MESSAGE value="fix ButtonBack.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ButtonBack.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -625,12 +630,12 @@
     </state>
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="304" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1612452487498" />
-    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1612454067808">
+    <state x="171" y="0" key="CommitChangelistDialog2" timestamp="1612454396019">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361979671" />
     <state x="2177" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684799125" />
-    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1612454067808" />
+    <state x="171" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1612454396019" />
     <state width="1197" height="623" key="DebuggerActiveHint" timestamp="1607686690743">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -643,34 +648,34 @@
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612355862" />
     <state x="2469" y="194" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607694044988" />
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1612453013792" />
-    <state width="1237" height="259" key="GridCell.Tab.0.bottom" timestamp="1612453815066">
+    <state width="1259" height="146" key="GridCell.Tab.0.bottom" timestamp="1612535156674">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485991" />
     <state width="1259" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801102" />
     <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801982" />
-    <state width="1237" height="259" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612453815066" />
-    <state width="1237" height="259" key="GridCell.Tab.0.center" timestamp="1612453815065">
+    <state width="1259" height="146" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612535156674" />
+    <state width="1259" height="146" key="GridCell.Tab.0.center" timestamp="1612535156674">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801981" />
-    <state width="1237" height="259" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612453815065" />
-    <state width="1237" height="259" key="GridCell.Tab.0.left" timestamp="1612453815065">
+    <state width="1259" height="146" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612535156674" />
+    <state width="1259" height="146" key="GridCell.Tab.0.left" timestamp="1612535156674">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801981" />
-    <state width="1237" height="259" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612453815065" />
-    <state width="1237" height="259" key="GridCell.Tab.0.right" timestamp="1612453815065">
+    <state width="1259" height="146" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612535156674" />
+    <state width="1259" height="146" key="GridCell.Tab.0.right" timestamp="1612535156674">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801982" />
-    <state width="1237" height="259" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612453815065" />
+    <state width="1259" height="146" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612535156674" />
     <state width="1899" height="340" key="GridCell.Tab.1.bottom" timestamp="1607692101776">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -756,12 +761,12 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612432334" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1612210425154" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1612454013686">
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1612454400247">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361984755" />
     <state x="2117" y="164" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684816681" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1612454013686" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1612454400247" />
     <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1607157855251">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -779,10 +784,10 @@
     </state>
     <state x="2158" y="173" key="run.anything.popup/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607512721680" />
     <state x="297" y="151" width="672" height="677" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1612374774347" />
-    <state x="219" y="87" width="672" height="160" key="search.everywhere.popup" timestamp="1612448302600">
+    <state x="219" y="87" width="672" height="160" key="search.everywhere.popup" timestamp="1612534968455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2095" y="100" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607351105478" />
-    <state x="219" y="87" width="672" height="160" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1612448302600" />
+    <state x="219" y="87" width="672" height="160" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1612534968455" />
   </component>
 </project>

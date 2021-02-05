@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import OrderStatus from "../common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
@@ -20,18 +20,19 @@ const toppings = [
   "Marinara",
 ];
 
-const ProductPage = (props) => {
+const ProductPage = () => {
+  const history = useHistory();
+  const { id } = useParams();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const cart = useSelector((state) => state.carts.cart);
   const product = useSelector((state) => state.products.product);
-  const history = useHistory();
 
   useEffect(() => {
-    const id = props.match.params.prodId;
     dispatch(getProduct(id));
-  }, [props, dispatch]);
+  }, [dispatch]);
+
   const handleSubmit = () => {
     let newProd = {
       name: product.name,

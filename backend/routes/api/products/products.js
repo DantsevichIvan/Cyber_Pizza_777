@@ -26,7 +26,7 @@ async function getProducts(req, res) {
 async function getProduct(req, res) {
   try {
     const productId = req.params.id;
-    const product = Products.findById(productId);
+    const product = await Products.findById(productId);
     if (!product) {
       throw new Error("Product not found");
     }
