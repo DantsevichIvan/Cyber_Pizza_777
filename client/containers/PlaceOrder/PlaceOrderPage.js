@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Formik } from "formik";
 import s from "./PlaceOrderPage.module.css";
-import Input from "../common/Input/Input";
-import Product from "./Product/Product";
+import Input from "../../component/common/Input/Input";
+import Product from "../../component/PlaceOrderPage/Product/Product";
 import { useHistory } from "react-router-dom";
-import ButtonBack from "../common/ButtonBack/ButtonBack";
+import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
 import { createOrder } from "../../action/orderAction";
 import { useDispatch } from "react-redux";
 import * as yup from "yup";

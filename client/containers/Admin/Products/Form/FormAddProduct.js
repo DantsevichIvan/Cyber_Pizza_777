@@ -1,32 +1,53 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Field, Formik } from "formik";
-import { updateProduct } from "../../../../action/productsAction";
-import s from "../Form.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { createProduct } from "../../../../action/productsAction";
+import s from "./Form.module.css";
 
-const FormUpdateProduct = ({ closeModal, item }) => {
+const FormAddProduct = ({ closeModal }) => {
   const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
+  const validation = (values) => {
+    const errors = {};
+    for (let key in values) {
+      if (!values[key]) {
+        errors[key] = "Required";
+      }
+    }
+    // if (values.categories !== ' '){
+    //     errors.categories = 'Selected category'
+    // }
+    return errors;
+  };
   return (
     <Formik
       initialValues={{
-        name: item.name,
-        description: item.description,
-        weight: item.weight,
-        price: item.price,
-        categories: item.categories,
-        image: item.image,
-        id: item._id,
+        name: "",
+        description: "",
+        weight: 0,
+        price: 0,
+        categories: categories,
+        image: "",
       }}
       onSubmit={(values) => {
-        dispatch(updateProduct(values));
+        console.log(values);
+        dispatch(createProduct(values));
         closeModal();
       }}
+      validate={validation}
     >
-      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
-            <h3>Update Product</h3>
+            <h3>Add new Product</h3>
             <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
@@ -41,6 +62,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 onBlur={handleBlur}
                 value={values.name}
               />
+              {errors.name && touched.name && errors.name}
             </div>
             <div className={s["form-item"]}>
               <label htmlFor="">Description</label>
@@ -50,6 +72,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 onBlur={handleBlur}
                 value={values.description}
               />
+              {errors.description && touched.description && errors.description}
             </div>
             <div className={s["form-item"]}>
               <label htmlFor="">Weight</label>
@@ -60,6 +83,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 onBlur={handleBlur}
                 value={values.weight}
               />
+              {errors.weight && touched.weight && errors.weight}
             </div>
             <div className={s["form-item"]}>
               <label htmlFor="">Price</label>
@@ -70,6 +94,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 onBlur={handleBlur}
                 value={values.price}
               />
+              {errors.price && touched.price && errors.price}
             </div>
             <div className={s["form-item"]}>
               <label htmlFor="">Image</label>
@@ -80,6 +105,7 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 onBlur={handleBlur}
                 value={values.image}
               />
+              {errors.image && touched.image && errors.image}
               <a
                 href="https://dantsevichivan.github.io/Search-Image/"
                 target="_blank"
@@ -89,7 +115,10 @@ const FormUpdateProduct = ({ closeModal, item }) => {
             </div>
             <div className={s["form-item"]}>
               <label htmlFor="">Categories</label>
-              <Field name="categories" as="select">
+              <Field name="categories" as="select" onChange={handleChange}>
+                <option value="" defaultValue>
+                  Select Categories
+                </option>
                 {categories.map((item) => {
                   return (
                     <option key={item._id} value={item._id}>
@@ -98,11 +127,12 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                   );
                 })}
               </Field>
+              {errors.categories && touched.categories && errors.categories}
             </div>
           </div>
           <div className={s["btn-add"]}>
             <button type="submit" disabled={isSubmitting}>
-              Update Product
+              Create Product
             </button>
           </div>
         </form>
@@ -111,4 +141,4 @@ const FormUpdateProduct = ({ closeModal, item }) => {
   );
 };
 
-export default FormUpdateProduct;
+export default FormAddProduct;

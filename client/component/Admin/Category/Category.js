@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonRemove from "../../common/RemoveBtn/ButtonRemove";
+import ButtonRemove from "../../common/Buttons/RemoveBtn/ButtonRemove";
 import s from "./Category.module.css";
 
 const Category = ({ category, updateCategory, removeCategory }) => {

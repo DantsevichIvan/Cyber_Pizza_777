@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import s from "../../../containers/HomeContainers/HomePage.module.css";
-import Product from "../Product/Product";
+import s from "../HomePage.module.css";
+import Product from "../../../component/Home/Product/Product";
 import { getCategory } from "../../../action/categoriesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductForCarts } from "../../../action/cartsAction";

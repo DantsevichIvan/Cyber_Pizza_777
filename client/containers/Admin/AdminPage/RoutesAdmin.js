@@ -10,6 +10,9 @@ const RoutesAdmin = ({ routes }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth.isAuth);
   const isAdmin = useSelector((state) => state.auth.isAdmin);
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const name = useSelector((state) => state.auth.name);
+
 
   useEffect(() => {
     dispatch(getUser());
@@ -20,7 +23,7 @@ const RoutesAdmin = ({ routes }) => {
   }
   return (
     <div className={s.admin_wrap}>
-      <NavBar />
+      <NavBar isAuth={isAuth} name={name}  />
       <div className={s.container}>
         <Switch>
           {routes.map((route, i) => (

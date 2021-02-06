@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import s from "../../Home/HomeHeader/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faConciergeBell } from "@fortawesome/free-solid-svg-icons";

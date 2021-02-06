@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./NavBar.module.css";
-import LogOut from "../../../containers/AuthContainers/LogOut/LogOut";
-import { useSelector } from "react-redux";
+import LogOut from "../../../containers/Auth/LogOut/LogOut";
 
-const NavBar = () => {
-  const isAuth = useSelector((state) => state.auth.isAuth);
-  const name = useSelector((state) => state.auth.name);
+const NavBar = ({isAuth, name}) => {
   return (
     <div className={s.header}>
       <div className={s.header_container}>
@@ -19,7 +16,6 @@ const NavBar = () => {
           <NavLink to="/admin/products">Products</NavLink>
         </div>
       </div>
-
       {isAuth ? <LogOut /> : null}
     </div>
   );

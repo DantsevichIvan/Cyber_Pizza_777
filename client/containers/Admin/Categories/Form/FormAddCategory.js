@@ -1,25 +1,25 @@
 import React from "react";
 import { Formik } from "formik";
-import s from "../../Admin/Form/Form.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { addCoupon } from "../../../action/cartsAction";
+import { useDispatch } from "react-redux";
+import { createCategories } from "../../../../action/categoriesAction";
+import s from "./Form.module.css";
 
-const CouponForm = ({ closeModal }) => {
+const FormAddCategory = ({ closeModal }) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.carts.cart);
   return (
     <Formik
       initialValues={{
-        coupon: "",
+        name: "",
+        available: false,
       }}
       onSubmit={(values) => {
-        dispatch(addCoupon(cart.id, values, cart.total));
+        dispatch(createCategories(values));
         closeModal();
       }}
       validate={(values) => {
         const errors = {};
-        if (!values.coupon) {
-          errors.coupon = "Required";
+        if (!values.name) {
+          errors.name = "Required";
         }
         return errors;
       }}
@@ -33,33 +33,35 @@ const CouponForm = ({ closeModal }) => {
         handleSubmit,
         isSubmitting,
       }) => (
-        <form action="" onSubmit={handleSubmit} className={s.form}>
+        <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
-            <h3>Add Coupon</h3>
+            <h3>Add new Category</h3>
             <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
           </div>
           <div className={s["form-wrap"]}>
             <div className={s["form-item"]}>
-              <label htmlFor="">Coupon</label>
+              <label htmlFor="">Name</label>
               <input
                 type="text"
-                name="coupon"
+                name="name"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.coupon}
+                value={values.name}
               />
             </div>
-            {errors.coupon && touched.coupon && errors.coupon}
+            {errors.name && touched.name && errors.name}
           </div>
-          <button type="submit" disabled={isSubmitting}>
-            Add Coupon
-          </button>
+          <div className={s["btn-add"]}>
+            <button type="submit" disabled={isSubmitting}>
+              Create Category
+            </button>
+          </div>
         </form>
       )}
     </Formik>
   );
 };
 
-export default CouponForm;
+export default FormAddCategory;

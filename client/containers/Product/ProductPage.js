@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import OrderStatus from "../common/OrderStatus/OrderStatus";
+import OrderStatus from "../../component/common/OrderStatus/OrderStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import s from "./ProductPage.module.css";
-import OrderStatusPage from "../OrderStatusPage/OrderStatusPage";
+import OrderStatusPage from "../Order/OrderStatusPage";
 import { getProduct } from "../../action/productsAction";
 import { useDispatch, useSelector } from "react-redux";
 import not_image from "../../images/not-img.png";
-import ButtonBack from "../common/ButtonBack/ButtonBack";
+import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
 import { addProductForCarts } from "../../action/cartsAction";
 
 const toppings = [

@@ -1,41 +1,27 @@
 import React from "react";
-import { Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { createCategories } from "../../../../action/categoriesAction";
-import s from "../Form.module.css";
+import { Formik } from "formik";
+import { updateCategories } from "../../../../action/categoriesAction";
+import s from "./Form.module.css";
 
-const FormAddCategory = ({ closeModal }) => {
+const FormUpdateCategory = ({ item, closeModal }) => {
   const dispatch = useDispatch();
   return (
     <Formik
       initialValues={{
-        name: "",
-        available: false,
+        name: item.name,
+        available: item.available,
+        id: item._id,
       }}
       onSubmit={(values) => {
-        dispatch(createCategories(values));
+        dispatch(updateCategories(values));
         closeModal();
       }}
-      validate={(values) => {
-        const errors = {};
-        if (!values.name) {
-          errors.name = "Required";
-        }
-        return errors;
-      }}
     >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-      }) => (
+      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
-            <h3>Add new Category</h3>
+            <h3>Update Category</h3>
             <button onClick={closeModal} className={s["btn-close"]}>
               Close
             </button>
@@ -51,11 +37,10 @@ const FormAddCategory = ({ closeModal }) => {
                 value={values.name}
               />
             </div>
-            {errors.name && touched.name && errors.name}
           </div>
           <div className={s["btn-add"]}>
             <button type="submit" disabled={isSubmitting}>
-              Create Category
+              Update Category
             </button>
           </div>
         </form>
@@ -64,4 +49,4 @@ const FormAddCategory = ({ closeModal }) => {
   );
 };
 
-export default FormAddCategory;
+export default FormUpdateCategory;

@@ -5,10 +5,10 @@ import { getCategories } from "../../action/categoriesAction";
 import { createCarts } from "../../action/cartsAction";
 import HomeSideBar from "../../component/Home/HomeSideBar/HomeSideBar";
 import s from "./HomePage.module.css";
-import OrderStatusPage from "../../component/OrderStatusPage/OrderStatusPage";
+import OrderStatusPage from "../Order/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
-import CouponForm from "../../component/OrderStatusPage/Form/CouponForm";
-import HomeListProducts from "../../component/Home/HomeListProducts/HomeListProducts";
+import CouponForm from "../Order/Form/CouponForm";
+import HomeListProducts from "./HomeListProducts/HomeListProducts";
 import { useParams } from "react-router-dom";
 
 const HomePage = () => {
@@ -18,6 +18,7 @@ const HomePage = () => {
   const cart = useSelector((state) => state.carts.cart);
   const [isModal, setIsModal] = useState(false);
   const categories = useSelector((state) => state.categories.categories);
+  const isAuth = useSelector((state) => state.auth.isAuth);
 
   const openCloseCouponWindow = () => {
     setIsModal(!isModal);
@@ -29,7 +30,7 @@ const HomePage = () => {
 
   return (
     <div className={s.home_wrap}>
-      <HomeSideBar categories={categories} />
+      <HomeSideBar categories={categories} isAuth={isAuth} />
       <div className={s.home_container}>
         <HeaderHomePage
           cartsProducts={cart.products}

@@ -1,6 +1,6 @@
 import React from "react";
-import s from "../OrderStatusPage.module.css";
-import ButtonRemove from "../../common/RemoveBtn/ButtonRemove";
+import s from "../../../containers/Order/OrderStatusPage.module.css";
+import ButtonRemove from "../../common/Buttons/RemoveBtn/ButtonRemove";
 
 const OrderProgressContainer = ({ product, remove }) => {
   return (

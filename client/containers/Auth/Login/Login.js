@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../action/authAction";
 import { Link, useHistory } from "react-router-dom";
 import s from "./Login.module.css";
-import ButtonBack from "../../../component/common/ButtonBack/ButtonBack";
+import ButtonBack from "../../../component/common/Buttons/ButtonBack/ButtonBack";
 
 const Login = () => {
   const history = useHistory();

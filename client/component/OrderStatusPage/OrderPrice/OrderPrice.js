@@ -1,5 +1,5 @@
 import React from "react";
-import s from "../OrderStatusPage.module.css";
+import s from "../../../containers/Order/OrderStatusPage.module.css";
 
 const OrderPrice = ({ values }) => {
   return (

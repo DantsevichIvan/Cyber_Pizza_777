@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { registration } from "../../../action/authAction";
 import s from "./Registration.module.css";
 import { useHistory } from "react-router-dom";
-import ButtonBack from "../../../component/common/ButtonBack/ButtonBack";
+import ButtonBack from "../../../component/common/Buttons/ButtonBack/ButtonBack";
 
 const Registration = ({}) => {
   const history = useHistory();

@@ -1,8 +1,6 @@
 import React from "react";
-import Tags from "../Tags/Tags";
 import s from "./Header.module.css";
 import OrderStatus from "../../common/OrderStatus/OrderStatus";
-import HomeSideBar from "../HomeSideBar/HomeSideBar";
 
 const HeaderHomePage = ({ cartsProducts, setIsOrderStatus }) => {
   return (

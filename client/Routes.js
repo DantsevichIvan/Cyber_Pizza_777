@@ -1,27 +1,27 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Products from "./containers/AdminContainers/Products/Products";
-import Categories from "./containers/AdminContainers/Categories/Categories";
+import Products from "./containers/Admin/Products/Products";
+import Categories from "./containers/Admin/Categories/Categories";
 import { routes } from "./shared/constants";
 
 const HomePage = React.lazy(() =>
-  import("./containers/HomeContainers/HomePage")
+  import("./containers/Home/HomePage")
 );
 const ProductPage = React.lazy(() =>
-  import("./component/ProductPage/ProductPage")
+  import("./containers/Product/ProductPage")
 );
 const RoutesAdmin = React.lazy(() =>
-  import("./containers/AdminContainers/AdminPage/RoutesAdmin")
+  import("./containers/Admin/AdminPage/RoutesAdmin")
 );
 
 const Login = React.lazy(() =>
-  import("./containers/AuthContainers/Login/Login")
+  import("./containers/Auth/Login/Login")
 );
 const Registration = React.lazy(() =>
-  import("./containers/AuthContainers/Registration/Registration")
+  import("./containers/Auth/Registration/Registration")
 );
 const PlaceOrderPage = React.lazy(() =>
-  import("./component/PlaceOrderPage/PlaceOrderPage")
+  import("./containers/PlaceOrder/PlaceOrderPage")
 );
 
 const marketplaceRoutes = [

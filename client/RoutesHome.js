@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 const HomePage = React.lazy(() =>
-  import("./containers/HomeContainers/HomePage")
+  import("./containers/Home/HomePage")
 );
 
 const RoutesHome = () => {

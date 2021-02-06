@@ -1,11 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import s from "./HomeSideBar.module.css";
-import { useSelector } from "react-redux";
-import LogOut from "../../../containers/AuthContainers/LogOut/LogOut";
+import LogOut from "../../../containers/Auth/LogOut/LogOut";
 
-const HomeSideBar = ({ categories }) => {
-  const isAuth = useSelector((state) => state.auth.isAuth);
+const HomeSideBar = ({ categories,isAuth }) => {
   return (
     <div className={s.home_list_categories}>
       <div className={s.side_bar_title}>

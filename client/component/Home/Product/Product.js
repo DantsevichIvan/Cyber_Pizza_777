@@ -1,5 +1,5 @@
 import React from "react";
-import s from "../../../containers/HomeContainers/HomePage.module.css";
+import s from "../../../containers/Home/HomePage.module.css";
 import { NavLink } from "react-router-dom";
 import not_image from "../../../images/not-img.png";
 

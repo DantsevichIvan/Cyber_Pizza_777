@@ -3,12 +3,12 @@ import s from "./OrderStatusPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import OrderPrice from "./OrderPrice/OrderPrice";
-import OrderProgressTitle from "./OrderProgressTitle/OrderProgressTitle";
-import OrderProgressContainer from "./OrderProgressContainer/OrderProgressContainer";
+import OrderPrice from "../../component/OrderStatusPage/OrderPrice/OrderPrice";
+import OrderProgressTitle from "../../component/OrderStatusPage/OrderProgressTitle/OrderProgressTitle";
+import OrderProgressContainer from "../../component/OrderStatusPage/OrderProgressContainer/OrderProgressContainer";
 import { deleteProductToCart } from "../../action/cartsAction";
 import PlaceAnOrderBtn from "./PlaceAnOrderBtn/PlaceAnOrderBtn";
-import Button from "../common/Button/Button";
+import Button from "../../component/common/Buttons/Button/Button";
 
 const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
