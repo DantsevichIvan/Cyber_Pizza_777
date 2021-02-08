@@ -2,14 +2,14 @@ import { setCategories } from "../reducers/categoriesReducer";
 import { setProducts } from "../reducers/productsReducer";
 
 export const getCategories = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("/api/categories", {
     method: "GET",
   });
   const result = await res.json();
   dispatch(setCategories(result.categories));
 };
 export const getCategory = (category) => async (dispatch) => {
-  const res = await fetch(`http://localhost:3000/api/categories/${category}`, {
+  const res = await fetch(`/api/categories/${category}`, {
     method: "GET",
   });
   const result = await res.json();
@@ -17,7 +17,7 @@ export const getCategory = (category) => async (dispatch) => {
 };
 
 export const createCategories = (categories) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("/api/categories", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const createCategories = (categories) => async (dispatch) => {
 };
 export const updateCategories = (categories) => async (dispatch) => {
   const id = categories.id;
-  const res = await fetch("http://localhost:3000/api/categories/" + id, {
+  const res = await fetch("/api/categories/" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const updateCategories = (categories) => async (dispatch) => {
   dispatch(getCategories());
 };
 export const deleteCategories = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/categories/" + id, {
+  const res = await fetch("/api/categories/" + id, {
     method: "DELETE",
   });
   const result = await res.json();

@@ -1,7 +1,7 @@
 import { setOrder } from "../reducers/orderReducer";
 
 export const createOrder = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/order", {
+  const res = await fetch("/api/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export const createOrder = () => async (dispatch) => {
 };
 
 export const getStatus = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/order/" + id, {
+  const res = await fetch("/api/order/" + id, {
     method: "GET",
   });
   const result = await res.json();

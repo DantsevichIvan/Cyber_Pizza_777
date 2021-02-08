@@ -5,11 +5,10 @@ import {
   successErrorData,
   successLogOut,
 } from "../reducers/authReducer";
-import { Redirect } from "react-router-dom";
-import React from "react";
+
 
 export const login = (values) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/user/login", {
+  const res = await fetch("/api/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -27,14 +26,14 @@ export const login = (values) => async (dispatch) => {
   }
 };
 export const logOut = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/user/logout", {
+  const res = await fetch("/api/user/logout", {
     method: "POST",
   });
   const result = await res.json();
   dispatch(successLogOut());
 };
 export const registration = (values) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/users", {
+  const res = await fetch("/api/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +50,7 @@ export const registration = (values) => async (dispatch) => {
 };
 
 export const getUser = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/user", {
+  const res = await fetch("/api/user", {
     method: "GET",
   });
   if (res.status === 200) {

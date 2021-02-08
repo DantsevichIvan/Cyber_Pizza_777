@@ -2,7 +2,7 @@ import { setProduct, setProducts } from "../reducers/productsReducer";
 import { getCategories } from "./categoriesAction";
 
 export const getProducts = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch("/api/products", {
     method: "GET",
   });
   const result = await res.json();
@@ -10,14 +10,14 @@ export const getProducts = () => async (dispatch) => {
   dispatch(setProducts(result.products));
 };
 export const getAllProduct = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch("/api/products", {
     method: "GET",
   });
   const result = await res.json();
   dispatch(setProducts(result.products));
 };
 export const getProduct = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/products/" + id, {
+  const res = await fetch("/api/products/" + id, {
     method: "GET",
   });
   const result = await res.json();
@@ -25,7 +25,7 @@ export const getProduct = (id) => async (dispatch) => {
 };
 
 export const createProduct = (product) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch("/api/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const createProduct = (product) => async (dispatch) => {
 };
 export const updateProduct = (product) => async (dispatch) => {
   const id = product.id;
-  const res = await fetch("http://localhost:3000/api/products/" + id, {
+  const res = await fetch("/api/products/" + id, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const updateProduct = (product) => async (dispatch) => {
   dispatch(getProducts());
 };
 export const deleteProduct = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/products/" + id, {
+  const res = await fetch("/api/products/" + id, {
     method: "DELETE",
   });
   const result = await res.json();
