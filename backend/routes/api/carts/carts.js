@@ -1,10 +1,11 @@
 const { Router } = require("express");
 const router = Router();
 const Carts = require("../../../models/Carts");
+const mongoose = require("mongoose");
 
 router.post("/carts", createCarts);
 router.post("/carts/:id/items", addNewProduct);
-router.put("/carts/:id", updateCarts);
+router.put("/carts/:cart_id/items/:item_id", updateCarts);
 router.delete("/carts/:cart_id/items/:item_id", deleteProductFromCarts);
 router.post("/carts/:id/code", addCouponToCarts);
 router.get("/carts/:id", getCarts);
@@ -23,13 +24,19 @@ async function createCarts(req, res) {
 
 async function addNewProduct(req, res) {
   try {
-    const { name, subtotal, discount, count, price } = req.body.product;
+    const { name, count, price } = req.body.product;
     let cartsId = req.params.id;
-    let total = subtotal - (subtotal / 100) * discount;
+
     const carts = await Carts.findById(cartsId);
     if (!carts) {
       throw new Error("Carts not found");
     }
+
+    let subtotal = carts.subtotal + price;
+    const discount = carts.discount;
+
+    let total = subtotal - (subtotal / 100) * discount;
+
     const found = await Carts.find({
       products: { $elemMatch: { name: name } },
     });
@@ -42,10 +49,8 @@ async function addNewProduct(req, res) {
         { $inc: { "products.$.count": 1 } }
       );
     }
-
     await carts.update({ subtotal, total });
     await carts.save();
-
     res.status(200).json({ message: "Product add to cart", id: cartsId });
   } catch (e) {
     res.status(500).json({
@@ -54,27 +59,63 @@ async function addNewProduct(req, res) {
   }
 }
 
-async function updateCarts(req, res) {}
+async function updateCarts(req, res) {
+  try {
+    const cart_id = req.params.cart_id;
+    const item_id = req.params.item_id;
+    const { price } = req.body;
+
+    const carts = await Carts.findById(cart_id);
+    if (!carts) {
+      throw new Error("Carts not found");
+    }
+
+    let subtotal = carts.subtotal - price;
+    const discount = carts.discount;
+
+    let total = subtotal - (subtotal / 100) * discount;
+
+    await Carts.findOneAndUpdate(
+      { "products._id": item_id },
+      { $inc: { "products.$.count": -1 } }
+    );
+
+    await carts.update({ subtotal, total });
+    await carts.save();
+
+    res.status(200).json({ message: "Product update", id: cart_id });
+  } catch (err) {
+    res.status(500).json({
+      message: `Что-то пошло не так,${err}`,
+    });
+  }
+}
 
 async function deleteProductFromCarts(req, res) {
   try {
     const cart_id = req.params.cart_id;
     const item_id = req.params.item_id;
-
+    let price = 0;
     const carts = await Carts.findById(cart_id);
 
-    const found = await Carts.findOne({
-      products: { $elemMatch: { _id: item_id } },
-    });
+    for (let value of carts.products) {
+      let id = mongoose.Types.ObjectId(value._id).toString();
+      if (id === item_id) {
+        price = value.price;
+      }
+    }
 
-    console.log(found);
+    let subtotal = carts.subtotal - price;
+    const discount = carts.discount;
+    let total = subtotal - (subtotal / 100) * discount;
 
     await carts.products.remove({ _id: item_id });
-    await carts.update({ subtotal: 0, total: 0 });
+    await carts.update({ subtotal, total });
 
     await carts.save();
     res.status(200).json({ message: "Product Delete", id: cart_id });
-  } catch (e) {
+  } catch (err) {
+    console.log(err);
     throw new Error("Product not delete");
   }
 }

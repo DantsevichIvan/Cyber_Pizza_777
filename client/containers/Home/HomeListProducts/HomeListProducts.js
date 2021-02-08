@@ -20,8 +20,6 @@ const HomeListProducts = ({ category }) => {
   const addProduct = (product) => {
     let newProd = {
       name: product.name,
-      subtotal: product.price + cart.subtotal,
-      discount: cart.discount,
       count: 1,
       price: product.price,
     };

@@ -6,7 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import OrderPrice from "../../component/OrderStatusPage/OrderPrice/OrderPrice";
 import OrderProgressTitle from "../../component/OrderStatusPage/OrderProgressTitle/OrderProgressTitle";
 import OrderProgressContainer from "../../component/OrderStatusPage/OrderProgressContainer/OrderProgressContainer";
-import { deleteProductToCart } from "../../action/cartsAction";
+import {
+  deleteProductToCart,
+  updateProductToCart,
+} from "../../action/cartsAction";
 import PlaceAnOrderBtn from "./PlaceAnOrderBtn/PlaceAnOrderBtn";
 import Button from "../../component/common/Buttons/Button/Button";
 
@@ -15,9 +18,13 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const cart = useSelector((state) => state.carts.cart);
   const status = useSelector((state) => state.order.order.status);
 
-  const removeProduct = (id) => {
+  const removeProduct = (id, product) => {
     let [id_Cart, id_Prod] = [cart.id, id];
-    dispatch(deleteProductToCart(id_Cart, id_Prod));
+    if (product.count > 1) {
+      dispatch(updateProductToCart(id_Cart, id_Prod, product));
+    } else {
+      dispatch(deleteProductToCart(id_Cart, id_Prod));
+    }
   };
 
   return (

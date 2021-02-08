@@ -8,11 +8,12 @@ const ButtonRemove = ({
   classNameRoot,
   classNameLeft,
   classNameRight,
+  product,
 }) => {
   return (
     <div
       className={cn(s.close_container, classNameRoot)}
-      onClick={() => remove(id)}
+      onClick={() => remove(id, product)}
     >
       <div className={cn(s.leftright, classNameLeft)}></div>
       <div className={cn(s.rightleft, classNameRight)}></div>

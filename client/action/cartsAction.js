@@ -1,7 +1,7 @@
 import { setCarts } from "../reducers/cartsReducer";
 
 export const createCarts = () => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/carts", {
+  const res = await fetch("/api/carts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export const createCarts = () => async (dispatch) => {
   dispatch(setCarts(result));
 };
 export const addProductForCarts = (product, id) => async (dispatch) => {
-  const res = await fetch(`http://localhost:3000/api/carts/${id}/items`, {
+  const res = await fetch(`/api/carts/${id}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const addProductForCarts = (product, id) => async (dispatch) => {
   dispatch(getCarts(result.id));
 };
 export const getCarts = (id) => async (dispatch) => {
-  const res = await fetch("http://localhost:3000/api/carts/" + id, {
+  const res = await fetch("/api/carts/" + id, {
     method: "GET",
   });
   const result = await res.json();
@@ -30,7 +30,7 @@ export const getCarts = (id) => async (dispatch) => {
 };
 
 export const addCoupon = (id, value, total) => async (dispatch) => {
-  const res = await fetch(`http://localhost:3000/api/carts/${id}/code`, {
+  const res = await fetch(`/api/carts/${id}/code`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -42,23 +42,23 @@ export const addCoupon = (id, value, total) => async (dispatch) => {
 };
 
 export const deleteProductToCart = (id_Cart, id_Prod) => async (dispatch) => {
-  const res = await fetch(
-    `http://localhost:3000/api/carts/${id_Cart}/items/` + id_Prod,
-    {
-      method: "DELETE",
-    }
-  );
+  const res = await fetch(`/api/carts/${id_Cart}/items/` + id_Prod, {
+    method: "DELETE",
+  });
   const result = await res.json();
   dispatch(getCarts(result.id));
 };
 
-export const updateCart = (id) => async (dispatch) => {
-  const res = await fetch(`http://localhost:3000/api/carts/` + id, {
+export const updateProductToCart = (id_Cart, id_Prod, product) => async (
+  dispatch
+) => {
+  const res = await fetch(`/api/carts/${id_Cart}/items/` + id_Prod, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(),
+    body: JSON.stringify({ price: product.price }),
   });
   const result = await res.json();
+  dispatch(getCarts(result.id));
 };

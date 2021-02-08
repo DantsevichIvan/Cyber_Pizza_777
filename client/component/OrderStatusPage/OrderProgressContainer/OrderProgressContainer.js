@@ -16,6 +16,7 @@ const OrderProgressContainer = ({ product, remove }) => {
           classNameLeft={s["product-delete-left"]}
           classNameRight={s["product-delete-right"]}
           id={product._id}
+          product={product}
           remove={remove}
         />
       </div>
