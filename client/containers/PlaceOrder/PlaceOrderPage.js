@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Formik } from "formik";
+import React from "react";
+import { Field, Formik } from "formik";
 import s from "./PlaceOrderPage.module.css";
 import Input from "../../component/common/Input/Input";
 import Product from "../../component/PlaceOrderPage/Product/Product";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
 import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
-import { getStatus } from "../../action/orderAction";
+import { updateOrder } from "../../action/orderAction";
 
 const orderSchema = yup.object().shape({
   name: yup.string().required("Required"),
@@ -18,33 +18,26 @@ const orderSchema = yup.object().shape({
 });
 
 const PlaceOrderPage = () => {
-  const { order_id } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
   const order = useSelector((state) => state.order.order);
 
-  useEffect(() => {
-    dispatch(getStatus(order_id));
-  }, [dispatch]);
-
   const goBack = () => history.goBack();
 
   const handleSubmit = (values) => {
-    console.log(values);
+    dispatch(updateOrder(values, order.id));
+    history.push(`/orders/${order.id}`);
   };
+
   return (
     <div className={s.wrap}>
       <Formik
         initialValues={{
-          user: {
-            phone: "",
-            name: "",
-            address: {
-              street: "",
-              house: "",
-              flat: "",
-            },
-          },
+          phone: "",
+          name: "",
+          street: "",
+          house: "",
+          flat: "",
         }}
         onSubmit={handleSubmit}
         validationSchema={orderSchema}

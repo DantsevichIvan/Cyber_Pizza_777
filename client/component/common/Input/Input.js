@@ -10,7 +10,6 @@ const Input = ({
   onBlur,
   error,
 }) => {
-  console.log(error);
   return (
     <div className={classname}>
       <label htmlFor="">{name}</label>

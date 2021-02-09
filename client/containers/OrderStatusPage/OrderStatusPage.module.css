@@ -1,0 +1,26 @@
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.container{
+  min-width:10px;
+  min-height: 40px;
+  padding: 30px 50px;
+  box-shadow: 0 0 12px 0 #d8d8d8;
+  position: relative;
+}
+.container h2{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.btn{
+  top: 10px;
+  left: 10px;
+  position: absolute;
+}
+.btn button{
+  font-size: 1rem!important;
+}

@@ -6,5 +6,6 @@ export const routes = {
   PRODUCT: `/product/:id?`,
   ADMIN_PRODUCTS: "/admin/products",
   ADMIN_CATEGORIES: "/admin/categories",
-  PLACE_ORDER: "/orders/:order_id?",
+  PLACE_ORDER: "/orders",
+  ORDER_STATUS: "/orders/:order_id?",
 };

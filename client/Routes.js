@@ -19,11 +19,19 @@ const Registration = React.lazy(() =>
 const PlaceOrderPage = React.lazy(() =>
   import("./containers/PlaceOrder/PlaceOrderPage")
 );
+const OrderStatusPage = React.lazy(() =>
+  import("./containers/OrderStatusPage/OrderStatusPage")
+);
 
 const marketplaceRoutes = [
   {
     path: routes.PLACE_ORDER,
     component: PlaceOrderPage,
+    exact: true,
+  },
+  {
+    path: routes.ORDER_STATUS,
+    component: OrderStatusPage,
   },
   {
     path: routes.PRODUCT,

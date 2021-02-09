@@ -4,6 +4,7 @@ const Order = require("../../../models/Order");
 
 router.post("/order", createOrder);
 router.get("/order/:id", getOrder);
+router.put("/order/:id", updateStatusOrder);
 
 async function createOrder(req, res) {
   try {
@@ -35,6 +36,41 @@ async function getOrder(req, res) {
     throw new Error("Order not found");
   }
   return res.status(200).json({ order });
+}
+
+async function updateStatusOrder(req, res) {
+  try {
+    const { status } = req.body;
+    const { name, phone, street, house, flat } = req.body.orderValues;
+    let order_id = req.params.id;
+    console.log(order_id);
+
+    const order = await Order.findOneAndUpdate(
+      { _id: order_id },
+      {
+        user: {
+          name,
+          phone,
+          address: {
+            street,
+            house,
+            flat,
+          },
+        },
+        status,
+      }
+    );
+    if (!order) {
+      throw new Error("Order not update");
+    }
+    await order.save();
+    return res.status(200).json({ message: "Order update", id: order_id });
+  } catch (e) {
+    console.log(e);
+    res.status(500).json({
+      message: "Что-то пошло не так, попробуйте снова",
+    });
+  }
 }
 
 module.exports = router;
