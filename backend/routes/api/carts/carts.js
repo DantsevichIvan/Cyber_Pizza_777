@@ -32,16 +32,22 @@ async function addNewProduct(req, res) {
       throw new Error("Carts not found");
     }
 
+    //Price
     let subtotal = carts.subtotal + price;
     const discount = carts.discount;
-
     let total = subtotal - (subtotal / 100) * discount;
 
-    const found = await Carts.find({
-      products: { $elemMatch: { name: name } },
-    });
+    //Found product
+    let found;
+    for (let value of carts.products) {
+      if (value.name === name) {
+        found = true;
+      } else {
+        found = false;
+      }
+    }
 
-    if (!found.length) {
+    if (!found) {
       await carts.products.push({ name, count, price });
     } else {
       await Carts.findOneAndUpdate(
@@ -51,7 +57,9 @@ async function addNewProduct(req, res) {
     }
     await carts.update({ subtotal, total });
     await carts.save();
-    res.status(200).json({ message: "Product add to cart", id: cartsId });
+    return res
+      .status(200)
+      .json({ message: "Product add to cart", id: cartsId });
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",

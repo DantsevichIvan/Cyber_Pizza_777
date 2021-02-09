@@ -16,7 +16,6 @@ import Button from "../../component/common/Buttons/Button/Button";
 const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
-  const status = useSelector((state) => state.order.order.status);
 
   const removeProduct = (id, product) => {
     let [id_Cart, id_Prod] = [cart.id, id];
@@ -63,7 +62,7 @@ const OrderStatusPage = ({ setIsOrderStatus, openCloseCouponWindow }) => {
       <OrderPrice values={cart} />
 
       <div className={s.btn}>
-        <PlaceAnOrderBtn />
+        <PlaceAnOrderBtn cart={cart} />
       </div>
     </div>
   );

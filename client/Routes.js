@@ -4,9 +4,7 @@ import Products from "./containers/Admin/Products/Products";
 import Categories from "./containers/Admin/Categories/Categories";
 import { routes } from "./shared/constants";
 
-const HomePage = React.lazy(() =>
-  import("./containers/Home/HomePage")
-);
+const HomePage = React.lazy(() => import("./containers/Home/HomePage"));
 const ProductPage = React.lazy(() =>
   import("./containers/Product/ProductPage")
 );
@@ -14,9 +12,7 @@ const RoutesAdmin = React.lazy(() =>
   import("./containers/Admin/AdminPage/RoutesAdmin")
 );
 
-const Login = React.lazy(() =>
-  import("./containers/Auth/Login/Login")
-);
+const Login = React.lazy(() => import("./containers/Auth/Login/Login"));
 const Registration = React.lazy(() =>
   import("./containers/Auth/Registration/Registration")
 );
@@ -28,7 +24,6 @@ const marketplaceRoutes = [
   {
     path: routes.PLACE_ORDER,
     component: PlaceOrderPage,
-    exact: true,
   },
   {
     path: routes.PRODUCT,

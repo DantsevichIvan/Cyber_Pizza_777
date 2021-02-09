@@ -3,11 +3,11 @@ import { Formik } from "formik";
 import s from "./PlaceOrderPage.module.css";
 import Input from "../../component/common/Input/Input";
 import Product from "../../component/PlaceOrderPage/Product/Product";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
-import { createOrder } from "../../action/orderAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
+import { getStatus } from "../../action/orderAction";
 
 const orderSchema = yup.object().shape({
   name: yup.string().required("Required"),
@@ -18,14 +18,17 @@ const orderSchema = yup.object().shape({
 });
 
 const PlaceOrderPage = () => {
+  const { order_id } = useParams();
   const dispatch = useDispatch();
+  const history = useHistory();
+  const order = useSelector((state) => state.order.order);
 
   useEffect(() => {
-    dispatch(createOrder());
+    dispatch(getStatus(order_id));
   }, [dispatch]);
 
-  const history = useHistory();
   const goBack = () => history.goBack();
+
   const handleSubmit = (values) => {
     console.log(values);
   };
@@ -42,8 +45,6 @@ const PlaceOrderPage = () => {
               flat: "",
             },
           },
-          price: 12,
-          products: [{ name: "paperoni", count: 2 }],
         }}
         onSubmit={handleSubmit}
         validationSchema={orderSchema}
@@ -118,14 +119,14 @@ const PlaceOrderPage = () => {
                 <div className={s["list-order"]}>
                   <h2>Order List</h2>
                   <div className={s["list-order-product"]}>
-                    {values.products.map((product) => (
-                      <Product product={product} />
+                    {order.products.map((product) => (
+                      <Product product={product} key={order._id} />
                     ))}
                   </div>
                 </div>
                 <div className={s["order-price"]}>
                   <span>Price:</span>
-                  <span>${values.price}</span>
+                  <span>${order.price}</span>
                 </div>
               </div>
             </div>

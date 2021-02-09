@@ -3,6 +3,9 @@ const SET_ORDER = "SET_ORDER";
 const initState = {
   order: {
     status: "",
+    id: "",
+    products: [],
+    price: 0,
   },
 };
 
@@ -13,6 +16,9 @@ const OrderReducer = (state = initState, action) => {
         ...state,
         order: {
           status: action.data.order.status,
+          products: action.data.order.products,
+          price: action.data.order.price,
+          id: action.data.order._id,
         },
       };
     }

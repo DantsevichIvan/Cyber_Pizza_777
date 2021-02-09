@@ -1,11 +1,12 @@
 import { setOrder } from "../reducers/orderReducer";
 
-export const createOrder = () => async (dispatch) => {
+export const createOrder = (order) => async (dispatch) => {
   const res = await fetch("/api/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({ order: order }),
   });
   const result = await res.json();
   dispatch(setOrder(result));
