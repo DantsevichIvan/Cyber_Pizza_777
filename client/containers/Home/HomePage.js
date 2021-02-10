@@ -28,6 +28,8 @@ const HomePage = () => {
     dispatch(createCarts());
   }, [dispatch]);
 
+
+
   return (
     <div className={s.home_wrap}>
       <HomeSideBar categories={categories} isAuth={isAuth} />

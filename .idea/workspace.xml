@@ -30,17 +30,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1c197d-c164-43b0-9015-58b55a4bf1e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/containers/OrderStatusPage/OrderStatusPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/containers/OrderStatusPage/OrderStatusPage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/schemas/schemas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/order/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/orderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/orderAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/common/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Order/PlaceAnOrderBtn/PlaceAnOrderBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Order/PlaceAnOrderBtn/PlaceAnOrderBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Auth/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Auth/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Auth/Registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Auth/Registration/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Home/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Home/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/containers/PlaceOrder/PlaceOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/PlaceOrder/PlaceOrderPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/shared/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/shared/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -111,7 +107,7 @@
       <recent name="C:\ivan-dansevitch\Cyber_Pizza_777\client\component\common\Buttons" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.client:watch">
+  <component name="RunManager" selected="npm.server:watch">
     <configuration name="Test.Get user when not cookie" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -179,8 +175,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.client:watch" />
         <item itemvalue="npm.server:watch" />
+        <item itemvalue="npm.client:watch" />
         <item itemvalue="npm.db:seed" />
         <item itemvalue="Jest.Test.Get user when not cookie" />
         <item itemvalue="Jest.Test.Validation password" />
@@ -233,14 +229,8 @@
       <workItem from="1612766855344" duration="19682000" />
       <workItem from="1612809994914" duration="1541000" />
       <workItem from="1612851127368" duration="4740000" />
-      <workItem from="1612865756737" duration="9687000" />
-    </task>
-    <task id="LOCAL-00009" summary="feat: add new structure  and static page">
-      <created>1606990977659</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1606990977659</updated>
+      <workItem from="1612865756737" duration="11646000" />
+      <workItem from="1612936858436" duration="1813000" />
     </task>
     <task id="LOCAL-00010" summary="feat:static page">
       <created>1606991270313</created>
@@ -578,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612859090119</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fix Redirect user to order view page #7">
+      <created>1612880812112</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1612880812113</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: fix layout desktop" />
     <MESSAGE value="feat: fix db.js and add test-helper.js" />
     <MESSAGE value="feat: add test for Registration and Login" />
     <MESSAGE value="Merge branch 'create-home-page' into main&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
@@ -634,7 +630,8 @@
     <MESSAGE value="fix Order total is not recalculated after removing items from cart #14" />
     <MESSAGE value="fix url" />
     <MESSAGE value="fix carts method addNewProduct&#10;fix Show actual cart on order creation form #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix carts method addNewProduct&#10;fix Show actual cart on order creation form #6" />
+    <MESSAGE value="fix Redirect user to order view page #7" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Redirect user to order view page #7" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -647,12 +644,12 @@
     </state>
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="304" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1612452487498" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1612859088607">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1612880810904">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361979671" />
     <state x="2177" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684799125" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1612859088607" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1612880810904" />
     <state width="1197" height="623" key="DebuggerActiveHint" timestamp="1607686690743">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -669,34 +666,34 @@
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612355862" />
     <state x="2469" y="194" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607694044988" />
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1612869499359" />
-    <state width="1259" height="103" key="GridCell.Tab.0.bottom" timestamp="1612879509916">
+    <state width="1259" height="167" key="GridCell.Tab.0.bottom" timestamp="1612937717127">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485991" />
     <state width="1259" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801102" />
     <state width="1899" height="368" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801982" />
-    <state width="1259" height="103" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612879509916" />
-    <state width="1259" height="103" key="GridCell.Tab.0.center" timestamp="1612879509916">
+    <state width="1259" height="167" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612937717127" />
+    <state width="1259" height="167" key="GridCell.Tab.0.center" timestamp="1612937717127">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.center/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801981" />
-    <state width="1259" height="103" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612879509916" />
-    <state width="1259" height="103" key="GridCell.Tab.0.left" timestamp="1612879509916">
+    <state width="1259" height="167" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612937717127" />
+    <state width="1259" height="167" key="GridCell.Tab.0.left" timestamp="1612937717126">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.left/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801981" />
-    <state width="1259" height="103" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612879509916" />
-    <state width="1259" height="103" key="GridCell.Tab.0.right" timestamp="1612879509916">
+    <state width="1259" height="167" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612937717126" />
+    <state width="1259" height="167" key="GridCell.Tab.0.right" timestamp="1612937717127">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1003" height="240" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607528485990" />
     <state width="1259" height="217" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607611801101" />
     <state width="1899" height="368" key="GridCell.Tab.0.right/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607693801982" />
-    <state width="1259" height="103" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612879509916" />
+    <state width="1259" height="167" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612937717127" />
     <state width="1899" height="340" key="GridCell.Tab.1.bottom" timestamp="1607692101776">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -782,12 +779,12 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612432334" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1612210425154" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1612859268538">
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1612880817174">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361984755" />
     <state x="2117" y="164" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684816681" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1612859268538" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1612880817174" />
     <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1607157855251">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

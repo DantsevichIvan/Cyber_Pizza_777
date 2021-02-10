@@ -6,16 +6,8 @@ import Product from "../../component/PlaceOrderPage/Product/Product";
 import { useHistory } from "react-router-dom";
 import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
 import { useDispatch, useSelector } from "react-redux";
-import * as yup from "yup";
 import { updateOrder } from "../../action/orderAction";
-
-const orderSchema = yup.object().shape({
-  name: yup.string().required("Required"),
-  phone: yup.number().required("Required"),
-  street: yup.string().required("Required"),
-  house: yup.number().required("Required"),
-  flat: yup.number().required("Required"),
-});
+import {orderSchema} from "../../schemas/schemas";
 
 const PlaceOrderPage = () => {
   const dispatch = useDispatch();
