@@ -12,14 +12,11 @@ const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.errorData);
-  const auth = useSelector((state) => state.auth.isAuth);
   const goBack = () => history.goBack();
 
-  if (auth) {
-    history.push("/admin");
-  }
   const handleSubmit = (values) => {
     dispatch(login(values));
+    history.push("/admin");
   };
 
   return (
@@ -76,7 +73,7 @@ const Login = () => {
             </div>
 
             <div className={s.form_login_link}>
-              <Link to="/admin/registration">Registration</Link>
+              <Link to="/register">Registration</Link>
             </div>
             <div className={s.form_login_btn}>
               <button type="submit" disabled={isSubmitting}>

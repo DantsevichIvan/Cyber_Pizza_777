@@ -11,6 +11,7 @@ const initState = {
   isAdmin: null,
   errorData: "",
   errorAuth: "",
+  id: "",
 };
 
 const AuthReducer = (state = initState, action) => {
@@ -27,6 +28,7 @@ const AuthReducer = (state = initState, action) => {
         email: action.data.email,
         name: action.data.name,
         isAdmin: action.data.isAdmin,
+        id: action.data.id,
         isAuth: true,
         errorData: "",
       };

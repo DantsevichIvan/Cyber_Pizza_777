@@ -15,7 +15,7 @@ const Registration = () => {
   const auth = useSelector((state) => state.auth.isAuth);
 
   if (auth) {
-    history.push("/admin");
+    history.push("/");
   }
   const handleSubmit = (values) => {
     dispatch(registration(values));

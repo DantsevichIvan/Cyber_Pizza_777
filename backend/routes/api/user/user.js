@@ -7,12 +7,12 @@ const auth = require("../../../middleware/auth.middleware");
 
 router.post("/user/login", logIn);
 router.post("/users", registration);
-router.get("/user", auth, getUser);
+router.get("/user/:userId", auth, getUser);
 router.post("/user/logout", logOut);
 
 async function getUser(req, res) {
   //if cookie not
-  if (!req.cookies) {
+  if (!req.cookies.token) {
     return res.status(400);
   }
   const userId = req.user.userId;
@@ -27,6 +27,7 @@ async function getUser(req, res) {
   if (!user.isAuth) {
     return res.status(400);
   }
+  await user.save();
   return res.status(200).json({
     data: { name: user.name, email: user.email, isAdmin: user.isAdmin },
   });
@@ -111,9 +112,19 @@ async function logIn(req, res) {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
-    return res.cookie("token", token).json({ token }).status(200);
+    return res
+      .cookie("token", token)
+      .json({
+        token,
+        data: {
+          isAdmin: user.isAdmin,
+          name: user.name,
+          id: user._id,
+          email: user.email,
+        },
+      })
+      .status(200);
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
     });

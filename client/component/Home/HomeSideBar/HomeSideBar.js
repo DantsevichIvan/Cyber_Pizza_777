@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import s from "./HomeSideBar.module.css";
 import LogOut from "../../../containers/Auth/LogOut/LogOut";
 
-const HomeSideBar = ({ categories,isAuth }) => {
+const HomeSideBar = ({ categories, isAuth }) => {
   return (
     <div className={s.home_list_categories}>
       <div className={s.side_bar_title}>
@@ -21,7 +21,7 @@ const HomeSideBar = ({ categories,isAuth }) => {
                   activeClassName={s.active_item}
                   className={s.home_list_categories_item}
                   key={index}
-                  to={`/${item.name}`}
+                  to={`/category/${item.name}`}
                 >
                   {item.name}
                 </NavLink>
@@ -30,7 +30,7 @@ const HomeSideBar = ({ categories,isAuth }) => {
           </div>
         </div>
         <div className={s.home_list_categories_link}>
-          {isAuth ? <LogOut /> : <Link to="/admin/login">Login</Link>}
+          {isAuth ? <LogOut /> : <Link to="/sign-in">Login</Link>}
         </div>
       </div>
     </div>

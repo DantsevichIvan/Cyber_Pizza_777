@@ -10,18 +10,17 @@ const RoutesAdmin = ({ routes }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth.isAuth);
+  const userId = useSelector((state) => state.auth.id);
   const isAdmin = useSelector((state) => state.auth.isAdmin);
   const isAuth = useSelector((state) => state.auth.isAuth);
   const name = useSelector((state) => state.auth.name);
 
   useEffect(() => {
-    dispatch(getUser());
+    dispatch(getUser(userId));
   }, [dispatch, auth]);
 
-  debugger;
-  if (isAdmin === false) {
-    //history.push("/admin");
-    return <Redirect to="/" />;
+  if (!isAdmin || !isAuth) {
+    history.push("/");
   }
   return (
     <div className={s.admin_wrap}>

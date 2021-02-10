@@ -11,7 +11,6 @@ const ProductPage = React.lazy(() =>
 const RoutesAdmin = React.lazy(() =>
   import("./containers/Admin/AdminPage/RoutesAdmin")
 );
-
 const Login = React.lazy(() => import("./containers/Auth/Login/Login"));
 const Registration = React.lazy(() =>
   import("./containers/Auth/Registration/Registration")
@@ -25,9 +24,31 @@ const OrderStatusPage = React.lazy(() =>
 
 const marketplaceRoutes = [
   {
+    path: routes.HOME,
+    exact: true,
+    component: HomePage,
+  },
+  {
+    path: routes.CATEGORY,
+    component: HomePage,
+  },
+  {
+    path: routes.ADMIN,
+    component: RoutesAdmin,
+    routes: [
+      {
+        path: routes.ADMIN_PRODUCTS,
+        component: Products,
+      },
+      {
+        path: routes.ADMIN_CATEGORIES,
+        component: Categories,
+      },
+    ],
+  },
+  {
     path: routes.PLACE_ORDER,
     component: PlaceOrderPage,
-    exact: true,
   },
   {
     path: routes.ORDER_STATUS,
@@ -35,41 +56,15 @@ const marketplaceRoutes = [
   },
   {
     path: routes.PRODUCT,
-    exact: true,
     component: ProductPage,
-  },
-  {
-    path: routes.HOME,
-    exact: true,
-    component: HomePage,
   },
   {
     path: routes.REGISTER,
     component: Registration,
-    exact: true,
   },
   {
     path: routes.SIGN_IN,
     component: Login,
-    exact: true,
-  },
-
-  {
-    path: routes.ADMIN,
-    component: RoutesAdmin,
-    exact: true,
-    routes: [
-      {
-        path: routes.ADMIN_PRODUCTS,
-        component: Products,
-        exact: true,
-      },
-      {
-        path: routes.ADMIN_CATEGORIES,
-        component: Categories,
-        exact: true,
-      },
-    ],
   },
 ];
 

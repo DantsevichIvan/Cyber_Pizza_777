@@ -9,16 +9,20 @@ import OrderStatusPage from "../Order/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
 import CouponForm from "../Order/Form/CouponForm";
 import HomeListProducts from "./HomeListProducts/HomeListProducts";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams, Switch, Route } from "react-router-dom";
+import { getUser } from "../../action/authAction";
 
 const HomePage = () => {
-  const { category } = useParams();
+  const { name } = useParams();
+  const history = useHistory();
   const [isOrderStatus, setIsOrderStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
   const [isModal, setIsModal] = useState(false);
   const categories = useSelector((state) => state.categories.categories);
   const isAuth = useSelector((state) => state.auth.isAuth);
+  const userId = useSelector((state) => state.auth.id);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
 
   const openCloseCouponWindow = () => {
     setIsModal(!isModal);
@@ -26,9 +30,12 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(getCategories());
     dispatch(createCarts());
+    dispatch(getUser(userId));
   }, [dispatch]);
 
-
+  if (isAdmin) {
+    history.push("/admin");
+  }
 
   return (
     <div className={s.home_wrap}>
@@ -38,7 +45,7 @@ const HomePage = () => {
           cartsProducts={cart.products}
           setIsOrderStatus={setIsOrderStatus}
         />
-        <HomeListProducts category={category} />
+        <HomeListProducts category={name} />
       </div>
       {isOrderStatus ? (
         <OrderStatusPage

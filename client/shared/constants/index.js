@@ -1,7 +1,8 @@
 export const routes = {
-  HOME: "/:category?",
-  REGISTER: "/admin/registration",
-  SIGN_IN: "/admin/login",
+  HOME: "/",
+  CATEGORY: "/category/:name?",
+  REGISTER: "/register",
+  SIGN_IN: "/sign-in",
   ADMIN: "/admin",
   PRODUCT: `/product/:id?`,
   ADMIN_PRODUCTS: "/admin/products",
