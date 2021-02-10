@@ -3,22 +3,14 @@ import { Field, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { createProduct } from "../../../../action/productsAction";
 import s from "./Form.module.css";
+import { addProductSchema } from "../../../../schemas/schemas";
+import Input from "../../../../component/common/Input/Input";
+import Button from "../../../../component/common/Buttons/Button/Button";
 
 const FormAddProduct = ({ closeModal }) => {
   const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
-  const validation = (values) => {
-    const errors = {};
-    for (let key in values) {
-      if (!values[key]) {
-        errors[key] = "Required";
-      }
-    }
-    // if (values.categories !== ' '){
-    //     errors.categories = 'Selected category'
-    // }
-    return errors;
-  };
+
   return (
     <Formik
       initialValues={{
@@ -34,7 +26,7 @@ const FormAddProduct = ({ closeModal }) => {
         dispatch(createProduct(values));
         closeModal();
       }}
-      validate={validation}
+      validationSchema={addProductSchema}
     >
       {({
         values,
@@ -48,71 +40,60 @@ const FormAddProduct = ({ closeModal }) => {
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
             <h3>Add new Product</h3>
-            <button onClick={closeModal} className={s["btn-close"]}>
-              Close
-            </button>
+            <Button
+              method={closeModal}
+              title={"Close"}
+              classname={s["btn-close"]}
+            />
           </div>
           <div className={s["form-wrap"]}>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Name</label>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-              {errors.name && touched.name && errors.name}
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Description</label>
-              <textarea
-                name="description"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.description}
-              />
-              {errors.description && touched.description && errors.description}
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Weight</label>
-              <input
-                type="number"
-                name="weight"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.weight}
-              />
-              {errors.weight && touched.weight && errors.weight}
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Price</label>
-              <input
-                type="number"
-                name="price"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.price}
-              />
-              {errors.price && touched.price && errors.price}
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Image</label>
-              <input
-                type="text"
-                name="image"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.image}
-              />
-              {errors.image && touched.image && errors.image}
-              <a
-                href="https://dantsevichivan.github.io/Search-Image/"
-                target="_blank"
-              >
-                Image Search
-              </a>
-            </div>
+            <Input
+              name={"name"}
+              placeholder={"Name"}
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.name && errors.name}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"description"}
+              placeholder={"Description"}
+              value={values.description}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.description && errors.description}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"weight"}
+              placeholder={"Weight"}
+              value={values.weight}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.weight && errors.weight}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"price"}
+              placeholder={"Price"}
+              value={values.price}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.price && errors.price}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"image"}
+              placeholder={"Image"}
+              value={values.image}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.image && errors.image}
+              classname={s["form-item"]}
+              link={"https://dantsevichivan.github.io/Search-Image/"}
+              titleLink={"Image Search"}
+            />
             <div className={s["form-item"]}>
               <label htmlFor="">Categories</label>
               <Field name="categories" as="select" onChange={handleChange}>
@@ -131,9 +112,12 @@ const FormAddProduct = ({ closeModal }) => {
             </div>
           </div>
           <div className={s["btn-add"]}>
-            <button type="submit" disabled={isSubmitting}>
-              Create Product
-            </button>
+            <Button
+              type={"submit"}
+              disabled={isSubmitting}
+              title={"Create Product"}
+              classname={s["btn-submit"]}
+            />
           </div>
         </form>
       )}

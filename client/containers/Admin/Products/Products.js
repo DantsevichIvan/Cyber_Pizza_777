@@ -37,7 +37,7 @@ const Products = () => {
     <div className={s.container}>
       <HeaderComponent
         create={createProduct}
-        value={"Add Products"}
+        value={"Add"}
         title={"Products"}
       />
       <div className={s.wrap}>

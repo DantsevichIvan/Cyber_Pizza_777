@@ -3,6 +3,9 @@ import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { createCategories } from "../../../../action/categoriesAction";
 import s from "./Form.module.css";
+import { addCategorySchema } from "../../../../schemas/schemas";
+import Button from "../../../../component/common/Buttons/Button/Button";
+import Input from "../../../../component/common/Input/Input";
 
 const FormAddCategory = ({ closeModal }) => {
   const dispatch = useDispatch();
@@ -16,13 +19,7 @@ const FormAddCategory = ({ closeModal }) => {
         dispatch(createCategories(values));
         closeModal();
       }}
-      validate={(values) => {
-        const errors = {};
-        if (!values.name) {
-          errors.name = "Required";
-        }
-        return errors;
-      }}
+      validationSchema={addCategorySchema}
     >
       {({
         values,
@@ -36,27 +33,30 @@ const FormAddCategory = ({ closeModal }) => {
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
             <h3>Add new Category</h3>
-            <button onClick={closeModal} className={s["btn-close"]}>
-              Close
-            </button>
+            <Button
+              method={closeModal}
+              title={"Close"}
+              classname={s["btn-close"]}
+            />
           </div>
           <div className={s["form-wrap"]}>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Name</label>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-            </div>
-            {errors.name && touched.name && errors.name}
+            <Input
+              name={"name"}
+              placeholder={"Name"}
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.name && errors.name}
+              classname={s["form-item"]}
+            />
           </div>
           <div className={s["btn-add"]}>
-            <button type="submit" disabled={isSubmitting}>
-              Create Category
-            </button>
+            <Button
+              type={"submit"}
+              disabled={isSubmitting}
+              title={"Create Category"}
+              classname={s["btn-submit"]}
+            />
           </div>
         </form>
       )}

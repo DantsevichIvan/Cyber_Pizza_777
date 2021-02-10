@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./Input.module.css";
+import { Link } from "react-router-dom";
 
 const Input = ({
   classname,
@@ -10,6 +11,8 @@ const Input = ({
   onBlur,
   error,
   type,
+  link,
+  titleLink,
 }) => {
   return (
     <div className={classname}>
@@ -23,6 +26,11 @@ const Input = ({
         value={value}
       />
       <span className={s["error-message"]}>{error}</span>
+      {link ? (
+        <Link to={link} target={"_blank"}>
+          {titleLink}
+        </Link>
+      ) : null}
     </div>
   );
 };

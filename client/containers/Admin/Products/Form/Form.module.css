@@ -20,8 +20,14 @@
   margin: 10px;
 }
 
+.form-header h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .btn-close {
-  height: 30px;
+  font-size: 1.2rem;
+  padding: 4px 12px !important;
 }
 
 .form-wrap {
@@ -33,17 +39,32 @@
 .form-item {
   display: flex;
   flex-direction: column;
-  margin: 15px;
-  width: 150px;
+  margin: 14px 10px;
+  min-width: 184px;
 }
 
-.form-item input, textarea {
-  border: 1px solid #000;
+.form-item label {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.form-item input {
+  line-height: 23px;
+  border: 1px solid;
+  padding: 5px 10px;
 }
 
 .btn-add {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin-bottom: 15px;
+}
+
+.btn-submit {
+  font-size: 1.6rem;
+  text-transform: uppercase !important;
+  padding: 4px 7px !important;
 }

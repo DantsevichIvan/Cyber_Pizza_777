@@ -24,3 +24,14 @@ export const orderSchema = Yup.object().shape({
   house: Yup.number().required("Required"),
   flat: Yup.number().required("Required"),
 });
+export const addProductSchema = Yup.object().shape({
+  name: Yup.string().required("Required"),
+  description: Yup.string().required("Required"),
+  weight: Yup.number().required("Required"),
+  price: Yup.number().required("Required"),
+  categories: Yup.string().required("Required"),
+  image: Yup.string().required("Required"),
+});
+export const addCategorySchema = Yup.object().shape({
+  name: Yup.string().required("Required"),
+});

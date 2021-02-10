@@ -42,7 +42,7 @@ const Categories = () => {
     <div className={s.container}>
       <HeaderComponent
         create={createCategory}
-        value={"Add Categories"}
+        value={"Add"}
         title={"Categories"}
       />
       <div className={s.wrap}>

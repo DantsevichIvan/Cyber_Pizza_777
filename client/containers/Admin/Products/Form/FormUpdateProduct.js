@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Field, Formik } from "formik";
 import { updateProduct } from "../../../../action/productsAction";
 import s from "./Form.module.css";
+import { addProductSchema } from "../../../../schemas/schemas";
+import Button from "../../../../component/common/Buttons/Button/Button";
+import Input from "../../../../component/common/Input/Input";
 
 const FormUpdateProduct = ({ closeModal, item }) => {
   const categories = useSelector((state) => state.categories.categories);
@@ -22,26 +25,36 @@ const FormUpdateProduct = ({ closeModal, item }) => {
         dispatch(updateProduct(values));
         closeModal();
       }}
+      validationSchema={addProductSchema}
     >
-      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+      {({
+        errors,
+        touched,
+        values,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
             <h3>Update Product</h3>
-            <button onClick={closeModal} className={s["btn-close"]}>
-              Close
-            </button>
+            <Button
+              method={closeModal}
+              title={"Close"}
+              classname={s["btn-close"]}
+            />
           </div>
           <div className={s["form-wrap"]}>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Name</label>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-            </div>
+            <Input
+              name={"name"}
+              placeholder={"Name"}
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.name && errors.name}
+              classname={s["form-item"]}
+            />
             <div className={s["form-item"]}>
               <label htmlFor="">Description</label>
               <textarea
@@ -51,42 +64,35 @@ const FormUpdateProduct = ({ closeModal, item }) => {
                 value={values.description}
               />
             </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Weight</label>
-              <input
-                type="number"
-                name="weight"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.weight}
-              />
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Price</label>
-              <input
-                type="number"
-                name="price"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.price}
-              />
-            </div>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Image</label>
-              <input
-                type="text"
-                name="image"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.image}
-              />
-              <a
-                href="https://dantsevichivan.github.io/Search-Image/"
-                target="_blank"
-              >
-                Image Search
-              </a>
-            </div>
+            <Input
+              name={"weight"}
+              placeholder={"Weight"}
+              value={values.weight}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.weight && errors.weight}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"price"}
+              placeholder={"Price"}
+              value={values.price}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.price && errors.price}
+              classname={s["form-item"]}
+            />
+            <Input
+              name={"image"}
+              placeholder={"Image"}
+              value={values.image}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.image && errors.image}
+              classname={s["form-item"]}
+              link={"https://dantsevichivan.github.io/Search-Image/"}
+              titleLink={"Image Search"}
+            />
             <div className={s["form-item"]}>
               <label htmlFor="">Categories</label>
               <Field name="categories" as="select">
@@ -101,9 +107,12 @@ const FormUpdateProduct = ({ closeModal, item }) => {
             </div>
           </div>
           <div className={s["btn-add"]}>
-            <button type="submit" disabled={isSubmitting}>
-              Update Product
-            </button>
+            <Button
+              type={"submit"}
+              disabled={isSubmitting}
+              title={"Update Product"}
+              classname={s["btn-submit"]}
+            />
           </div>
         </form>
       )}

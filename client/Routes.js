@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Products from "./containers/Admin/Products/Products";
 import Categories from "./containers/Admin/Categories/Categories";
 import { routes } from "./shared/constants";
+import Orders from "./containers/Admin/Orders/Orders";
 
 const HomePage = React.lazy(() => import("./containers/Home/HomePage"));
 const ProductPage = React.lazy(() =>
@@ -43,6 +44,10 @@ const marketplaceRoutes = [
       {
         path: routes.ADMIN_CATEGORIES,
         component: Categories,
+      },
+      {
+        path: routes.ADMIN_ORDERS,
+        component: Orders,
       },
     ],
   },

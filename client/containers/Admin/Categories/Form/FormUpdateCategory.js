@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { Formik } from "formik";
 import { updateCategories } from "../../../../action/categoriesAction";
 import s from "./Form.module.css";
+import Button from "../../../../component/common/Buttons/Button/Button";
+import Input from "../../../../component/common/Input/Input";
 
 const FormUpdateCategory = ({ item, closeModal }) => {
   const dispatch = useDispatch();
@@ -17,31 +19,44 @@ const FormUpdateCategory = ({ item, closeModal }) => {
         dispatch(updateCategories(values));
         closeModal();
       }}
+      validationSchema={addCategorySchema}
     >
-      {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+      {({
+        errors,
+        touched,
+        values,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
             <h3>Update Category</h3>
-            <button onClick={closeModal} className={s["btn-close"]}>
-              Close
-            </button>
+            <Button
+              method={closeModal}
+              title={"Close"}
+              classname={s["btn-close"]}
+            />
           </div>
           <div className={s["form-wrap"]}>
-            <div className={s["form-item"]}>
-              <label htmlFor="">Name</label>
-              <input
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-            </div>
+            <Input
+              name={"name"}
+              placeholder={"Name"}
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.name && errors.name}
+              classname={s["form-item"]}
+            />
           </div>
           <div className={s["btn-add"]}>
-            <button type="submit" disabled={isSubmitting}>
-              Update Category
-            </button>
+            <Button
+              type={"submit"}
+              disabled={isSubmitting}
+              title={"Update Category"}
+              classname={s["btn-submit"]}
+            />
           </div>
         </form>
       )}
