@@ -49,7 +49,6 @@ const Registration = () => {
             className={s.registration_form}
             onSubmit={handleSubmit}
           >
-            {console.log(errors)}
             <div className={s.registration_form_header}>
               <ButtonBack
                 classname={s["header-back"]}
@@ -65,7 +64,7 @@ const Registration = () => {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.email}
+                error={touched.email && errors.email}
                 classname={s["form-item"]}
               />
               <Input
@@ -74,7 +73,7 @@ const Registration = () => {
                 value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.name}
+                error={touched.name && errors.name}
                 classname={s["form-item"]}
               />
               <Input
@@ -84,7 +83,7 @@ const Registration = () => {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.password}
+                error={touched.password && errors.password}
                 classname={s["form-item"]}
               />
               <Input
@@ -94,7 +93,7 @@ const Registration = () => {
                 value={values.confirmPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.confirmPassword}
+                error={touched.confirmPassword && errors.confirmPassword}
                 classname={s["form-item"]}
               />
               {errorMessage ? (

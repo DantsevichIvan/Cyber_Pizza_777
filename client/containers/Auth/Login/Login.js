@@ -57,7 +57,7 @@ const Login = () => {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.email}
+                error={touched.email && errors.email}
                 classname={s["form-item"]}
               />
               <Input
@@ -67,7 +67,7 @@ const Login = () => {
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors.password}
+                error={touched.password && errors.password}
                 classname={s["form-item"]}
               />
               {errorMessage ? (

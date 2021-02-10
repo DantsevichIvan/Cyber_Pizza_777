@@ -108,14 +108,14 @@ async function logIn(req, res) {
         .json({ message: "Неверный данные, попробуйте снова" });
     }
     //Token
-    const token = await jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
     return res.cookie("token", token).json({ token }).status(200);
   } catch (e) {
+    console.log(e);
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
-      success: false,
     });
   }
 }
