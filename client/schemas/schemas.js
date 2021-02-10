@@ -1,27 +1,26 @@
-import * as yup from "yup";
+import * as Yup from "yup";
 
-export const orderSchema = yup.object().shape({
-  name: yup.string().required("Required"),
-  phone: yup.number().required("Required"),
-  street: yup.string().required("Required"),
-  house: yup.number().required("Required"),
-  flat: yup.number().required("Required"),
+const emailSchema = Yup.string().required("Required").email();
+const passwordSchema = Yup.string().required("Required");
+
+export const loginSchema = Yup.object().shape({
+  email: emailSchema,
+  password: passwordSchema,
 });
 
-const emailSchema = yup.string().required("Required").email;
-const passwordSchema = yup.string().required("Required");
-
-export const registrationSchema = yup.object().shape({
+export const registrationSchema = Yup.object().shape({
   email: emailSchema,
-  name: yup.string().required("Required"),
+  name: Yup.string().required("Required"),
   password: passwordSchema,
   confirmPassword: passwordSchema.oneOf(
-    [yup.ref("password"), null],
+    [Yup.ref("password"), null],
     `Password don't match`
   ),
 });
-
-export const loginSchema = yup.object().shape({
-  email:emailSchema,
-  password:passwordSchema
-})
+export const orderSchema = Yup.object().shape({
+  name: Yup.string().required("Required"),
+  phone: Yup.number().required("Required"),
+  street: Yup.string().required("Required"),
+  house: Yup.number().required("Required"),
+  flat: Yup.number().required("Required"),
+});

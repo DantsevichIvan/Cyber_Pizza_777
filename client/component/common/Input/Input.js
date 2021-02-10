@@ -9,12 +9,13 @@ const Input = ({
   onChange,
   onBlur,
   error,
+  type,
 }) => {
   return (
     <div className={classname}>
       <label htmlFor="">{name}</label>
       <input
-        type="text"
+        type={type || "text"}
         name={name}
         placeholder={placeholder}
         onChange={onChange}

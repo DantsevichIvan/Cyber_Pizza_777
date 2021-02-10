@@ -26,16 +26,8 @@
     align-items: center;
 }
 .registration_form_item{
-    padding: 10px 0;
     display: flex;
     flex-direction: column;
-}
-.registration_form_item input{
-    padding: 5px 10px;
-}
-.registration_form_item span{
-    padding-top: 5px;
-    font-size: 0.8rem;
 }
 .registration_form_btn button{
     background-color: #ffffff;
@@ -61,4 +53,22 @@
     left: -60px;
     top: -30px;
     font-size: 1.2rem!important;
+}
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.form-item label {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.form-item input {
+    line-height: 23px;
+    border: 1px solid;
+    padding: 5px 10px;
 }

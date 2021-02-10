@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, Formik } from "formik";
+import { Formik } from "formik";
 import s from "./PlaceOrderPage.module.css";
 import Input from "../../component/common/Input/Input";
 import Product from "../../component/PlaceOrderPage/Product/Product";
@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 import ButtonBack from "../../component/common/Buttons/ButtonBack/ButtonBack";
 import { useDispatch, useSelector } from "react-redux";
 import { updateOrder } from "../../action/orderAction";
-import {orderSchema} from "../../schemas/schemas";
+import { orderSchema } from "../../schemas/schemas";
 
 const PlaceOrderPage = () => {
   const dispatch = useDispatch();

@@ -5,7 +5,8 @@ import { login } from "../../../action/authAction";
 import { Link, useHistory } from "react-router-dom";
 import s from "./Login.module.css";
 import ButtonBack from "../../../component/common/Buttons/ButtonBack/ButtonBack";
-import {loginSchema} from "../../../schemas/schemas";
+import { loginSchema } from "../../../schemas/schemas";
+import Input from "../../../component/common/Input/Input";
 
 const Login = () => {
   const history = useHistory();
@@ -28,7 +29,7 @@ const Login = () => {
           email: "",
           password: "",
         }}
-        validate={loginSchema}
+        validationSchema={loginSchema}
         onSubmit={handleSubmit}
       >
         {({
@@ -38,6 +39,7 @@ const Login = () => {
           handleChange,
           handleBlur,
           handleSubmit,
+          isSubmitting,
         }) => (
           <form action="" className={s.form_login} onSubmit={handleSubmit}>
             <div className={s.form_login_header}>
@@ -49,30 +51,25 @@ const Login = () => {
               <h3>Login</h3>
             </div>
             <div className={s.form_login_wrap}>
-              <div className={s.form_login_item}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                />
-                <span>{errors.email && touched.email && errors.email}</span>
-              </div>
-              <div className={s.form_login_item}>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                />
-                <span>
-                  {errors.password && touched.password && errors.password}
-                </span>
-              </div>
+              <Input
+                name={"email"}
+                placeholder={"Email"}
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                classname={s["form-item"]}
+              />
+              <Input
+                name={"password"}
+                type={"password"}
+                placeholder={"Password"}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.password}
+                classname={s["form-item"]}
+              />
               {errorMessage ? (
                 <span className={s.form_login_item_error}>{errorMessage}</span>
               ) : null}
@@ -82,7 +79,9 @@ const Login = () => {
               <Link to="/admin/registration">Registration</Link>
             </div>
             <div className={s.form_login_btn}>
-              <button type="submit">Login</button>
+              <button type="submit" disabled={isSubmitting}>
+                Login
+              </button>
             </div>
           </form>
         )}

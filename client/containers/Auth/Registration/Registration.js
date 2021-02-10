@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Formik } from "formik";
 import { registration } from "../../../action/authAction";
 import s from "./Registration.module.css";
 import { useHistory } from "react-router-dom";
 import ButtonBack from "../../../component/common/Buttons/ButtonBack/ButtonBack";
-import {registrationSchema} from "../../../schemas/schemas";
+import { Formik } from "formik";
+import { registrationSchema } from "../../../schemas/schemas";
+import Input from "../../../component/common/Input/Input";
 
-const Registration = ({}) => {
+const Registration = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const errorMessage = useSelector((state) => state.auth.errorData);
@@ -31,8 +32,8 @@ const Registration = ({}) => {
           password: "",
           confirmPassword: "",
         }}
-        validate={registrationSchema}
         onSubmit={handleSubmit}
+        validationSchema={registrationSchema}
       >
         {({
           values,
@@ -41,12 +42,14 @@ const Registration = ({}) => {
           touched,
           handleBlur,
           handleSubmit,
+          isSubmitting,
         }) => (
           <form
             action=""
             className={s.registration_form}
             onSubmit={handleSubmit}
           >
+            {console.log(errors)}
             <div className={s.registration_form_header}>
               <ButtonBack
                 classname={s["header-back"]}
@@ -56,62 +59,52 @@ const Registration = ({}) => {
               <h3>Registration</h3>
             </div>
             <div className={s.registration_form_wrap}>
-              <div className={s.registration_form_item}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                />
-                <span>{errors.email && touched.email && errors.email}</span>
-              </div>
-              <div className={s.registration_form_item}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.name}
-                />
-                <span>{errors.name && touched.name && errors.name}</span>
-              </div>
-              <div className={s.registration_form_item}>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                />
-                <span>
-                  {errors.password && touched.password && errors.password}
-                </span>
-              </div>
-              <div className={s.registration_form_item}>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="confirm password"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.confirmPassword}
-                />
-                <span>
-                  {errors.confirmPassword &&
-                    touched.confirmPassword &&
-                    errors.confirmPassword}
-                </span>
-              </div>
+              <Input
+                name={"email"}
+                placeholder={"Email"}
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.email}
+                classname={s["form-item"]}
+              />
+              <Input
+                name={"name"}
+                placeholder={"Name"}
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.name}
+                classname={s["form-item"]}
+              />
+              <Input
+                name={"password"}
+                type={"password"}
+                placeholder={"Password"}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.password}
+                classname={s["form-item"]}
+              />
+              <Input
+                name={"confirmPassword"}
+                type={"password"}
+                placeholder={"ConfirmPassword"}
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.confirmPassword}
+                classname={s["form-item"]}
+              />
               {errorMessage ? (
                 <span className={s.form_login_item_error}>{errorMessage}</span>
               ) : null}
             </div>
             <div className={s.registration_form_btn}>
-              <button type="submit">Registration</button>
+              <button type="submit" disabled={isSubmitting}>
+                Registration
+              </button>
             </div>
           </form>
         )}
