@@ -94,11 +94,29 @@ async function updateStatusOrder(req, res) {
       throw new Error("Order not update");
     }
     await order.save();
-    return res.status(200).json({ message: "Order update", id: order_id });
+
+    await res.status(200).json({ message: "Order update", id: order_id });
+
+    await setTimeout(() => changeStatus(order_id, "Accept"), 1000);
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
     });
+  }
+}
+//function randomInteger(min, max) {
+//   // получить случайное число от (min-0.5) до (max+0.5)
+//   let rand = min - 0.5 + Math.random() * (max - min + 1);
+//   return Math.round(rand);
+// }
+async function changeStatus(id, status) {
+  try {
+    const order = await Order.findOneAndUpdate({ _id: id }, { status });
+    if (!order) {
+      throw new Error("Status not update");
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
 

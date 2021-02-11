@@ -30,26 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1c197d-c164-43b0-9015-58b55a4bf1e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Order/Order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Order/Order.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Order/OrderModal/OrderModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/Admin/Order/OrderModal/OrderModal.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/reducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api/order/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/authAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/authAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/action/orderAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/action/orderAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/component/common/Buttons/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/component/common/Buttons/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/AdminPage/RoutesAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/AdminPage/RoutesAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/Categories/Form/FormUpdateCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/Categories/Form/FormUpdateCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/Orders/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/Orders/Orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/Products/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Home/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Home/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/reducers/orderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/reducers/orderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/schemas/schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/schemas/schemas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/PlaceOrder/PlaceOrderPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/PlaceOrder/PlaceOrderPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/shared/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/shared/constants/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +72,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rocket-cloud-storefront" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -246,14 +230,7 @@
       <workItem from="1612936858436" duration="13874000" />
       <workItem from="1612955870644" duration="13000" />
       <workItem from="1612958459299" duration="12310000" />
-      <workItem from="1613020736306" duration="12272000" />
-    </task>
-    <task id="LOCAL-00015" summary="feat: fix webpack.common.js and webpack.dev.js">
-      <created>1607009397969</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1607009397969</updated>
+      <workItem from="1613020736306" duration="18665000" />
     </task>
     <task id="LOCAL-00016" summary="feat: fix routers.js">
       <created>1607064915051</created>
@@ -591,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612977965414</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="update Order.js">
+      <created>1613039225825</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1613039225826</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Router" />
     <MESSAGE value="Update Router&#10;update cart&#10;fix count products" />
     <MESSAGE value="add form for PlaceAnOrderBtn.js" />
     <MESSAGE value="fix package.json" />
@@ -647,7 +630,8 @@
     <MESSAGE value="fix error-message" />
     <MESSAGE value="fix Routers url" />
     <MESSAGE value="fix Form" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix Form" />
+    <MESSAGE value="update Order.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Order.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -660,12 +644,12 @@
     </state>
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="304" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1612452487498" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1612977964101">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1613039223968">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361979671" />
     <state x="2177" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684799125" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1612977964101" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1613039223968" />
     <state width="1197" height="623" key="DebuggerActiveHint" timestamp="1607686690743">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -675,13 +659,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1612859076208" />
-    <state x="366" y="127" key="FileChooserDialogImpl" timestamp="1612959015157">
+    <state x="366" y="127" key="FileChooserDialogImpl" timestamp="1613041152459">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2213" y="145" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607510773423" />
     <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612355862" />
     <state x="2469" y="194" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607694044988" />
-    <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1612959015157" />
+    <state x="366" y="127" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1613041152459" />
     <state width="1259" height="167" key="GridCell.Tab.0.bottom" timestamp="1613030926004">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -795,12 +779,12 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612432334" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1612210425154" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1612977972266">
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1613039227570">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361984755" />
     <state x="2117" y="164" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684816681" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1612977972266" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1613039227570" />
     <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1607157855251">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

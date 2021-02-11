@@ -18,7 +18,7 @@ const PlaceOrderPage = () => {
 
   const handleSubmit = (values) => {
     dispatch(updateOrder(values, order.id));
-    history.push(`/orders/${order.id}`);
+    history.push(`/orders_status/${order.id}`);
   };
 
   return (
@@ -60,7 +60,7 @@ const PlaceOrderPage = () => {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  error={errors.name}
+                  error={touched.name && errors.name}
                   classname={s["form-item"]}
                 />
                 <Input
@@ -68,7 +68,7 @@ const PlaceOrderPage = () => {
                   placeholder={"Phone"}
                   value={values.phone}
                   onChange={handleChange}
-                  error={errors.phone}
+                  error={touched.phone && errors.phone}
                   onBlur={handleBlur}
                   classname={s["form-item"]}
                 />
@@ -76,7 +76,7 @@ const PlaceOrderPage = () => {
                   name={"street"}
                   placeholder={"Street"}
                   value={values.street}
-                  error={errors.street}
+                  error={touched.street && errors.street}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   classname={s["form-item"]}
@@ -85,7 +85,7 @@ const PlaceOrderPage = () => {
                   name={"house"}
                   placeholder={"House"}
                   value={values.house}
-                  error={errors.house}
+                  error={touched.house && errors.house}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   classname={s["form-item"]}
@@ -94,7 +94,7 @@ const PlaceOrderPage = () => {
                   name={"flat"}
                   placeholder={"Flat"}
                   value={values.flat}
-                  error={errors.flat}
+                  error={touched.flat && errors.flat}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   classname={s["form-item"]}

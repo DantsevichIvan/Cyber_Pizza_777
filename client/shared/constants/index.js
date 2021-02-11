@@ -9,5 +9,5 @@ export const routes = {
   ADMIN_CATEGORIES: "/admin/categories",
   ADMIN_ORDERS: "/admin/orders",
   PLACE_ORDER: "/orders",
-  ORDER_STATUS: "/orders/:order_id?",
+  ORDER_STATUS: "/orders_status/:order_id?",
 };
