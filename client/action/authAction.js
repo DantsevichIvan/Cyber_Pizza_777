@@ -17,7 +17,6 @@ export const login = (values) => async (dispatch) => {
   });
   if (res.status === 200) {
     const result = await res.json();
-    console.log(result);
     dispatch(setUser(result.data));
   } else if (res.status === 400) {
     const result = await res.json();

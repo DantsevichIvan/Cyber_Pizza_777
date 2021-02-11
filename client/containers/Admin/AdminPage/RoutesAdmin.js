@@ -16,7 +16,7 @@ const RoutesAdmin = ({ routes }) => {
   const name = useSelector((state) => state.auth.name);
 
   useEffect(() => {
-    dispatch(getUser(userId));
+    dispatch(getUser());
   }, [dispatch, auth]);
 
   if (!isAdmin || !isAuth) {

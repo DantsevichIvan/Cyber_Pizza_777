@@ -14,6 +14,7 @@ const Products = () => {
   const [isModal, setModal] = useState(false);
   const [isMethod, setMethod] = useState("");
   const [product, setProduct] = useState({});
+
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);

@@ -9,7 +9,7 @@ import OrderStatusPage from "../Order/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
 import CouponForm from "../Order/Form/CouponForm";
 import HomeListProducts from "./HomeListProducts/HomeListProducts";
-import { useHistory, useParams, Switch, Route } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getUser } from "../../action/authAction";
 
 const HomePage = () => {

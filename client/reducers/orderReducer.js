@@ -1,4 +1,5 @@
 const SET_ORDER = "SET_ORDER";
+const SET_ALL_ORDERS = "SET_ALL_ORDERS";
 
 const initState = {
   order: {
@@ -7,6 +8,7 @@ const initState = {
     products: [],
     price: 0,
   },
+  orders: [],
 };
 
 const OrderReducer = (state = initState, action) => {
@@ -22,6 +24,12 @@ const OrderReducer = (state = initState, action) => {
         },
       };
     }
+    case SET_ALL_ORDERS: {
+      return {
+        ...state,
+        orders: [...action.data.orders],
+      };
+    }
     default:
       return {
         ...state,
@@ -32,6 +40,12 @@ const OrderReducer = (state = initState, action) => {
 export const setOrder = (data) => {
   return {
     type: SET_ORDER,
+    data,
+  };
+};
+export const setOrders = (data) => {
+  return {
+    type: SET_ALL_ORDERS,
     data,
   };
 };

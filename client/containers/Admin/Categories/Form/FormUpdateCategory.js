@@ -5,6 +5,7 @@ import { updateCategories } from "../../../../action/categoriesAction";
 import s from "./Form.module.css";
 import Button from "../../../../component/common/Buttons/Button/Button";
 import Input from "../../../../component/common/Input/Input";
+import { addCategorySchema } from "../../../../schemas/schemas";
 
 const FormUpdateCategory = ({ item, closeModal }) => {
   const dispatch = useDispatch();

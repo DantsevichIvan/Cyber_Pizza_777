@@ -4,6 +4,8 @@ const Order = require("../../../models/Order");
 
 router.post("/order", createOrder);
 router.get("/order/:id", getOrder);
+router.get("/admin/order/:id", getOneForAdmin);
+router.get("/order", getAllOrders);
 router.put("/order/:id", updateStatusOrder);
 
 async function createOrder(req, res) {
@@ -38,12 +40,40 @@ async function getOrder(req, res) {
   return res.status(200).json({ order });
 }
 
+async function getAllOrders(req, res) {
+  try {
+    const orders = await Order.find({});
+    if (!orders) {
+      throw new Error("orders not found");
+    }
+    return res.status(200).json({ orders });
+  } catch (e) {
+    res.status(500).json({
+      message: "Что-то пошло не так, попробуйте снова",
+    });
+  }
+}
+
+async function getOneForAdmin(req, res) {
+  try {
+    const order_id = req.params.id;
+    const order = await Order.findOne({ _id: order_id });
+    if (!order) {
+      throw new Error("order not found");
+    }
+    return res.status(200).json({ order });
+  } catch (err) {
+    res.status(500).json({
+      message: `Что-то пошло не так, ${err}`,
+    });
+  }
+}
+
 async function updateStatusOrder(req, res) {
   try {
     const { status } = req.body;
     const { name, phone, street, house, flat } = req.body.orderValues;
     let order_id = req.params.id;
-    console.log(order_id);
 
     const order = await Order.findOneAndUpdate(
       { _id: order_id },
@@ -66,7 +96,6 @@ async function updateStatusOrder(req, res) {
     await order.save();
     return res.status(200).json({ message: "Order update", id: order_id });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
     });

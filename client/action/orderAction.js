@@ -1,4 +1,4 @@
-import { setOrder } from "../reducers/orderReducer";
+import { setOrder, setOrders } from "../reducers/orderReducer";
 
 export const createOrder = (order) => async (dispatch) => {
   const res = await fetch("/api/order", {
@@ -19,6 +19,13 @@ export const getStatus = (id) => async (dispatch) => {
   const result = await res.json();
   dispatch(setOrder(result));
 };
+export const getOrder = (id) => async (dispatch) => {
+  const res = await fetch("/api/admin/order/" + id, {
+    method: "GET",
+  });
+  const result = await res.json();
+  dispatch(setOrder(result));
+};
 
 export const updateOrder = (order, id) => async (dispatch) => {
   const res = await fetch(`/api/order/` + id, {
@@ -31,7 +38,14 @@ export const updateOrder = (order, id) => async (dispatch) => {
       status: "The order is accepted and processed",
     }),
   });
-  debugger;
   const result = await res.json();
   dispatch(getStatus(result.id));
+};
+
+export const getAllOrders = () => async (dispatch) => {
+  const res = await fetch("/api/order/", {
+    method: "GET",
+  });
+  const result = await res.json();
+  dispatch(setOrders(result));
 };

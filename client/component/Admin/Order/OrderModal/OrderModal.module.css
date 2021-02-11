@@ -1,0 +1,57 @@
+.wrap{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-height: max-content;
+  background-color: #ffff;
+  z-index: 99;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+.header h2{
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.btn-close{
+  padding: 4px 10px!important;
+  font-size: 1.2rem!important;
+}
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.status{
+  display: flex;
+  align-items: center;
+}
+.status-title{
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-right: 10px;
+}
+.status-value{
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #c3c3c3;
+}
+.products{
+  display: flex;
+  flex-direction: column;
+}
+.product{
+  display: flex;
+}
