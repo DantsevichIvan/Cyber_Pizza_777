@@ -19,7 +19,7 @@ const RoutesAdmin = ({ routes }) => {
     dispatch(getUser());
   }, [dispatch, auth]);
 
-  if (!isAdmin || !isAuth) {
+  if (!isAuth) {
     history.push("/");
   }
   return (

@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleSubmit = (values) => {
     dispatch(login(values));
-    history.push("/admin");
+    history.push("/");
   };
 
   return (

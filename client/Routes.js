@@ -1,9 +1,10 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Products from "./containers/Admin/Products/Products";
 import Categories from "./containers/Admin/Categories/Categories";
 import { routes } from "./shared/constants";
 import Orders from "./containers/Admin/Orders/Orders";
+import { useSelector } from "react-redux";
 
 const HomePage = React.lazy(() => import("./containers/Home/HomePage"));
 const ProductPage = React.lazy(() =>
@@ -28,6 +29,7 @@ const marketplaceRoutes = [
     path: routes.HOME,
     exact: true,
     component: HomePage,
+    type: "auth",
   },
   {
     path: routes.CATEGORY,
@@ -74,6 +76,12 @@ const marketplaceRoutes = [
 ];
 
 export function RouteWithSubRoutes(route) {
+  const history = useHistory();
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
+
+  if (route.type === "auth" && isAdmin) {
+    history.push("/admin");
+  }
   return (
     <Route
       path={route.path}

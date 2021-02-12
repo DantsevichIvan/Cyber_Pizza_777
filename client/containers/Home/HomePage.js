@@ -33,9 +33,9 @@ const HomePage = () => {
     dispatch(getUser(userId));
   }, [dispatch]);
 
-  if (isAdmin) {
-    history.push("/admin");
-  }
+  // if (isAdmin) {
+  //   history.push("/admin");
+  // }
 
   return (
     <div className={s.home_wrap}>
