@@ -1,13 +1,15 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Field, Formik } from "formik";
-import { updateProduct } from "../../../../action/productsAction";
+import {useDispatch, useSelector} from "react-redux";
+import {Field, Formik} from "formik";
+import {updateProduct} from "../../../../action/productsAction";
 import s from "./Form.module.css";
-import { addProductSchema } from "../../../../schemas/schemas";
+import {addProductSchema} from "../../../../schemas/schemas";
 import Button from "../../../../component/common/Buttons/Button/Button";
 import Input from "../../../../component/common/Input/Input";
+import Select from "../../../../component/common/Select/Select";
+import TextArea from "../../../../component/common/TextArea/TextArea";
 
-const FormUpdateProduct = ({ closeModal, item }) => {
+const FormUpdateProduct = ({closeModal, item}) => {
   const categories = useSelector((state) => state.categories.categories);
   const dispatch = useDispatch();
   return (
@@ -28,14 +30,14 @@ const FormUpdateProduct = ({ closeModal, item }) => {
       validationSchema={addProductSchema}
     >
       {({
-        errors,
-        touched,
-        values,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-      }) => (
+          errors,
+          touched,
+          values,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+        }) => (
         <form action="" className={s.form} onSubmit={handleSubmit}>
           <div className={s["form-header"]}>
             <h3>Update Product</h3>
@@ -55,15 +57,14 @@ const FormUpdateProduct = ({ closeModal, item }) => {
               error={touched.name && errors.name}
               classname={s["form-item"]}
             />
-            <div className={s["form-item"]}>
-              <label htmlFor="">Description</label>
-              <textarea
-                name="description"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.description}
-              />
-            </div>
+            <TextArea
+              name={"description"}
+              title={'Description'}
+              value={values.description}
+              handleChange={handleChange}
+              classname={s["form-item"]}
+              error={touched.description && errors.description}
+            />
             <Input
               name={"weight"}
               placeholder={"Weight"}
@@ -93,18 +94,12 @@ const FormUpdateProduct = ({ closeModal, item }) => {
               link={"https://dantsevichivan.github.io/Search-Image/"}
               titleLink={"Image Search"}
             />
-            <div className={s["form-item"]}>
-              <label htmlFor="">Categories</label>
-              <Field name="categories" as="select">
-                {categories.map((item) => {
-                  return (
-                    <option key={item._id} value={item._id}>
-                      {item.name}
-                    </option>
-                  );
-                })}
-              </Field>
-            </div>
+            <Select
+              classname={s["form-item"]}
+              title={'Categories'}
+              handleChange={handleChange}
+              selects={categories}
+              error={touched.categories && errors.categories}/>
           </div>
           <div className={s["btn-add"]}>
             <Button

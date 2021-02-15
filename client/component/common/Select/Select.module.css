@@ -1,0 +1,11 @@
+.select {
+  line-height: 23px;
+  border: 1px solid;
+  padding: 8px 11px;
+  text-transform: capitalize;
+}
+.error-message{
+  color: red;
+  font-size: 1rem;
+  margin-top: 5px;
+}
