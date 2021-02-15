@@ -49,3 +49,12 @@ export const getAllOrders = () => async (dispatch) => {
   const result = await res.json();
   dispatch(setOrders(result));
 };
+
+export const getStatusCode = (code) => async (dispatch) => {
+  const res = await fetch("/api/order/" + code, {
+    method: "GET",
+  });
+  const result = await res.json();
+  console.log(result)
+  dispatch(setOrder(result));
+}

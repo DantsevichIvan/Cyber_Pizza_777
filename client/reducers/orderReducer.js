@@ -22,7 +22,7 @@ const OrderReducer = (state = initState, action) => {
           products: action.data.order.products,
           price: action.data.order.price,
           id: action.data.order._id,
-          order_number: action.data.order_number,
+          order_number: action.data.order.order_number,
         },
       };
     }

@@ -15,12 +15,16 @@ const OrderStatusPage = () => {
   const cart_id = useSelector((state) => state.carts.cart.id);
 
   useEffect(() => {
-    const intervalStatus = setInterval(() => {
-      dispatch(getStatus(order_id));
-    }, 1000);
-    return () => {
-      clearInterval(intervalStatus);
-    };
+    if (order_id){
+      const intervalStatus = setInterval(() => {
+        dispatch(getStatus(order_id));
+      }, 1000);
+      if (status === 'Pending'){
+        return () => {
+          clearInterval(intervalStatus);
+        };
+      }
+    }
   }, [status]);
 
   const back = () => {
@@ -28,7 +32,6 @@ const OrderStatusPage = () => {
     history.push(`/`);
   };
 
-  //
   return status === "Pending" ? (
     <div className={s.wrap}>
       <div className={s.container}>

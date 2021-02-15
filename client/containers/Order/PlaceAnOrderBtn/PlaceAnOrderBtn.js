@@ -21,7 +21,7 @@ const PlaceAnOrderBtn = ({ cart }) => {
     history.push(`/orders/`);
   };
   return (
-    <button className={s["learn-more"]} onClick={redirectPlaceOrder}>
+    <button className={s["learn-more"]} disabled={!cart.products.length} onClick={redirectPlaceOrder}>
       <span className={s["circle"]} aria-hidden="true">
         <span className={cn(s["icon"], s["arrow"])}> </span>
       </span>

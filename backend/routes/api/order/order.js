@@ -4,6 +4,7 @@ const Order = require("../../../models/Order");
 
 router.post("/order", createOrder);
 router.get("/order/:id", getOrder);
+router.get("/order/:code", getOrderCode);
 router.get("/admin/order/:id", getOneForAdmin);
 router.get("/order", getAllOrders);
 router.put("/order/:id", updateStatusOrder);
@@ -38,6 +39,21 @@ async function getOrder(req, res) {
     throw new Error("Order not found");
   }
   return res.status(200).json({ order });
+}
+
+async function getOrderCode(req, res) {
+  try {
+    const code = req.params.code;
+    const order = await Order.findOne({ order_number: code });
+    if (!order) {
+      throw new Error("order not found");
+    }
+    return res.status(200).json({ order });
+  }catch (err){
+    res.status(500).json({
+      message: "Что-то пошло не так, попробуйте снова",
+    });
+  }
 }
 
 async function getAllOrders(req, res) {
@@ -111,6 +127,7 @@ async function updateStatusOrder(req, res) {
 async function changeStatus(id, status) {
   try {
     const code = generationCode(5);
+    debugger
     const order = await Order.findOneAndUpdate(
       { _id: id },
       { status, order_number: code }

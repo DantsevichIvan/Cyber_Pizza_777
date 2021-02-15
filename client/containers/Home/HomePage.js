@@ -9,20 +9,22 @@ import OrderStatusPage from "../Order/OrderStatusPage";
 import ModalWindow from "../../component/common/Modal/ModalWindow";
 import CouponForm from "../Order/Form/CouponForm";
 import HomeListProducts from "./HomeListProducts/HomeListProducts";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getUser } from "../../action/authAction";
+import OrderStatusForm from "./OrderStatusForm/OrderStatusForm";
 
 const HomePage = () => {
   const { name } = useParams();
-  const history = useHistory();
   const [isOrderStatus, setIsOrderStatus] = useState(false);
+  const [isStatus, setIsStatus] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.carts.cart);
+  const status = useSelector((state) => state.order.order.status);
   const [isModal, setIsModal] = useState(false);
   const categories = useSelector((state) => state.categories.categories);
   const isAuth = useSelector((state) => state.auth.isAuth);
   const userId = useSelector((state) => state.auth.id);
-  const isAdmin = useSelector((state) => state.auth.isAdmin);
+
 
   const openCloseCouponWindow = () => {
     setIsModal(!isModal);
@@ -33,10 +35,6 @@ const HomePage = () => {
     dispatch(getUser(userId));
   }, [dispatch]);
 
-  // if (isAdmin) {
-  //   history.push("/admin");
-  // }
-
   return (
     <div className={s.home_wrap}>
       <HomeSideBar categories={categories} isAuth={isAuth} />
@@ -44,6 +42,9 @@ const HomePage = () => {
         <HeaderHomePage
           cartsProducts={cart.products}
           setIsOrderStatus={setIsOrderStatus}
+          status={status}
+          openClose={setIsStatus}
+          isStatus={isStatus}
         />
         <HomeListProducts category={name} />
       </div>
@@ -59,6 +60,12 @@ const HomePage = () => {
           openCloseModal={openCloseCouponWindow}
         />
       ) : null}
+      {isStatus?(
+        <ModalWindow
+          Component={OrderStatusForm}
+          openCloseModal={()=>setIsStatus(false)}
+        />
+      ):null}
     </div>
   );
 };
