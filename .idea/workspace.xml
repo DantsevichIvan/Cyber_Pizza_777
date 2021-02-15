@@ -30,17 +30,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d1c197d-c164-43b0-9015-58b55a4bf1e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/component/common/Select/Select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/common/Select/Select.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/common/TextArea/TextArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/component/common/TextArea/TextArea.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/RoutesHome.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/Products/Form/FormAddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/Products/Form/FormAddProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/containers/Admin/Products/Form/FormUpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Admin/Products/Form/FormUpdateProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/containers/Order/Form/CouponForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/containers/Order/Form/CouponForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/schemas/schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/schemas/schemas.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,14 +232,7 @@
       <workItem from="1613073389743" duration="46000" />
       <workItem from="1613108941005" duration="613000" />
       <workItem from="1613117401940" duration="11155000" />
-      <workItem from="1613381842590" duration="13624000" />
-    </task>
-    <task id="LOCAL-00020" summary="feat: add FormUpdateProduct.js">
-      <created>1607103216514</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1607103216514</updated>
+      <workItem from="1613381842590" duration="13996000" />
     </task>
     <task id="LOCAL-00021" summary="feat: add layout Products.js and Product.js">
       <created>1607116565598</created>
@@ -586,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613416420293</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="add new component TextArea.js and Select.js">
+      <created>1613420186607</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1613420186607</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +608,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add ButtonBack.js" />
     <MESSAGE value="fix issue Routes declaration #13&#10;fix issue Mongoose methods #12" />
     <MESSAGE value="fix issue Simplify categories url structure #5" />
     <MESSAGE value="fix issue Show some products on home page #4" />
@@ -642,7 +632,8 @@
     <MESSAGE value="fix admin Router" />
     <MESSAGE value="fix project" />
     <MESSAGE value="update project" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project" />
+    <MESSAGE value="add new component TextArea.js and Select.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new component TextArea.js and Select.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607241943274">
@@ -655,12 +646,12 @@
     </state>
     <state x="2163" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607341585178" />
     <state x="304" y="120" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1612452487498" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1613416418970">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1613420185184">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1984" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361979671" />
     <state x="2177" y="0" key="CommitChangelistDialog2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684799125" />
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1613416418970" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1613420185184" />
     <state width="1197" height="623" key="DebuggerActiveHint" timestamp="1607686690743">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -790,12 +781,12 @@
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1607612432334" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1612210425154" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1613416422769">
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2" timestamp="1613420188677">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="2025" y="123" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1024.779@1920.0.1024.779" timestamp="1607361984755" />
     <state x="2117" y="164" key="Vcs.Push.Dialog.v2/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607684816681" />
-    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1613416422769" />
+    <state x="131" y="107" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1613420188677" />
     <state x="277" y="0" width="1017" height="737" key="dock-window-1" timestamp="1613418561870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
