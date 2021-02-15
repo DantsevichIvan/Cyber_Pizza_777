@@ -1,4 +1,5 @@
 const SET_CARTS = "SET_CARTS";
+const CLEAR_DATA = "CLEAR_DATA";
 
 const initState = {
   cart: {
@@ -24,6 +25,9 @@ const CartsReducer = (state = initState, action) => {
         },
       };
     }
+    case CLEAR_DATA: {
+      return initState;
+    }
     default:
       return {
         ...state,
@@ -35,6 +39,11 @@ export const setCarts = (data) => {
   return {
     type: SET_CARTS,
     data,
+  };
+};
+export const clearCarts = () => {
+  return {
+    type: CLEAR_DATA,
   };
 };
 

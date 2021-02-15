@@ -7,6 +7,7 @@ const initState = {
     id: "",
     products: [],
     price: 0,
+    order_number: 0,
   },
   orders: [],
 };
@@ -21,6 +22,7 @@ const OrderReducer = (state = initState, action) => {
           products: action.data.order.products,
           price: action.data.order.price,
           id: action.data.order._id,
+          order_number: action.data.order_number,
         },
       };
     }

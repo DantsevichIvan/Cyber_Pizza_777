@@ -4,6 +4,7 @@ const orderSchema = new Schema({
   products: [],
   price: { type: Number, default: 0 },
   status: { type: String, default: "Ordered" },
+  order_number: { type: Number },
   user: {
     phone: { type: Number },
     address: {

@@ -1,4 +1,4 @@
-import { setCarts } from "../reducers/cartsReducer";
+import { clearCarts, setCarts } from "../reducers/cartsReducer";
 
 export const createCarts = () => async (dispatch) => {
   const res = await fetch("/api/carts", {
@@ -47,6 +47,13 @@ export const deleteProductToCart = (id_Cart, id_Prod) => async (dispatch) => {
   });
   const result = await res.json();
   dispatch(getCarts(result.id));
+};
+export const deleteCart = (id_Cart) => async (dispatch) => {
+  const res = await fetch(`/api/carts/` + id_Cart, {
+    method: "DELETE",
+  });
+  const result = await res.json();
+  dispatch(clearCarts());
 };
 
 export const updateProductToCart = (id_Cart, id_Prod, product) => async (

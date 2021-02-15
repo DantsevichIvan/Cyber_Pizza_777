@@ -97,26 +97,42 @@ async function updateStatusOrder(req, res) {
 
     await res.status(200).json({ message: "Order update", id: order_id });
 
-    await setTimeout(() => changeStatus(order_id, "Accept"), 1000);
+    await setTimeout(
+      () => changeStatus(order_id, "Accept"),
+      randomInteger(1, 4) * 1000
+    );
   } catch (e) {
     res.status(500).json({
       message: "Что-то пошло не так, попробуйте снова",
     });
   }
 }
-//function randomInteger(min, max) {
-//   let rand = min - 0.5 + Math.random() * (max - min + 1);
-//   return Math.round(rand);
-// }
+
 async function changeStatus(id, status) {
   try {
-    const order = await Order.findOneAndUpdate({ _id: id }, { status });
+    const code = generationCode(5);
+    const order = await Order.findOneAndUpdate(
+      { _id: id },
+      { status, order_number: code }
+    );
     if (!order) {
       throw new Error("Status not update");
     }
   } catch (err) {
     console.log(err);
   }
+}
+
+function randomInteger(min, max) {
+  let rand = min + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+function generationCode(n) {
+  let code = "";
+  let abd = "123456789";
+  let length = abd.length;
+  while (code.length < n) code += abd[(Math.random() * length) | 0];
+  return code;
 }
 
 module.exports = router;

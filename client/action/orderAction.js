@@ -35,7 +35,7 @@ export const updateOrder = (order, id) => async (dispatch) => {
     },
     body: JSON.stringify({
       orderValues: order,
-      status: "The order is accepted and processed",
+      status: "Pending",
     }),
   });
   const result = await res.json();

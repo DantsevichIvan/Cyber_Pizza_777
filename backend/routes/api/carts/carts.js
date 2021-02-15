@@ -7,6 +7,7 @@ router.post("/carts", createCarts);
 router.post("/carts/:id/items", addNewProduct);
 router.put("/carts/:cart_id/items/:item_id", updateCarts);
 router.delete("/carts/:cart_id/items/:item_id", deleteProductFromCarts);
+router.delete("/carts/:cart_id", deleteCarts);
 router.post("/carts/:id/code", addCouponToCarts);
 router.get("/carts/:id", getCarts);
 
@@ -166,6 +167,22 @@ async function getCarts(req, res) {
     throw new Error("Carts not found");
   }
   return res.status(200).json({ carts });
+}
+
+async function deleteCarts(req, res) {
+  try {
+    const cart_id = req.params.cart_id;
+    const carts = await Carts.findByIdAndDelete(cart_id);
+    if (!carts) {
+      throw new Error("Carts not delete");
+    }
+    return res
+      .clearCookie("carts")
+      .status(200)
+      .json({ message: "carts Delete" });
+  } catch (err) {
+    throw new Error("Product not delete");
+  }
 }
 
 const coupons = [
