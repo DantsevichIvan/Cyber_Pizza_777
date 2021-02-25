@@ -6,6 +6,7 @@ const cartsSchema = new Schema({
       name: { type: String },
       price: { type: Number },
       count: { type: Number, default: 1 },
+      image: {type: String}
     },
   ],
 

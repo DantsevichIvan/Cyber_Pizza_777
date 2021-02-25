@@ -22,6 +22,7 @@ const HomeListProducts = ({ category }) => {
       name: product.name,
       count: 1,
       price: product.price,
+      image: product.image
     };
     const id = cart.id;
     dispatch(addProductForCarts(newProd, id));

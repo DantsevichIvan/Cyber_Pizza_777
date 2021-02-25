@@ -25,7 +25,7 @@ async function createCarts(req, res) {
 
 async function addNewProduct(req, res) {
   try {
-    const { name, count, price } = req.body.product;
+    const { name, count, price, image } = req.body.product;
     let cartsId = req.params.id;
 
     const carts = await Carts.findById(cartsId);
@@ -49,7 +49,7 @@ async function addNewProduct(req, res) {
     }
 
     if (!found) {
-      await carts.products.push({ name, count, price });
+      await carts.products.push({ name, count, price, image });
     } else {
       await Carts.findOneAndUpdate(
         { "products.name": name },
